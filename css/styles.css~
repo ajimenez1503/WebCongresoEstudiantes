@@ -1,3 +1,6 @@
+/*
+Copyright ©. All rights reserved. Designed by Antonio Jimenez Martienz y Andres Ortiz Corrales
+*/
 * {
 	margin:0;
 	padding:0;
@@ -12,7 +15,6 @@ p {
 	line-height:170%;	
 }
 a {
-	font-size: 26px;
 	text-decoration:none;
 }
 
@@ -32,6 +34,8 @@ a {
 	float: left;
 	background-color: #45AAFF;	
 	border:2px solid #1A4671;
+	font-size: 26px;
+	text-decoration:none;
 }
 .mainContent {
 	width: 710px;
@@ -45,11 +49,27 @@ a {
 	color: #aeaeae;
 }
 
+.foorterContainerInterior{
+	height: 105px
+}
+
+.footerContainerizq{
+	width: 350px;
+	float: left;
+}
+.footerContainerder{
+	
+	width: 600px;
+	margin-left: 350px;
+}
+
 .MenuSuperior{
 	float: right;
 	width: 300px;
 	background-color: #45AAFF;	
 	border:2px solid #1A4671;
+	font-size: 26px;
+	text-decoration:none;
 }
 .EtiquetaSuperior{
 	display: inline;
