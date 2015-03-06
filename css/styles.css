@@ -18,6 +18,12 @@ a {
 	color:#ECE6AE;
 	text-decoration:none;
 }
+table,th, td {
+	text-align: center;
+   	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 5px;
+}
 
 
 
