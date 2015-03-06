@@ -6,7 +6,7 @@ Copyright ©. All rights reserved. Designed by Antonio Jimenez Martienz y Andres
 	padding:0;
 }
 body  {
-	 font-family: "Times New Roman", Georgia, Serif;
+	font-family: "Times New Roman", Georgia, Serif;
 	font-size: 17px;
 	background: url(../images/contentBackground.jpg) repeat;
 	color: #44391C;
@@ -15,6 +15,7 @@ p {
 	line-height:170%;	
 }
 a {
+	color:#ECE6AE;
 	text-decoration:none;
 }
 
@@ -32,9 +33,13 @@ a {
 .LMenu {
 	width: 230px;
 	float: left;
-	background-color: #45AAFF;	
-	border:2px solid #1A4671;
 	font-size: 26px;
+	/*fonde degradado*/
+	background: -webkit-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); /* For Opera 11.1 to 12.0 */
+ 	 background: -moz-linear-gradient(rgb(249, 160, 0),rgb(152, 97, 12)); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12));/* Standard syntax */
+	/*border: 2px solid #BA7708;*/
 }
 .mainContent {
 	width: 710px;
@@ -62,11 +67,19 @@ a {
 	margin-left: 350px;
 }
 
+.footerContainerder a{
+	color: #be6100;
+}
+
 .MenuSuperior{
 	float: right;
 	width: 300px;
-	background-color: #45AAFF;	
-	border:2px solid #1A4671;
+	/*fonde degradado*/
+	background: -webkit-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); /* For Opera 11.1 to 12.0 */
+ 	 background: -moz-linear-gradient(rgb(249, 160, 0),rgb(152, 97, 12)); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12));/* Standard syntax */
+	border: 2px solid #BA7708;
 	font-size: 26px;
 }
 .EtiquetaSuperior{
@@ -74,7 +87,6 @@ a {
 	padding: 0px 20px 0px 20px;
 }
 
-.MenuLateral{
-	background-color: #45AAFF;	
+.MenuLateral{	
 	list-style-type: none;
 }
