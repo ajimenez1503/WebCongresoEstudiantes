@@ -6,7 +6,7 @@ Copyright ©. All rights reserved. Designed by Antonio Jimenez Martienz y Andres
 	padding:0;
 }
 body  {
-	font-family: "Times New Roman", Georgia, Serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 17px;
 	background: url(../images/contentBackground.jpg) repeat;
 	color: #44391C;
@@ -39,12 +39,18 @@ a {
   	background: -o-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); /* For Opera 11.1 to 12.0 */
  	 background: -moz-linear-gradient(rgb(249, 160, 0),rgb(152, 97, 12)); /* For Firefox 3.6 to 15 */
   	background: linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12));/* Standard syntax */
-	/*border: 2px solid #BA7708;*/
 }
 .mainContent {
 	width: 710px;
 	margin-left: 250px;
+	color: #020202;
+	
 }
+.mainContent a{
+	color: #0F3A98;
+	
+}
+
 
 .foorterContainer{
 	border-top: 4px solid #E5E5E5;
@@ -68,7 +74,7 @@ a {
 }
 
 .footerContainerder a{
-	color: #be6100;
+	color: #0F3A98;
 }
 
 .MenuSuperior{
