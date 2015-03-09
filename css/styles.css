@@ -52,6 +52,15 @@ table,th, td {
 	color: #020202;
 	
 }
+
+.mainContentizq{
+	width: 350px;
+	float: left;
+}
+.mainContentder{
+	
+	margin-left: 390px;
+}
 .mainContent a{
 	color: #0F3A98;
 	
@@ -61,7 +70,7 @@ table,th, td {
 .foorterContainer{
 	border-top: 4px solid #E5E5E5;
 	width: 960px;
-	margin: 140px 0px 0px 0px;
+	margin: 230px 0px 0px 0px;
 	color: #be6100;
 }
 
