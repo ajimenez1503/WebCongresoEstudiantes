@@ -30,6 +30,7 @@
 			<li><a href="./como_llegar.html">Como llegar</a></li>
 			<li><a href="./ponencias.html">Ponencias</a></li>
 			<li><a href="./granada.html">Sobre Granada</a></li>
+			<li><a href="./patrocinadores.html">Patrocinadores</a></li>
 			</ul>
 		</div>
 		<div class="mainContent">
@@ -37,12 +38,27 @@
 			Manda un mensaje a <a href="congreso@ugr.es">congreso@ugr.es </a> o envia señales de humo
 			</p>
 			<p>
-			<textarea id="apuntarseText" rows="4" cols="40">
-Escribe tus datos (o algo asi)
-			</textarea>
-		</p>
-		<p>
-			<button type="button"> Nice Button </button>
+				<form action="">
+					<fieldset>
+						<legend>Datos:</legend>
+						<label>Nombre</label> <input type="text" size="30"><br>
+						<label>Apellidos</label> <input type="text" size="30"><br>
+						<label>Ocupación</label>
+								<select name="rol">
+								<option value="estudiante">Estudiante</option>
+								<option value="profesor">Profesor</option>
+								<option value="visitante">Visitante</option>
+								<option value="supervillano">Super-Villano</option>
+								</select>
+					<h4>Actividades</h4>
+				<input type="checkbox" name="actividad" value="conferencias">Conferencias<br>
+				<input type="checkbox" name="actividad" value="talleres">Talleres<br>
+				<input type="checkbox" name="actividad" value="otras">Otras Actividades<br>
+					</fieldset>
+				</form>
+			</p>
+			<p>
+			<button type="button">Nice Button</button>
 			</p>
 		</div>
 	</div>
