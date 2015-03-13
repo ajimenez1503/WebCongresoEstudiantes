@@ -8,7 +8,8 @@ Copyright ©. All rights reserved. Designed by Antonio Jimenez Martienz y Andres
 body  {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 17px;
-	background: url(../images/backgroundblack.jpg) repeat;
+	background: url(../images/backgroundbrown.jpg);
+  	background-size: 100% 100%;
 	color: #44391C;
 }
 p {
@@ -24,10 +25,13 @@ table,th, td {
 	border-collapse: collapse;
 	padding: 5px;
 }
+header {
+	text-align: center;
+}
 
 .containerSuperior {
 	margin: 0 auto;
-	width: 1000px;
+	width: 1020px;
 	background: url(../images/contentBackground.jpg) repeat;
 }
 
@@ -64,12 +68,12 @@ table,th, td {
 }
 
 .mainContentizq{
-	width: 350px;
+	width: 435px;
 	float: left;
+	text-align : justify;
 }
 .mainContentder{
-	
-	margin-left: 390px;
+	margin-left: 458px;
 }
 .mainContent a{
 	color: #0F3A98;
