@@ -66,11 +66,10 @@ table,th, td {
 	
 }
 
-
 .foorterContainer{
 	border-top: 4px solid #E5E5E5;
 	width: 960px;
-	margin: 230px 0px 0px 0px;
+	margin: 150px 0px 0px 0px;
 	color: #be6100;
 }
 
@@ -110,4 +109,13 @@ table,th, td {
 
 .MenuLateral{	
 	list-style-type: none;
+}
+.totalDinero{	
+	color:red;
+	font-size: 16px;
+}
+
+.imagenesPatrocinadores{
+	margin: 50px 0px 0px 90px;
+
 }
