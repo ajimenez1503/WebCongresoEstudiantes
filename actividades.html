@@ -6,32 +6,45 @@
 	<title>I Congreso de Estudiantes de Ingeniería Informática</title>
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	<link href="css/styles.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="./js/formulario.js"></script>
 </head>
 <body>
 <div class="containerSuperior">
 	<div class="container">
 	<header>
-		<div class="headerContainer">
-		<h1>I Congreso de Estudiantes de Ingeniería Informática</h1>
-		<img src="images/img2.jpg" alt="Foto chula" width="960px" height="200">
+		<div class="headderizq">
+			<div class="headder">
+				<h1>I Congreso de Estudiantes de Ingeniería Informática</h1>		
+			</div>
+			<div class="headleft">
+				<a href="./index.html"><img src="images/logo_web.png" width="100px" height="100px"></a>
+			
+			</div>
 		</div>
+		<img src="images/img2.jpg" alt="Foto chula" width="960px" height="200px">
 	</header>
 	<section>
 		<div>
 			<!--Menu izq -->
-			<div class="LMenu">
-			<a href="./index.html"><img src="images/etsiit_logo2.png" width="230"></a>
-				<ul class="MenuLateral">
-				<li ><a href="./contacto.html">Contacto</a></li>
-				<li><a href="./actividades.html">Actividades</a></li>
+			<div class="LMenu" >
+			<a href="./index.html"><img src="images/etsiit_logo.png" width="230"></a>
+				<ul class="MenuLateral" >
+				<li onmouseover="ver(1)" ><a href="#">+Info</a></li>
+					<div id="subseccion1">
+						<li><a href="./actividades.html"> actividades</a></li>
+						<li><a href="./ponencias.html"> ponencias</a></li>
+					</div>
 				<li><a href="./apuntate.html">Apúntate</a></li>
-				<li><a href="./como_llegar.html">Como llegar</a></li>
-				<li><a href="./ponencias.html">Ponencias</a></li>
-				<li><a href="./granada.html">Sobre Granada</a></li>
+				<li onmouseover="ver(2)"><a href="#">Granada</a></li>
+					<div id="subseccion2">
+						<li><a href="./como_llegar.html"> como llegar</a></li>
+						<li><a href="./granada.html">Info granada</a></li>
+					</div>
 				<li><a href="./patrocinadores.html">Patrocinadores</a></li>
+				<li ><a href="./contacto.html">Contacto</a></li>
 				</ul>
 			</div>
-		<div class="mainContent">
+			<div class="mainContent" onmouseover="ocultar()" >
 				<h3>Actividades</h3>
 			<table>
 				<thead>

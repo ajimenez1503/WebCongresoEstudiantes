@@ -34,6 +34,7 @@ function formSubmit(){
 	else{
 		alert("Ha sido inscrito al congreso correctamente");
 		
+		//calculamos dinero y los mostramos en un parrafo
 		var cantidad_dinero=0;
 		if(document.getElementById("checkbox1").checked==true) cantidad_dinero=cantidad_dinero+2;
 		if(document.getElementById("checkbox2").checked==true) cantidad_dinero=cantidad_dinero+2;
@@ -45,7 +46,14 @@ function formSubmit(){
 		if(document.getElementById("option3").selected==true) cantidad_dinero=cantidad_dinero+20;//visitante
 		
 		dinero.innerHTML="Total:"+cantidad_dinero.toString()+"€";
-	}
-		
+	}		
+}
+
+function ver(n) {
+        document.getElementById("subseccion"+n).style.display="block";
+}
+function ocultar(n) {
+         document.getElementById("subseccion2").style.display="none";
+	 document.getElementById("subseccion1").style.display="none";
 }
 

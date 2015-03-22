@@ -6,6 +6,7 @@
 	<title>I Congreso de Estudiantes de Ingeniería Informática</title>
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	<link href="css/styles.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="./js/formulario.js"></script>
 </head>
 <body>
 <div class="containerSuperior">
@@ -25,19 +26,25 @@
 	<section>
 		<div>
 			<!--Menu izq -->
-			<div class="LMenu">
+			<div class="LMenu" >
 			<a href="./index.html"><img src="images/etsiit_logo.png" width="230"></a>
-				<ul class="MenuLateral">
-				<li ><a href="./contacto.html">Contacto</a></li>
-				<li><a href="./actividades.html">Actividades</a></li>
+				<ul class="MenuLateral" >
+				<li onmouseover="ver(1)" ><a href="#">+Info</a></li>
+					<div id="subseccion1">
+						<li><a href="./actividades.html"> actividades</a></li>
+						<li><a href="./ponencias.html"> ponencias</a></li>
+					</div>
 				<li><a href="./apuntate.html">Apúntate</a></li>
-				<li><a href="./como_llegar.html">Como llegar</a></li>
-				<li><a href="./ponencias.html">Ponencias</a></li>
-				<li><a href="./granada.html">Sobre Granada</a></li>
+				<li onmouseover="ver(2)"><a href="#">Granada</a></li>
+					<div id="subseccion2">
+						<li><a href="./como_llegar.html"> como llegar</a></li>
+						<li><a href="./granada.html">Info granada</a></li>
+					</div>
 				<li><a href="./patrocinadores.html">Patrocinadores</a></li>
+				<li ><a href="./contacto.html">Contacto</a></li>
 				</ul>
 			</div>
-			<div class="mainContent">
+			<div class="mainContent" onmouseover="ocultar()" >
 				<div>
 				<p>
 	Esta web os informara sobre el congreso realizado en la  Escuela de Informática y Telecomunicación. Este tendrá lugar durante la famosa Feria del Corpus de Granada del 30 de mayo al 6 de junio de 2015. 

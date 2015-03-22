@@ -62,6 +62,7 @@ section{
 .LMenu {
 	width: 230px;
 	float: left;
+	position: relative;
 	font-size: 22px;
 	/*fonde degradado*/
 	background: -webkit-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); /* For Safari 5.1 to 6.0 */
@@ -73,6 +74,13 @@ section{
 	list-style-type: none;
 	text-indent: 6px;
 }
+#subseccion1, #subseccion2{
+	font-size: 18px;
+	padding: 5px 0px 10px 25px;
+	display: none;
+}
+
+
 .mainContent {
 	width: 710px;
 	margin-left: 250px;
