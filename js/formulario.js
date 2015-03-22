@@ -7,7 +7,7 @@ function formSubmit(){
 
 	var mail=document.getElementById("formMail").value;
 	mail=mail.trim();
-	if(mail.search(" ")!=-1) 
+	if(mail.search(" ")!=-1)
 		there_err=true;
 	else{
 		var mail2=mail.split("@");
@@ -15,7 +15,7 @@ function formSubmit(){
 		else if(mail2[0].length==0) there_err=true;
 		else{
 		    var mail3=mail2[1].split(".");
-		    if(mail3.length<2) 
+		    if(mail3.length<2)
 			there_err=true;
 		    else{
 			var t;
@@ -33,7 +33,7 @@ function formSubmit(){
 		alert("Error, correo no es correcto");
 	else{
 		alert("Ha sido inscrito al congreso correctamente");
-		
+
 		//calculamos dinero y los mostramos en un parrafo
 		var cantidad_dinero=0;
 		if(document.getElementById("checkbox1").checked==true) cantidad_dinero=cantidad_dinero+2;
@@ -44,9 +44,9 @@ function formSubmit(){
 		if(document.getElementById("option1").selected==true) cantidad_dinero=cantidad_dinero+10;//estudiante
 		if(document.getElementById("option2").selected==true) cantidad_dinero=cantidad_dinero+15;//profesor
 		if(document.getElementById("option3").selected==true) cantidad_dinero=cantidad_dinero+20;//visitante
-		
+
 		dinero.innerHTML="Total:"+cantidad_dinero.toString()+"€";
-	}		
+	}
 }
 
 function ver(n) {
@@ -54,6 +54,16 @@ function ver(n) {
 }
 function ocultar(n) {
          document.getElementById("subseccion2").style.display="none";
-	 document.getElementById("subseccion1").style.display="none";
+	     document.getElementById("subseccion1").style.display="none";
 }
 
+setInterval(image_slider, 3000);
+function image_slider(){
+var imgs=["images/cevug.png","images/ugr.png","images/ceibiotic.png","images/osl.png"];
+var image=document.getElementById("image_pat");
+//var src=image.src;
+var n=Math.floor(Math.random() * imgs.length);
+image.src=imgs[n];
+
+}
+//
