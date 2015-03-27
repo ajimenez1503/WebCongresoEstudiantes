@@ -26,23 +26,29 @@
 	<section>
 		<div>
 			<!--Menu izq -->
-			<div class="LMenu" >
-			<a href="./index.html"><img src="images/etsiit_logo.png" width="230"></a>
-				<ul class="MenuLateral" >
-				<li onmouseover="ver(1)" ><a href="#">+Info</a></li>
-					<div id="subseccion1">
-						<li><a href="./actividades.html"> actividades</a></li>
-						<li><a href="./ponencias.html"> ponencias</a></li>
-					</div>
-				<li><a href="./apuntate.html">Apúntate</a></li>
-				<li onmouseover="ver(2)"><a href="#">Granada</a></li>
-					<div id="subseccion2">
-						<li><a href="./como_llegar.html"> como llegar</a></li>
-						<li><a href="./granada.html">Info granada</a></li>
-					</div>
-				<li><a href="./patrocinadores.html">Patrocinadores</a></li>
-				<li ><a href="./contacto.html">Contacto</a></li>
-				</ul>
+			<div class="MenuSuperior" >
+				<div class="LMenu" >
+				<a href="./index.html"><img src="images/etsiit_logo.png" width="230"></a>
+					<ul class="MenuLateral" >
+					<li onClick="switch_section(1)" ><a href="#">+Info</a></li>
+						<div id="subseccion1">
+							<li><a href="./actividades.html"> actividades</a></li>
+							<li><a href="./ponencias.html"> ponencias</a></li>
+						</div>
+					<li><a href="./apuntate.html">Apúntate</a></li>
+					<li onClick="switch_section(2)"><a href="#">Granada</a></li>
+						<div id="subseccion2">
+							<li><a href="./como_llegar.html"> como llegar</a></li>
+							<li><a href="./granada.html">Info granada</a></li>
+						</div>
+					<li><a href="./patrocinadores.html">Patrocinadores</a></li>
+					<li ><a href="./contacto.html">Contacto</a></li>
+					</ul>
+				</div>
+				<div class="izqimagnes" >
+				<img id="image_pat" src="images/cevug.png" alt="patrocinador" width="226px" height="152px">
+				</div>
+				
 			</div>
 			<div class="mainContent" onmouseover="ocultar()" >
 		<!--Acerca de granada -->

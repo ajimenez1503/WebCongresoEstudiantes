@@ -25,6 +25,11 @@ table,th, td {
 	border-collapse: collapse;
 	padding: 5px;
 }
+
+fieldset{
+	padding: 3px 0px 9px 10px
+}
+
 .headizq{
 	width: 100px;
 	float: left;
