@@ -59,10 +59,14 @@ section{
 	margin: 15px 0 0 0;
 
 }
-.LMenu {
+.MenuSuperior{
 	width: 230px;
 	float: left;
 	position: relative;
+}
+
+.LMenu {
+	
 	font-size: 22px;
 	/*fonde degradado*/
 	background: -webkit-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); /* For Safari 5.1 to 6.0 */
@@ -78,6 +82,11 @@ section{
 	font-size: 18px;
 	padding: 5px 0px 10px 25px;
 	display: none;
+}
+.izqimagnes{
+	margin: 10px 0 0 0;
+	border: 2px solid rgb(216, 112, 11);
+	height: 152px;
 }
 
 
