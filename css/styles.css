@@ -26,14 +26,21 @@ table,th, td {
 	padding: 5px;
 }
 th {
-
 	background-color: rgb(216, 112, 11);
 }
 
 fieldset{ 
 	padding: 3px 0px 9px 10px
 }
+h1,h2{
+	padding: 10px 0px 10px 0px;
+}
+h3,h4{
+	padding: 10px 0px 10px 20px;
+}
 
+
+/* Formato cabecera*/
 .headizq{
 	width: 100px;
 	float: left;
@@ -46,7 +53,8 @@ fieldset{
 .headderizq{
 	height: 90px;
 }
-
+/* Formato cabecera*/
+/* Formato container */
 .containerSuperior {
 	margin: 0 auto;
 	width: 1020px;
@@ -59,21 +67,17 @@ fieldset{
 	margin: 0 auto;
 
 }
-.headerContainer {
-	width: 960px;
-	position: relative;
-	margin: 0px 0 20px 0;
-}
+/* Formato container */
+
 section{
 	margin: 15px 0 0 0;
-
 }
+/* Formato menu */
 .MenuSuperior{
 	width: 230px;
 	float: left;
 	position: relative;
 }
-
 .LMenu {
 	
 	font-size: 22px;
@@ -92,20 +96,26 @@ section{
 	padding: 5px 0px 10px 25px;
 	display: none;
 }
-.izqimagnes{
+.slide{
+	width: 230px;
+	height: 150px;
+	float: left;
+}
+#slider{
+	width: 230px;
+	overflow: hidden;
+	position: relative;
 	margin: 10px 0 0 0;
 	border: 2px solid rgb(216, 112, 11);
 	height: 152px;
 }
-
-
+/* Formato menu */
+/* Formato central */
 .mainContent {
 	width: 710px;
 	margin-left: 250px;
-	color: #020202;
-	
+	color: #020202;	
 }
-
 .mainContentizq{
 	width: 435px;
 	float: left;
@@ -118,18 +128,17 @@ section{
 	color: #0F3A98;
 	
 }
-
+/* Formato central */
+/* Formato pie de pagina */
 .foorterContainer{
 	border-top: 4px solid #E5E5E5;
 	width: 960px;
 	margin: 150px 0px 0px 0px;
 	color: #be6100;
 }
-
 .foorterContainerInterior{
 	height: 105px
 }
-
 .footerContainerizq{
 	width: 350px;
 	float: left;
@@ -143,9 +152,10 @@ section{
 .footerContainerder a{
 	color: #0F3A98;
 }
+/* Formato pie de pagina */
 
-/*
-//procedente antiguo menu superior
+
+/*procedente antiguo menu superior
 .MenuSuperior{
 	float: right;
 	width: 300px;
@@ -170,5 +180,8 @@ section{
 
 .imagenesPatrocinadores{
 	margin: 50px 0px 0px 90px;
-
 }
+
+
+
+

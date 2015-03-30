@@ -56,23 +56,4 @@ function switch_section(n){
 		document.getElementById("subseccion"+n).style.display="block";
 }
 
-/*
-function ver(n) {
-        document.getElementById("subseccion"+n).style.display="block";
-}
-function ocultar(n) {
-         document.getElementById("subseccion2").style.display="none";
-	     document.getElementById("subseccion1").style.display="none";
-}
 
-*/
-
-setInterval(image_slider, 3000);
-function image_slider(){
-	var imgs=["images/cevug.png","images/ugr.png","images/ceibiotic.png","images/osl.png"];
-	var image=document.getElementById("image_pat");
-	var n=Math.floor(Math.random() * imgs.length);
-	image.src=imgs[n];
-
-}
-//

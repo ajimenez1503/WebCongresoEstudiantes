@@ -7,6 +7,51 @@
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	<link href="css/styles.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="./js/formulario.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"> type="text/javascript"></script>
+
+
+	<script> 
+	$(document).ready(function(){
+		// Variables
+		var slides, timer;
+		//Crea un objeto con informacion de los slides
+		slides = $('#slider .slidesContainer > .slide');
+		//Funciones
+		
+		
+		//Desplaza el contenedor hacia la direccion definida
+		//@direction = [left,right]
+		function sliderScroll(){
+
+		   //Calcula la posiciÃ³n actual del contenedor
+		   position = $('#slider').scrollLeft();
+
+		   //Calcula la anchura total menos el ultimo slide.
+		   //Se usa para calcular cuando el scroll llega al final.
+		   totalWidth = (slides.length * slides[0].offsetWidth) - slides[0].offsetWidth
+
+		    if (position+slides[0].offsetWidth > totalWidth){ //Si la siguiente posicion se sale del contenedor, vuelve al principio.
+		        $('#slider:not(:animated)').animate({scrollLeft:0},1000);
+		    } else { //Si no es el final, suma a la posicion actual la anchura del slide.
+		        $('#slider:not(:animated)').animate({scrollLeft:position+slides[0].offsetWidth},1000);
+		    }
+	   }
+
+	   //FunciÃ³n que crea el temporizador
+	   function initTimer(){
+		    timer = setInterval(function(){sliderScroll();}, 4000);
+	   }
+
+		//Asigna el ancho total de los slides al contenedor
+		//La anchura total se obtiene multiplicando la medida de un slide por el nÃºmero de slides)
+		$('#slider .slidesContainer').css('width',slides[0].offsetWidth * slides.length);
+
+		//Inicia el temporizador
+		initTimer();
+
+	});
+	</script> 
+	
 </head>
 <body>
 <div class="containerSuperior">
@@ -27,27 +72,34 @@
 		<div>
 			<!--Menu izq -->
 			<div class="MenuSuperior" >
-				<div class="LMenu" >
+				<!--<div class="LMenu" > -->
+				<nav class="LMenu">
 				<a href="./index.html"><img src="images/etsiit_logo.png" width="230"></a>
 					<ul class="MenuLateral" >
 					<li onClick="switch_section(1)" ><a href="#">+Info</a></li>
 						<div id="subseccion1">
-							<li><a href="./actividades.html"> actividades</a></li>
-							<li><a href="./ponencias.html"> ponencias</a></li>
+							<li><a href="./actividades.html"> Actividades</a></li>
+							<li><a href="./ponencias.html"> Ponencias</a></li>
 						</div>
 					<li><a href="./apuntate.html">Apúntate</a></li>
 					<li onClick="switch_section(2)"><a href="#">Granada</a></li>
 						<div id="subseccion2">
-							<li><a href="./como_llegar.html"> como llegar</a></li>
+							<li><a href="./como_llegar.html">Como llegar</a></li>
 							<li><a href="./granada.html">Info granada</a></li>
 						</div>
 					<li><a href="./patrocinadores.html">Patrocinadores</a></li>
 					<li ><a href="./contacto.html">Contacto</a></li>
 					</ul>
-				</div>
-				<div class="izqimagnes" >
-				<img id="image_pat" src="images/cevug.png" alt="patrocinador" width="226px" height="152px">
-				</div>
+				</nav>
+				<div id="slider">
+					<div class="slidesContainer">
+						<div class="slide"><img src="images/cevug.png" alt="cebug" width="230px"height="150"></div>
+						<div class="slide"><img src="images/ugr.png" alt="ugr" width="230px"height="150"></div>
+						<div class="slide"><img src="images/ceibiotic.png" alt="ceibiotic" width="230px" height="150"></div>
+						<div class="slide"><img src="images/osl.png" alt="cebug" width="230px" height="150"></div>
+
+					</div> <!-- /slidesContainer-->
+				</div> <!-- /slider -->
 				
 			</div>
 			<div class="mainContent" >
