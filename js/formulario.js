@@ -1,4 +1,3 @@
-//Si dios quiere esto validará los datos
 function formSubmit(){
 	var there_err=false;
 	var dinero=document.getElementById("dinero");
