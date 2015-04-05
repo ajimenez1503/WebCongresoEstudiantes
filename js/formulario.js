@@ -1,4 +1,41 @@
-//Si dios quiere esto validará los datos
+function pausecomp(millis){
+  var date = new Date();
+  var curDate = null;
+  do { curDate = new Date(); }
+  while(curDate-date < millis);
+
+}
+function rotar(){
+	var timer = setInterval(sliderScroll, 10);
+	//230px ancho ventana
+	//Desplaza el contenedor derecha
+    var slider =document.getElementById("slider");
+	    // crea el temporizador
+	var timer = setInterval(sliderScroll, 10);
+	//Asigna el ancho total de los slides al contenedor
+	//La anchura total se obtiene multiplicando la medida de un slide por el nÃºmero de slides)
+	document.getElementById("slidesContainer").style.width="920px";//230*4=920
+	var incremento=0;
+	var totalWidth =690;//4*230-230=690//Calcula la anchura total menos el ultimo slide.
+	var position=0;
+	function sliderScroll(){
+	    position =document.getElementById("slider").scrollLeft; //Calcula la posicion actual del contenedor
+		//si estamos al inicio de una imagne que se pare durante 1seg
+		if(position%230==0){
+			pausecomp(1000);
+		}
+		//movemos scroll
+		incremento=position+1;
+		if(incremento>totalWidth){//si es el final del scroll -> volvmeos a empezar
+			slider.scrollLeft=0;
+		}
+		else{
+	    	slider.scrollLeft=incremento;
+		}
+    }
+}
+
+
 function formSubmit(){
 	var there_err=false;
 	var dinero=document.getElementById("dinero");
@@ -55,5 +92,3 @@ function switch_section(n){
 	else
 		document.getElementById("subseccion"+n).style.display="block";
 }
-
-

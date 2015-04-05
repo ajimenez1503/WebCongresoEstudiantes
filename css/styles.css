@@ -103,11 +103,12 @@ section{
 }
 #slider{
 	width: 230px;
+	height: 150px;
 	overflow: hidden;
 	position: relative;
 	margin: 10px 0 0 0;
 	border: 2px solid rgb(216, 112, 11);
-	height: 152px;
+
 }
 /* Formato menu */
 /* Formato central */
