@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 function pausecomp(millis){
   var date = new Date();
   var curDate = null;
@@ -37,8 +36,6 @@ function rotar(){
 }
 
 
-=======
->>>>>>> bdf7a26f3638df0d2b266cb29880007edc5914d1
 function formSubmit(){
 	var there_err=false;
 	var dinero=document.getElementById("dinero");
