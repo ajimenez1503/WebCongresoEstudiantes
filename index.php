@@ -7,6 +7,7 @@
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	<link href="css/styles.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="./js/formulario.js"></script>
+	<?php $current_page="home" ?>
 
 </head>
 <body onload="rotar()">
@@ -18,7 +19,10 @@
 			<?php include './php/lmenu.php'; ?>
 			<div class="mainContent" >
 				<!-- Incluir contenido necesario -->
-				<?php include './php/home.php'; ?>
+				<?php
+				//includes the current_page (looking in ./php/ folder)
+				 include './php/ '. $current_page . '.php';
+				?>
 			</div>
 		</div>
 	</section>
