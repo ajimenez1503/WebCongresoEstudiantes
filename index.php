@@ -7,7 +7,15 @@
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	<link href="css/styles.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="./js/formulario.js"></script>
-	<?php $current_page="home" ?>
+	<?php
+
+	$current_page="home"
+	$new_page=$_GET['page']
+	if(strlen($new_page)>0){
+		$current_page=$new_page;
+	}
+
+?>
 
 </head>
 <body onload="rotar()">

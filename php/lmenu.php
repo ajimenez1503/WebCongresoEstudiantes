@@ -6,17 +6,17 @@
         <ul class="MenuLateral" >
         <li onClick="switch_section(1)" ><a href="#">+Info</a></li>
             <div id="subseccion1">
-                <li><a href="./actividades.html"> Actividades</a></li>
-                <li><a href="./ponencias.html"> Ponencias</a></li>
+                <li><a href="./index.php?page=actividades"> Actividades</a></li>
+                <li><a href="./index.php?page=ponencias"> Ponencias</a></li>
             </div>
         <li><a href="./apuntate.html">Apúntate</a></li>
         <li onClick="switch_section(2)"><a href="#">Granada</a></li>
             <div id="subseccion2">
-                <li><a href="./como_llegar.html">Como llegar</a></li>
-                <li><a href="./granada.html">Info granada</a></li>
+                <li><a href="./index.php?page=como_llegar">Como llegar</a></li>
+                <li><a href="./index.php?page=granada">Info granada</a></li>
             </div>
-        <li><a href="./patrocinadores.html">Patrocinadores</a></li>
-        <li ><a href="./contacto.html">Contacto</a></li>
+        <li><a href="./index.php?page=patrocinadores">Patrocinadores</a></li>
+        <li ><a href="./index.php?page=contacto">Contacto</a></li>
         </ul>
     </nav>
     <div id="slider">
