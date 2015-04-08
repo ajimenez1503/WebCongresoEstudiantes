@@ -27,7 +27,7 @@
 				<!-- Incluir contenido necesario -->
 				<?php
 				//includes the current_page (looking in ./php/ folder)
-				 include './php/ '. $current_page . '.php';
+				 include './php/'. $current_page . '.php';
 				?>
 			</div>
 		</div>
