@@ -9,7 +9,7 @@
                 <li><a href="./index.php?page=actividades"> Actividades</a></li>
                 <li><a href="./index.php?page=ponencias"> Ponencias</a></li>
             </div>
-        <li><a href="./apuntate.html">Apúntate</a></li>
+        <li><a href="./index.php?page=apuntate">Apúntate</a></li>
         <li onClick="switch_section(2)"><a href="#">Granada</a></li>
             <div id="subseccion2">
                 <li><a href="./index.php?page=como_llegar">Como llegar</a></li>
