@@ -13,7 +13,7 @@ body  {
 	color: #44391C;
 }
 p {
-	line-height:170%;	
+	line-height:170%;
 }
 a {
 	color:#ECE6AE;
@@ -29,7 +29,7 @@ th {
 	background-color: rgb(216, 112, 11);
 }
 
-fieldset{ 
+fieldset{
 	padding: 3px 0px 9px 10px
 }
 h1,h2{
@@ -61,7 +61,7 @@ h3,h4{
 	background: url(../images/contentBackground.jpg) repeat;
 }
 
-.container { 
+.container {
 	padding: 5px;
 	width: 960px;
 	margin: 0 auto;
@@ -73,13 +73,13 @@ section{
 	margin: 15px 0 0 0;
 }
 /* Formato menu */
-.MenuSuperior{
+.MenuIzquierda{
 	width: 230px;
 	float: left;
 	position: relative;
 }
 .LMenu {
-	
+
 	font-size: 22px;
 	/*fonde degradado*/
 	background: -webkit-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); /* For Safari 5.1 to 6.0 */
@@ -87,7 +87,7 @@ section{
  	background: -moz-linear-gradient(rgb(249, 160, 0),rgb(152, 97, 12)); /* For Firefox 3.6 to 15 */
   	background: linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12));/* Standard syntax */
 }
-.MenuLateral{	
+.MenuLateral{
 	list-style-type: none;
 	text-indent: 6px;
 }
@@ -115,7 +115,7 @@ section{
 .mainContent {
 	width: 710px;
 	margin-left: 250px;
-	color: #020202;	
+	color: #020202;
 }
 .mainContentizq{
 	width: 435px;
@@ -127,7 +127,7 @@ section{
 }
 .mainContent a{
 	color: #0F3A98;
-	
+
 }
 /* Formato central */
 /* Formato pie de pagina */
@@ -145,7 +145,7 @@ section{
 	float: left;
 }
 .footerContainerder{
-	
+
 	width: 600px;
 	margin-left: 350px;
 }
@@ -161,9 +161,9 @@ section{
 	float: right;
 	width: 300px;
 	//fonde degradado
-	background: -webkit-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); // For Safari 5.1 to 6.0 
-  	background: -o-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); / For Opera 11.1 to 12.0 
- 	 background: -moz-linear-gradient(rgb(249, 160, 0),rgb(152, 97, 12)); // For Firefox 3.6 to 15 
+	background: -webkit-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); // For Safari 5.1 to 6.0
+  	background: -o-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); / For Opera 11.1 to 12.0
+ 	 background: -moz-linear-gradient(rgb(249, 160, 0),rgb(152, 97, 12)); // For Firefox 3.6 to 15
   	background: linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12));// Standard syntax
 	border: 2px solid #BA7708;
 	font-size: 26px;
@@ -174,7 +174,7 @@ section{
 }
 */
 
-.totalDinero{	
+.totalDinero{
 	color:red;
 	font-size: 16px;
 }
@@ -182,7 +182,3 @@ section{
 .imagenesPatrocinadores{
 	margin: 50px 0px 0px 90px;
 }
-
-
-
-

@@ -1,8 +1,8 @@
 <!--Menu izq -->
-<div class="MenuSuperior" >
+<div class="MenuIzquierda" >
     <!--<div class="LMenu" > -->
     <nav class="LMenu">
-    <a href="./index.html"><img src="images/etsiit_logo.png" width="230"></a>
+    <a href="./index.php?page=home"><img src="images/etsiit_logo.png" width="230"></a>
         <ul class="MenuLateral" >
         <li onClick="switch_section(1)" ><a href="#">+Info</a></li>
             <div id="subseccion1">
