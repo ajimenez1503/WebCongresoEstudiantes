@@ -9,7 +9,7 @@
 	<script type="text/javascript" src="./js/formulario.js"></script>
 	<?php
 	if(isset($_GET['page']){
-	$current_page=$new_page;
+	$current_page=$_GET['page'];
 	}else{
 	$current_page="home";
 	}
