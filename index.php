@@ -8,11 +8,11 @@
 	<link href="css/styles.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="./js/formulario.js"></script>
 	<?php
-	if(isset($_GET['page']){
 	$current_page=$_GET['page'];
-	}else{
+	if(!isset($current_page)){
 	$current_page="home";
 	}
+
 ?>
 
 </head>
