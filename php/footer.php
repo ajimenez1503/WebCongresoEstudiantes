@@ -1,6 +1,5 @@
 <footer>
-    <div class="foorterContainer">
-        <div class="foorterContainerInterior" >
+        <div class="footerContainerInterior" >
             <div class="footerContainerizq">
                 <img  src="images/logo_etsiit.png" alt="Otra cosa chula">
             </div>
@@ -12,5 +11,5 @@
         <div >
             <p> Copyright ©. All rights reserved. Designed by Antonio Jimenez Martienz and Andres Ortiz Corrales</p>
         </div>
-    </div>
+
 </footer>

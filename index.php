@@ -6,7 +6,7 @@
 	<title>I Congreso de Estudiantes de Ingeniería Informática</title>
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	<link href="css/styles.css" rel="stylesheet" type="text/css"/>
-	<script type="text/javascript" src="./js/formulario.js"></script>
+	<script type="text/javascript" src="./js/script.js"></script>
 	<?php
 	$current_page=$_GET['page'];
 	if(!isset($current_page)){

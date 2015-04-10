@@ -79,7 +79,6 @@ section{
 	position: relative;
 }
 .LMenu {
-
 	font-size: 22px;
 	/*fonde degradado*/
 	background: -webkit-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); /* For Safari 5.1 to 6.0 */
@@ -131,13 +130,13 @@ section{
 }
 /* Formato central */
 /* Formato pie de pagina */
-.foorterContainer{
+footer{
 	border-top: 4px solid #E5E5E5;
 	width: 960px;
 	margin: 150px 0px 0px 0px;
 	color: #be6100;
 }
-.foorterContainerInterior{
+.footerContainerInterior{
 	height: 105px
 }
 .footerContainerizq{
@@ -145,11 +144,9 @@ section{
 	float: left;
 }
 .footerContainerder{
-
 	width: 600px;
 	margin-left: 350px;
 }
-
 .footerContainerder a{
 	color: #0F3A98;
 }
