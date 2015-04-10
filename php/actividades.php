@@ -1,5 +1,9 @@
 <!--Copyright ©. All rights reserved. Designed by Antonio Jimenez Martinez y Andres Ortiz Corrales -->
 <!DOCTYPE html>
+<script>
+	switch_section(1);
+</script>
+
 	<h3>Actividades</h3>
 <table>
 	<thead>

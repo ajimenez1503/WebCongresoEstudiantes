@@ -1,5 +1,8 @@
 <!--Copyright ©. All rights reserved. Designed by Antonio Jimenez Martinez y Andres Ortiz Corrales -->
 <!DOCTYPE html>
+<script>
+	switch_section(2);
+</script>
 		<!--Acerca de granada -->
 			<h2>ACERCA DE GRANADA</h2>
 
