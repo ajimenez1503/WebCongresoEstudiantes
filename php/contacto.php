@@ -15,37 +15,24 @@
 
 <?php
 // define variables and set to empty values
-$nameErr = $emailErr = "";
-$name = $email = $comment = "";
-
+$email = $comment = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-   if (empty($_POST["name"])) {
-     $nameErr = "Name is required";
-   } else {
-     $name = test_input($_POST["name"]);
-     // check if name only contains letters and whitespace
-     if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-       $nameErr = "Only letters and white space allowed";
-     }
-   }
-
-   if (empty($_POST["email"])) {
-     $emailErr = "Email is required";
-   } else {
+   if (!empty($_POST["email"])) {
      $email = test_input($_POST["email"]);
      // check if e-mail address is well-formed
      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-       $emailErr = "Invalid email format";
+		echo "<script type='text/javascript'>alert('correo incorrecto');</script>";
      }
    }
-
-
-   if (empty($_POST["comment"])) {
-     $comment = "";
-   } else {
+   if (!empty($_POST["comment"])) {
      $comment = test_input($_POST["comment"]);
    }
-
+	// use wordwrap() if lines are longer than 70 characters
+	//$comment = wordwrap($comment,70)
+	// Enviarlo
+	$email = $email . ",congreso@ugr.es";
+	mail($email," [Mensaje de Web] Asunto",  $comment);
+	$email = $comment = "";
 }
 
 function test_input($data) {
@@ -56,25 +43,13 @@ function test_input($data) {
 }
 ?>
 
-
-
 <h2>Formulario contacto</h2>
 <form method="post" action="index.php?page=contacto">
-   Name: <input type="text" name="name" value="<?php echo $name;?>">
+   Name: <input type="text" name="name" value="<?php echo $name;?>"required>
    <br><br>
-   E-mail: <input type="text" name="email" value="<?php echo $email;?>">
+   E-mail: <input type="text" name="email" value="<?php echo $email;?>"required>
    <br><br>
-   Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
+   <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
    <br><br>
    <input type="submit" name="submit" value="Submit">
 </form>
-
-<?php
-echo "<h2>Your Input:</h2>";
-echo $name;
-echo "<br>";
-echo $email;
-echo "<br>";
-echo $comment;
-?>
-		<!--informacion contacto -->
