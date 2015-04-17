@@ -43,6 +43,8 @@ function test_input($data) {
 }
 ?>
 
+<div class ="contacta">
+
 <h2>Formulario contacto</h2>
 <form method="post" action="index.php?page=contacto">
    Name: <input type="text" name="name" value="<?php echo $name;?>"required>
@@ -53,3 +55,4 @@ function test_input($data) {
    <br><br>
    <input type="submit" name="submit" value="Submit">
 </form>
+</div> <!-- end contacta -->
