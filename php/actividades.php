@@ -51,5 +51,5 @@
 </table>
 
 <?php
-include "./actividades/readcontent.php";
+include "actividades/readcontent.php";
 ?>

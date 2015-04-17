@@ -1,15 +1,14 @@
 <!--Copyright ©. All rights reserved. Designed by Antonio Jimenez Martinez y Andres Ortiz Corrales -->
-<!DOCTYPE html>
-		<!--informacion contacto -->
-			<h3>Información de contacto:</h3>
-			<p>C/Periodista Daniel Saucedo Aranda, s/n · E-18071 GRANADA (Spain)</p>
-			<p>Tlf:+34-958242802</p>
-			<p>Fax: +34-958242801</p>
-			<p>E-mail:<a href="congreso@ugr.es">congreso@ugr.es </a> </p>
+<!--informacion contacto -->
+<h3>Información de contacto:</h3>
+<p>C/Periodista Daniel Saucedo Aranda, s/n · E-18071 GRANADA (Spain)</p>
+<p>Tlf:+34-958242802</p>
+<p>Fax: +34-958242801</p>
+<p>E-mail:<a href="congreso@ugr.es">congreso@ugr.es </a> </p>
 
-			<h4>Secreataría ETSIIT :</h4>
-			<p> Administrador D. Juan Antonio Barros Jódar </p>
-			<p>E-mail:<a href="jbarros@ugr.es">jbarros@ugr.es </a> </p>
+<h4>Secreataría ETSIIT :</h4>
+<p> Administrador D. Juan Antonio Barros Jódar </p>
+<p>E-mail:<a href="jbarros@ugr.es">jbarros@ugr.es </a> </p>
 
 
 
@@ -27,12 +26,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    if (!empty($_POST["comment"])) {
      $comment = test_input($_POST["comment"]);
    }
+
+
+	require 'libreria/PHPMailer/PHPMailerAutoload.php';
+	echo "<script type='text/javascript'>alert('hola');</script>";
+	$mail = new PHPMailer;
+	$mail->isSMTP();                                      // Set mailer to use SMTP
+	$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+	$mail->SMTPAuth = true;                               // Enable SMTP authentication
+	$mail->Username = 'pisoxd5a@gmail.com';                 // SMTP username
+	$mail->Password = 'emperatriz8';                           // SMTP password
+	$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+	$mail->Port = 587;                                    // TCP port to connect to
+	$mail->From = 'pisoxd5a@gmail.com';
+	$mail->FromName = 'Congreso';
+	$mail->addAddress('jm.94.antonio@gmail.com', 'Antonio');     // Add a recipient
+	//$mail->addAddress('ellen@example.com');               // Name is optional
+
+	$mail->isHTML(false);                                  // Set email format to HTML
+
+	$mail->Subject = '[Mensaje de Web] Asunto';
+	$mail->Body    = 'This is the HTML message body';
+
+
+	if(!$mail->send()) {
+		echo "<script type='text/javascript'>alert('Message could not be sent');</script>";
+	    //echo 'Message could not be sent.';
+	    //echo 'Mailer Error: ' . $mail->ErrorInfo;
+	} else {
+		echo "<script type='text/javascript'>alert('Message has been sent');</script>";
+	    //echo 'Message has been sent';
+	}
+
+
+
+
+
+
 	// use wordwrap() if lines are longer than 70 characters
 	//$comment = wordwrap($comment,70)
 	// Enviarlo
-	$email = $email . ",congreso@ugr.es";
+	/*$email = $email . ",congreso@ugr.es";
 	mail($email," [Mensaje de Web] Asunto",  $comment);
 	$email = $comment = "";
+	*/
 }
 
 function test_input($data) {
