@@ -1,11 +1,12 @@
 <?php
-echo "<script type='text/javascript'>alert('Message has been sent');</script>";
-$myfile = fopen("content_example.txt", "r") or die("Unable to open file!");
+#echo "<script type='text/javascript'>alert('Message has been sent');</script>";
+if
+$myfile = fopen("content_example.txt", "r") #or die("Unable to open file!");
 #echo "<img src=\"" . fgets($myfile) . "\">";
-#echo "<p>";
+echo "<p>";
 while(!feof($myfile)) {
-  echo fgets($myfile); #. "<br>";
+  echo fgets($myfile); . "<br>";
 }
-#echo "</p>"
+echo "</p>"
 fclose($myfile);
 ?>
