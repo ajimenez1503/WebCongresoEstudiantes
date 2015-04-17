@@ -1,0 +1,2 @@
+/images/cevug.png
+This is an example content of an activity

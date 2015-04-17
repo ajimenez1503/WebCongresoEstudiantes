@@ -49,3 +49,7 @@
 
 	</tbody>
 </table>
+
+<?php
+include "./actividades/readcontent.php";
+?>
