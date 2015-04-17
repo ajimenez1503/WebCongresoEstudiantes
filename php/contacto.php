@@ -27,18 +27,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      $comment = test_input($_POST["comment"]);
    }
 
+	require '../lib/PHPMailer/PHPMailerAutoload.php';
 
-	require 'libreria/PHPMailer/PHPMailerAutoload.php';
-	echo "<script type='text/javascript'>alert('hola');</script>";
 	$mail = new PHPMailer;
 	$mail->isSMTP();                                      // Set mailer to use SMTP
 	$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
 	$mail->SMTPAuth = true;                               // Enable SMTP authentication
-	$mail->Username = 'pisoxd5a@gmail.com';                 // SMTP username
-	$mail->Password = 'emperatriz8';                           // SMTP password
+	$mail->Username = 'sibweb2014@gmail.com';                 // SMTP username
+	$mail->Password = 'antonioandres';                           // SMTP password
 	$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 	$mail->Port = 587;                                    // TCP port to connect to
-	$mail->From = 'pisoxd5a@gmail.com';
+	$mail->From = 'sibweb2014@gmail.com';
 	$mail->FromName = 'Congreso';
 	$mail->addAddress('jm.94.antonio@gmail.com', 'Antonio');     // Add a recipient
 	//$mail->addAddress('ellen@example.com');               // Name is optional

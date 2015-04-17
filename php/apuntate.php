@@ -36,7 +36,7 @@ Manda un mensaje a <a href="congreso@ugr.es">congreso@ugr.es </a> en caso de dud
 					<input id="checkbox5" type="checkbox" name="actividad" value="Taller: Introducción a WordPad">Taller: Introducción a WordPad<br>
 				</fieldset>
 			</form>
-			<button type="button" onClick="formSubmit()">Submit</button>
+			<button type="button" onClick="formSubmit()">Enviar</button>
 			<p class="totalDinero" id="dinero">
 			Total: 0€
 			</p>
