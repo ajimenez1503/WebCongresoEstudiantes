@@ -12,73 +12,6 @@
 
 
 
-<?php
-// define variables and set to empty values
-$email = $comment = "";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-   if (!empty($_POST["email"])) {
-     $email = test_input($_POST["email"]);
-     // check if e-mail address is well-formed
-     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-		echo "<script type='text/javascript'>alert('correo incorrecto');</script>";
-     }
-   }
-   if (!empty($_POST["comment"])) {
-     $comment = test_input($_POST["comment"]);
-   }
-
-	require 'lib/PHPMailer/PHPMailerAutoload.php';
-	$mail = new PHPMailer;
-    $mail->SMTPDebug = 2;//info debug
-	$mail->isSMTP();                                      // Set mailer to use SMTP
-	$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-	$mail->SMTPAuth = true;                               // Enable SMTP authentication
-	$mail->Username = 'sibweb2014@gmail.com';                 // SMTP username
-	$mail->Password = 'antonioandres';                           // SMTP password
-	$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-	$mail->Port = 587;                                    // TCP port to connect to
-	$mail->From = 'sibweb2014@gmail.com';
-	$mail->FromName = 'Congreso';
-    $mail->addAddress('jm.94.antonio@gmail.com', 'Antonio');     // Add a recipient
-	//$mail->addAddress('ellen@example.com');               // Name is optional
-
-	$mail->isHTML(false);                                  // Set email format to HTML
-
-	$mail->Subject = '[Mensaje de Web] Asunto';
-	$mail->Body    = 'This is the HTML message body';
-
-
-	if(!$mail->send()) {
-		//echo "<script type='text/javascript'>alert('Message could not be sent');</script>";
-	    echo 'Message could not be sent.';
-	    echo 'Mailer Error: ' . $mail->ErrorInfo;
-	} else {
-		//echo "<script type='text/javascript'>alert('Message has been sent');</script>";
-	    echo 'Message has been sent';
-	}
-
-
-
-
-
-
-	// use wordwrap() if lines are longer than 70 characters
-	//$comment = wordwrap($comment,70)
-	// Enviarlo
-	/*$email = $email . ",congreso@ugr.es";
-	mail($email," [Mensaje de Web] Asunto",  $comment);
-	$email = $comment = "";
-	*/
-}
-
-function test_input($data) {
-   $data = trim($data);
-   $data = stripslashes($data);
-   $data = htmlspecialchars($data);
-   return $data;
-}
-?>
-
 <div class ="contacta">
 
 <h2>Formulario contacto</h2>
@@ -92,3 +25,62 @@ function test_input($data) {
    <input type="submit" name="submit" value="Enviar">
 </form>
 </div> <!-- end contacta -->
+
+
+
+
+<?php
+// define variables and set to empty values
+$email = $comment = "";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (!empty($_POST["name"])) {
+        $name = test_input($_POST["name"]);
+    }
+    if (!empty($_POST["email"])) {
+    $email = test_input($_POST["email"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "<script type='text/javascript'>alert('correo incorrecto');</script>";
+    }
+    }
+    if (!empty($_POST["comment"])) {
+        $comment = test_input($_POST["comment"]);
+    }
+
+    require 'lib/PHPMailer/PHPMailerAutoload.php';
+    $mail = new PHPMailer;
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+    //Permitir el acceso al correo desde aplicacion no seguras desde
+    //https://www.google.com/settings/security/lesssecureapps
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = 'sibweb2014@gmail.com';                 // SMTP username
+    $mail->Password = 'antonioandres';                           // SMTP password
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;                                    // TCP port to connect to
+    $mail->From = 'sibweb2014@gmail.com';
+    $mail->FromName = 'Congreso';
+    $mail->addAddress('jm.94.antonio@gmail.com', 'Antonio');     // Add a recipient
+    $mail->addAddress($email, $name);     // Add a recipient
+    $mail->Subject = '[Mensaje de Web] Asunto';
+    // use wordwrap() if lines are longer than 70 characters
+    //$comment = wordwrap($comment,70)
+    $mail->Body    = $comment;
+
+
+    if(!$mail->send()) {
+    	//echo "<script type='text/javascript'>alert('Message could not be sent');</script>";
+        echo 'Mensaje no ha podido ser enviado';
+        echo 'Mailer Error: ' . $mail->ErrorInfo;
+    } else {
+    	//echo "<script type='text/javascript'>alert('Message has been sent');</script>";
+        echo 'Mensaje ha sido enviado';
+    }
+}
+function test_input($data) {
+   $data = trim($data);
+   $data = stripslashes($data);
+   $data = htmlspecialchars($data);
+   return $data;
+}
+?>
