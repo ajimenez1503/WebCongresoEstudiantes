@@ -7,12 +7,12 @@
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	<link href="css/styles.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="./js/script.js"></script>
+
 	<?php
 	$current_page=$_GET['page'];
 	if(!isset($current_page) || empty($current_page)){
-	$current_page="home";
+		$current_page="home";
 	}
-
 ?>
 
 </head>
@@ -26,8 +26,7 @@
 			<div class="mainContent" >
 				<!-- Incluir contenido necesario -->
 				<?php
-				//includes the current_page (looking in ./php/ folder)
-				 include './php/'. $current_page . '.php';
+				require './php/'. $current_page . '.php';
 				?>
 			</div>
 		</div>

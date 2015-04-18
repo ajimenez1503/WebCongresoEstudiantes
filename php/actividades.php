@@ -1,18 +1,25 @@
 <!--Copyright ©. All rights reserved. Designed by Antonio Jimenez Martinez y Andres Ortiz Corrales -->
 <!DOCTYPE html>
 <script>
+<!-- para que se mantenga abierto el menu desplegable-->
 	switch_section(1);
 </script>
 
 <?php
-include "actividades/readcontent.php";
+	$actividad=$_GET['actividad'];
+	if(!isset($actividad) || empty($actividad)){
+		$actividad="nada";//si no hemos elegido actividad la dejamos vacia
+	}
+	include "actividades/readcontent.php";
+
+	if($actividad=="content_example"){
+		loadActivity("Ejemplo","php/actividades/content_example.txt");
+	}
 ?>
 
-<?php
-loadActivity("Ejemplo","php/actividades/content_example.txt");
-?>
 
-	<h3>Actividades</h3>
+<div>
+<h3>Actividades</h3>
 <table>
 	<thead>
 		<tr>
@@ -26,7 +33,7 @@ loadActivity("Ejemplo","php/actividades/content_example.txt");
 		<tr>
 			<td>dd/mm</td>
 			<td>hh:mm</td>
-			<td>Campeonato de LoL</td>
+			<td><a href="./index.php?page=actividades&actividad=content_example"> Campeonato de LoL</a></td>
 			<td>50</td>
 		</tr>
 		<tr>
@@ -57,3 +64,4 @@ loadActivity("Ejemplo","php/actividades/content_example.txt");
 
 	</tbody>
 </table>
+</div><!-- end tabla-->

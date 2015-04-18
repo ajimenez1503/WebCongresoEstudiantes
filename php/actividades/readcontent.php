@@ -5,16 +5,23 @@
 //se usara php/actividades/$activityName.txt
 function loadActivity($activityname,$filename=null){
     if($filename==null) $filename="php/actividades/" . $activityname . ".txt";
-    echo "<h4>". $activityname . "</h4>";
     if(!file_exists($filename)) echo "file not extist";
     else{
-        $file = fopen($filename, "r") or die("Unable to open file!");
-        echo "<img src=\"" . fgets($file) . "\">";
-        echo "<p>";
-	while(! feof($file)){
-          echo fgets($file). "<br />";
-        }
-	echo "</p>";
+        echo "<div class =\"marco\">";
+            $file = fopen($filename, "r") or die("Unable to open file!");//abrimos fichero
+            echo "<div class =\"marcoImg\">";
+                echo "<img src=\"".fgets($file)."\"  alt=\"Imagne actividad\" width=\"200px\" height=\"200px\" >";
+            echo "</div> <!-- end marcoImg -->";
+            echo "<div class =\"marcoText\">";
+                echo "<h4>". $activityname ."</h4>";
+                echo "<p>";
+                while(! feof($file)){
+                      echo fgets($file). "<br />";
+                }
+        	    echo "</p>";
+            echo "</div> <!-- end marcoText -->";
+        echo "</div> <!-- end marco -->";
+
         fclose($file);
     }
 }

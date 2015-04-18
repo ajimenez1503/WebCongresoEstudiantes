@@ -187,3 +187,19 @@ footer{
 	border-radius : 15px;
 	height : 280px;
 }
+
+.marcoImg{
+	padding: 0px 0px 0px 10px;
+	width: 215px;
+	height: 250px;
+	float: left;
+}
+.marcoText{
+	width: 450px;
+	float: left;
+	background : #CDDBF0;
+	border-radius : 15px;
+}
+.marcoText p{
+	padding: 0px 0px 0px 15px;
+}
