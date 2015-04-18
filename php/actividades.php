@@ -9,7 +9,7 @@ include "actividades/readcontent.php";
 ?>
 
 <?php
-//loadActivity("Ejemplo","php/actividades/content_example.txt");
+loadActivity("Ejemplo","php/actividades/content_example.txt");
 ?>
 
 	<h3>Actividades</h3>

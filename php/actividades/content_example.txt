@@ -1,4 +1,4 @@
-/images/cevug.png
+images/logo.png
 This is an example content of an activity
 
 with multiple lines see what happends
