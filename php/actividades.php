@@ -3,15 +3,14 @@
 <script>
 	switch_section(1);
 </script>
+
 <?php
 include "actividades/readcontent.php";
 ?>
 
-<?php>
-loadActivity("Ejemplo","php/actividades/content_example.txt");
+<?php
+//loadActivity("Ejemplo","php/actividades/content_example.txt");
 ?>
-
-
 
 	<h3>Actividades</h3>
 <table>
