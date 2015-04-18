@@ -27,9 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      $comment = test_input($_POST["comment"]);
    }
 
-	require '../lib/PHPMailer/PHPMailerAutoload.php';
-
+	require 'lib/PHPMailer/PHPMailerAutoload.php';
 	$mail = new PHPMailer;
+    $mail->SMTPDebug = 2;//info debug
 	$mail->isSMTP();                                      // Set mailer to use SMTP
 	$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
 	$mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$mail->Port = 587;                                    // TCP port to connect to
 	$mail->From = 'sibweb2014@gmail.com';
 	$mail->FromName = 'Congreso';
-	$mail->addAddress('jm.94.antonio@gmail.com', 'Antonio');     // Add a recipient
+    $mail->addAddress('jm.94.antonio@gmail.com', 'Antonio');     // Add a recipient
 	//$mail->addAddress('ellen@example.com');               // Name is optional
 
 	$mail->isHTML(false);                                  // Set email format to HTML
@@ -49,12 +49,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 	if(!$mail->send()) {
-		echo "<script type='text/javascript'>alert('Message could not be sent');</script>";
-	    //echo 'Message could not be sent.';
-	    //echo 'Mailer Error: ' . $mail->ErrorInfo;
+		//echo "<script type='text/javascript'>alert('Message could not be sent');</script>";
+	    echo 'Message could not be sent.';
+	    echo 'Mailer Error: ' . $mail->ErrorInfo;
 	} else {
-		echo "<script type='text/javascript'>alert('Message has been sent');</script>";
-	    //echo 'Message has been sent';
+		//echo "<script type='text/javascript'>alert('Message has been sent');</script>";
+	    echo 'Message has been sent';
 	}
 
 
@@ -89,6 +89,6 @@ function test_input($data) {
    <br><br>
    <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
    <br><br>
-   <input type="submit" name="submit" value="Submit">
+   <input type="submit" name="submit" value="Enviar">
 </form>
 </div> <!-- end contacta -->
