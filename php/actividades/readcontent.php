@@ -5,7 +5,7 @@
 //se usara php/actividades/$activityName.txt
 function loadActivity($activityname,$filename=null){
     if($filename==null) $filename="php/actividades/" . $activityname . ".txt";
-    if(!file_exists($filename)) echo "file not extist";
+    if(!file_exists($filename)) echo "file".$filename." not extist";
     else{
         echo "<div class =\"marco\">";
             $file = fopen($filename, "r") or die("Unable to open file!");//abrimos fichero

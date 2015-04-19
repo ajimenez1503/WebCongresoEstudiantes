@@ -9,7 +9,7 @@
 	include "actividades/readcontent.php";
 	$actividad=$_GET['actividad'];
 	if(isset($actividad) && !empty($actividad)){
-		loadActivity("actividad");
+		loadActivity($actividad);
 	}
 ?>
 
