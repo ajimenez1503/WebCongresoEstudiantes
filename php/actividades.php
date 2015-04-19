@@ -29,31 +29,31 @@
 		<tr>
 			<td>dd/mm</td>
 			<td>hh:mm</td>
-			<td><a href="./index.php?page=actividades&actividad=campeonato_lol"> Campeonato de LoL</a></td>
+			<td><a href="./index.php?page=actividades&actividad=campeonato_lol">Campeonato de LoL</a></td>
 			<td>50</td>
 		</tr>
 		<tr>
 			<td>dd/mm</td>
 			<td>hh:mm</td>
-			<td>Picnic en sala de ordenadores</td>
+			<td><a href="./index.php?page=actividades&actividad=picnic">Picnic en sala de ordenadores</td>
 			<td>50</td>
 		</tr>
 		<tr>
 			<td>dd/mm</td>
 			<td>hh:mm</td>
-			<td>Campeonato futbolin</td>
+			<td><a href="./index.php?page=actividades&actividad=futbolin">Campeonato futbolin</td>
 			<td>50</td>
 		</tr>
 		<tr>
 			<td>dd/mm</td>
 			<td>hh:mm</td>
-			<td>Partido de futbol</td>
+			<td><a href="./index.php?page=actividades&actividad=futbol">Partido de futbol</td>
 			<td>25</td>
 		</tr>
 		<tr>
 			<td>dd/mm</td>
 			<td>hh:mm</td>
-			<td>Taller: Introducción a WordPad</td>
+			<td><a href="./index.php?page=actividades&actividad=wordpad">Taller: Introducción a WordPad</td>
 			<td>50</td>
 		</tr>
 
