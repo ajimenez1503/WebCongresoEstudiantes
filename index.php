@@ -13,7 +13,7 @@
 	if(!isset($current_page) || empty($current_page)){
 		$current_page="home";
 	}
-?>
+	?>
 
 </head>
 <body onload="rotar()">

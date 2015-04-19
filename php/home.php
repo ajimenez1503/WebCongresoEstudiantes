@@ -10,5 +10,5 @@ Esta web os informara sobre el congreso realizado en la  Escuela de Informática
     <p>¡Nos vemos en Granada!</p>
 </div>
 <div class="mainContentder">
-    <img src="images/monumento.jpg" alt="Monumento" width="250" height="320">
+    <img src="images/monumento.jpg" alt="Monumento" title="Monumento" width="250" height="320">
 </div>
