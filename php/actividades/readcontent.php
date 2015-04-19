@@ -10,10 +10,10 @@ function loadActivity($activityname,$filename=null){
         echo "<div class =\"marco\">";
             $file = fopen($filename, "r") or die("Unable to open file!");//abrimos fichero
             echo "<div class =\"marcoImg\">";
-                echo "<img src=\"".fgets($file)."\"  alt=\"Imagne actividad\" width=\"200px\" height=\"200px\" >";
+                echo "<img src=\"".fgets($file)."\"  alt=\"Imagen actividad\" width=\"200px\" height=\"200px\" >";
             echo "</div> <!-- end marcoImg -->";
             echo "<div class =\"marcoText\">";
-                echo "<h4>". $activityname ."</h4>";
+                echo "<h4>". fgets($file) ."</h4>";
                 echo "<p>";
                 while(! feof($file)){
                       echo fgets($file). "<br />";
