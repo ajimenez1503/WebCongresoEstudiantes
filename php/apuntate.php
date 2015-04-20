@@ -34,6 +34,8 @@ Manda un mensaje a <a href="congreso@ugr.es">congreso@ugr.es </a> en caso de dud
 					<input id="checkbox3" type="checkbox" name="actividad" value="Campeonato futbolin">Campeonato futbolin<br>
 					<input id="checkbox4" type="checkbox" name="actividad" value="Partido de futbol">Partido de futbol<br>
 					<input id="checkbox5" type="checkbox" name="actividad" value="Taller: Introducción a WordPad">Taller: Introducción a WordPad<br>
+					<input id="checkbox6" type="checkbox" name="actividad" value="Viaje Sierra Nevada">Viaje Sierra Nevada<br>
+					<input id="checkbox7" type="checkbox" name="actividad" value="Visita Alhambra">Visita Alhambra<br>
 				</fieldset>
 			</form>
 			<button type="button" onClick="formSubmit()">Enviar</button>

@@ -78,6 +78,8 @@ function formSubmit(){
 		if(document.getElementById("checkbox3").checked==true) cantidad_dinero=cantidad_dinero+2;
 		if(document.getElementById("checkbox4").checked==true) cantidad_dinero=cantidad_dinero+2;
 		if(document.getElementById("checkbox5").checked==true) cantidad_dinero=cantidad_dinero+2;
+        if(document.getElementById("checkbox6").checked==true) cantidad_dinero=cantidad_dinero+2;
+		if(document.getElementById("checkbox7").checked==true) cantidad_dinero=cantidad_dinero+2;
 		if(document.getElementById("option1").selected==true) cantidad_dinero=cantidad_dinero+10;//estudiante
 		if(document.getElementById("option2").selected==true) cantidad_dinero=cantidad_dinero+15;//profesor
 		if(document.getElementById("option3").selected==true) cantidad_dinero=cantidad_dinero+20;//visitante
