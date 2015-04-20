@@ -45,7 +45,7 @@
 		<tr>
 			<td>dd/mm</td>
 			<td>09:00</td>
-			<td><a href="./index.php?page=actividades&actividad=Sierra">Viaje a Sierra Nevada</td>
+			<td><a href="./index.php?page=actividades&actividad=sierra">Viaje a Sierra Nevada</td>
 			<td>100</td>
 		</tr>
 		<tr>
