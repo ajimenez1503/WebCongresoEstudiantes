@@ -1,6 +1,6 @@
 
 
-<div>
+<div class="tablaActividades">
 <h3>Actividades</h3>
 <table>
 	<thead>
