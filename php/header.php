@@ -4,7 +4,7 @@
             <h1>I Congreso de Estudiantes de Ingeniería Informática</h1>
         </div>
         <div class="headleft">
-            <a href="./index.php?page=home"><img src="images/logo_web.png"  alt="logo_web" title="logo_web" width="100px" height="100px"></a>
+            <a href="./index.php?page=home"><img src="images/logo/logo_web.png"  alt="logo_web" title="logo_web" width="100px" height="100px"></a>
 
         </div>
     </div>

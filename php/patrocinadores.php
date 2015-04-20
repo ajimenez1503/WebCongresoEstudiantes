@@ -13,8 +13,8 @@
 			</div>
 
 		<div class="imagenesPatrocinadores">
-			<a href="http://cevug.ugr.es/"><img src="images/cevug.png" alt="cebug" title="cebug" width="250px"height="150"></a>
-			<a href="http://www.ugr.es/"><img src="images/ugr.png" alt="ugr" title="ugr" width="250px"height="150" ></a>
-			<a href="http://biotic.ugr.es/"><img src="images/ceibiotic.png" title="ceibiotic" alt="ceibiotic" width="250px" height="150" ></a>
-			<a href="http://osl.ugr.es/"><img src="images/osl.png" title="osl" alt="osl" width="250px" height="150" ></a>
+			<a href="http://cevug.ugr.es/"><img src="images/patrocinador/cevug.png" alt="cebug" title="cebug" width="250px"height="150"></a>
+			<a href="http://www.ugr.es/"><img src="images/patrocinador/ugr.png" alt="ugr" title="ugr" width="250px"height="150" ></a>
+			<a href="http://biotic.ugr.es/"><img src="images/patrocinador/ceibiotic.png" title="ceibiotic" alt="ceibiotic" width="250px" height="150" ></a>
+			<a href="http://osl.ugr.es/"><img src="images/patrocinador/osl.png" title="osl" alt="osl" width="250px" height="150" ></a>
 		</div>
