@@ -11,6 +11,6 @@
 	if(isset($actividad) && !empty($actividad)){
 		loadActivity($actividad);
 	}
-	include "actividades/tabla.php";
+	include "actividades/tablaActividades.php";
 
 ?>

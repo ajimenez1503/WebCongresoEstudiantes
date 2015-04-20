@@ -16,7 +16,7 @@
 	?>
 
 </head>
-<body onload="rotar()">
+<body>
 <div class="containerSuperior">
 	<div class="container">
 	<?php include './php/header.php'; ?>
