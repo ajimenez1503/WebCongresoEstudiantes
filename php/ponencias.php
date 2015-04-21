@@ -5,11 +5,11 @@
 </script>
 
 <?php
-	/*include "actividades/readcontent.php";
-	$actividad=$_GET['actividad'];
-	if(isset($actividad) && !empty($actividad)){
-		loadActivity($actividad);
-	}*/
-	include "ponencias/tablaPonencias.php";
-
+	$ponencia=$_GET['ponencia'];
+	if(isset($ponencia) && !empty($ponencia)){
+		include 'php/ponencias/'. $ponencia . '.php';
+	}
+	else{
+		include "ponencias/tablaPonencias.php";
+	}
 ?>

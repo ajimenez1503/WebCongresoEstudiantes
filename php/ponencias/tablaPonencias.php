@@ -12,9 +12,9 @@
         <td>
             <h4>ING. SOFTWARE</h4>
             <p>
-            <b>Metodologías Ágiles</b>, por M.Noguera<br>
-            <b>IFML</b>, por M.Cabrera<br>
-            <b>Prince2</b>,por M.J.Rodríguez<br>
+            <a href="./index.php?page=ponencias&ponencia=metodologias"><b>Metodologías Ágiles</b>, por M.Noguera<br></a>
+            <a href="./index.php?page=ponencias&ponencia=IFML"><b>IFML</b>, por M.Cabrera<br></a>
+            <a href="./index.php?page=ponencias&ponencia=prince2"><b>Prince2</b>,por M.J.Rodríguez<br></a>
             </p>
         </td>
         <td>
