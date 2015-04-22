@@ -20,9 +20,9 @@
         <td>
             <h4>SISTEMA OPERATIVOS</h4>
             <p>
-            <b>Sistemas Windows</b>, por A.León<br>
-            <b>Sistemas Unix/Linux</b>, por P.Paderewski<br>
-            <b>Sistemas IOS/Mac</b>,por R. Montes<br>
+            <a href="./index.php?page=ponencias&ponencia=window"><b>Sistemas Windows</b>, por A.León<br></a>
+            <a href="./index.php?page=ponencias&ponencia=linux"><b>Sistemas Unix/Linux</b>, por P.Paderewski<br></a>
+            <a href="./index.php?page=ponencias&ponencia=ios"><b>Sistemas IOS/Mac</b>,por R. Montes<br></a>
             </p>
         </td>
     </tr>
@@ -36,17 +36,17 @@
         <td>
             <h4>INFORMÁTICA GRÁFICA</h4>
             <p>
-            <b>Visualización y Realismo</b>, por C.Ureña<br>
-            <b>Digitalización 3D</b>, por F.J.Melero :D<br>
-            <b>Realidad Aumentada</b>,por J.Revelles<br>
+            <a href="./index.php?page=ponencias&ponencia=visualizacion"><b>Visualización y Realismo</b>, por C.Ureña<br></a>
+            <a href="./index.php?page=ponencias&ponencia=digitalizacion"><b>Digitalización 3D</b>, por F.J.Melero :D<br></a>
+            <a href="./index.php?page=ponencias&ponencia=realidad_aumentada"><b>Realidad Aumentada</b>,por J.Revelles<br></a>
             </p>
         </td>
         <td>
             <h4>SISTEMA COMPLEJOS</h4>
             <p>
-            <b>Programación Paralela</b>, por J.M. Mantas<br>
-            <b>Sistemas Distribuidos</b>, por J.L Garrido<br>
-            <b>Sistemas en Tiempo Real</b>,por J.A.Holgado<br>
+            <a href="./index.php?page=ponencias&ponencia=paralela"><b>Programación Paralela</b>, por J.M. Mantas<br></a>
+            <a href="./index.php?page=ponencias&ponencia=distribuido"><b>Sistemas Distribuidos</b>, por J.L Garrido<br></a>
+            <a href="./index.php?page=ponencias&ponencia=tiempo_real"><b>Sistemas en Tiempo Real</b>,por J.A.Holgado<br></a>
             </p>
         </td>
     </tr>
