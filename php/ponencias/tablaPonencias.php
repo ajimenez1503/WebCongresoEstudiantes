@@ -60,17 +60,17 @@
             <td>
                 <h4>BASES DE DATOS</h4>
                 <p>
-                <b>Bases de Datos Multidimensionales</b>, por E.Garvi<br>
-                <b>Bases de datos orientadas a Objetos</b>, por J. Samos<br>
-                <b>Bases de Datos Distribuidas</b>,por C.Delgado<br>
+                <a href="./index.php?page=ponencias&ponencia=multidimensional"><b>Bases de Datos Multidimensionales</b>, por E.Garvi<br></a>
+                <a href="./index.php?page=ponencias&ponencia=BDdistribuidas"><b>Bases de datos orientadas a Objetos</b>, por J. Samos<br></a>
+                <a href="./index.php?page=ponencias&ponencia=BDobjetos"><b>Bases de Datos Distribuidas</b>,por C.Delgado<br></a>
                 </p>
             </td>
             <td>
                 <h4>INTERFACES DE USUARIO</h4>
                 <p>
-                <b>Interacción Háptica</b>, por F.Soler<br>
-                <b>Wearables</b>, por M.Cabrera<br>
-                <b>Realidad Virtual</b>,por J.Flores<br>
+                <a href="./index.php?page=ponencias&ponencia=haptica"><b>Interacción Háptica</b>, por F.Soler<br></a>
+                <a href="./index.php?page=ponencias&ponencia=wereables"><b>Wearables</b>, por M.Cabrera<br></a>
+                <a href="./index.php?page=ponencias&ponencia=virtual"><b>Realidad Virtual</b>,por J.Flores<br></a>
                 </p>
             </td>
         </tr>
@@ -84,9 +84,9 @@
             <td>
                 <h4>COMPILADORES</h4>
                 <p>
-                <b>Procesadores de Lenguajes</b>, por J.Revelles<br>
-                <b>Traductores</b>, por R.López-Cózar<br>
-                <b>Procesaddores del habla</b>,por Z.Callejas<br>
+                <a href="./index.php?page=ponencias&ponencia=lenguajes"><b>Procesadores de Lenguajes</b>, por J.Revelles<br></a>
+                <a href="./index.php?page=ponencias&ponencia=traductores"><b>Traductores</b>, por R.López-Cózar<br></a>
+                <a href="./index.php?page=ponencias&ponencia=habla"><b>Procesaddores del habla</b>,por Z.Callejas<br></a>
                 </p>
             </td>
             <td>

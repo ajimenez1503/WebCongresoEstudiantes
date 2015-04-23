@@ -5,8 +5,9 @@
 </script>
 
 <?php
-	$ponencia=$_GET['ponencia'];
-	if(isset($ponencia) && !empty($ponencia)){
+
+	if(isset($_GET['ponencia']) && !empty($_GET['ponencia'])){
+		$ponencia=$_GET['ponencia'];
 		include 'php/ponencias/'. $ponencia . '.php';
 	}
 	else{

@@ -7,10 +7,9 @@
 
 <?php
 	include "actividades/readcontent.php";
-	$actividad=$_GET['actividad'];
-	if(isset($actividad) && !empty($actividad)){
+	if(isset($_GET['actividad']) && !empty($_GET['actividad'])){
+		$actividad=$_GET['actividad'];
 		loadActivity($actividad);
 	}
 	include "actividades/tablaActividades.php";
-
 ?>

@@ -8,10 +8,13 @@
     de imagenes, animaciones o modelos digitales de entornos reales,
     con especial énfasis en el grado de realismo visual de los
     resultados.
-    <br>
+</p>
+<p>
     -Conocer las herramientas matematicas y computacionales básicas
     mas directamente útiles de cara al desarrollo del software citado.
-    <br>
+</p>
+<p>
+    
     -Adquirir la destreza necesaria para aplicar las herramientas
     anteriores en la creación de programas sencillos de síntesis de
     imagenes.

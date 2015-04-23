@@ -9,9 +9,12 @@
 	<script type="text/javascript" src="./js/script.js"></script>
 
 	<?php
-	$current_page=$_GET['page'];
-	if(!isset($current_page) || empty($current_page)){
+
+	if(!isset($_GET['page']) || empty($_GET['page'])){
 		$current_page="home";
+	}
+	else{
+		$current_page=$_GET['page'];
 	}
 	?>
 

@@ -5,11 +5,9 @@
 <p>
 
     El sistema Unix es un sistema operativo que admitemúltiples usuarios, así como también múltiples tareas, lo que significa que permite que en un único equipo o multiprocesador se ejecuten simultáneamente varios programas a cargo de uno o varios usuarios. Este sistema cuenta con uno o varios intérpretes de comando (shell) así como también con un gran número de comandos y muchas utilidades (ensambladores, compiladores para varios idiomas, procesador de textos, correo electrónico, etc.). Además, es altamente transportable, lo que significa que es posible implementar un sistema Unix en casi todas las plataformas de hardware.
-
+</p>
+<p>
     Actualmente, los sistemas Unix se afianzaron en entornos profesionales y universitarios gracias a su estabilidad, su gran nivel de seguridad y el cumplimiento de estándares, especialmente en lo que se refiere a redes.
-
-
-
 </p>
 
 </div> <!-- end marco_ponencias-->

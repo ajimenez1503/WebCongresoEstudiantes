@@ -2,8 +2,9 @@
 <h2>Sistemas Distribuidos, por J.L Garrido</h2>
 <p>
     La programación distribuida es un paradigma de programación enfocado en desarrollar sistemas distribuidos, abiertos, escalables, transparentes y tolerantes a fallos. Este paradigma es el resultado natural del uso de las computadoras y las redes.
-<br>
-Casi cualquier lenguaje de programación que tenga acceso al máximo al hardware del sistema puede manejar la programación distribuida, considerando una buena cantidad de tiempo y código.
+</p>
+<p>
+    Casi cualquier lenguaje de programación que tenga acceso al máximo al hardware del sistema puede manejar la programación distribuida, considerando una buena cantidad de tiempo y código.
 
 </p>
 
