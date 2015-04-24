@@ -16,11 +16,12 @@ function loadActivity($activityname,$filename=null){
             echo "<div class =\"marcoText_Superior\">";
                 echo "<div class =\"marcoText\">";
                     echo "<h4>". fgets($file) ."</h4>";
-                    echo "<p>";
                     while(! feof($file)){
-                          echo fgets($file). "<br />";
+                          echo "<p>";
+                          echo fgets($file);
+                          echo "</p>";
                     }
-            	    echo "</p>";
+
                 echo "</div> <!-- end marcoText -->";
             echo "</div> <!-- end marcoText_Superior -->";
         echo "</div> <!-- end marco -->";
