@@ -9,6 +9,14 @@
         </div>
     </div>
     <div>
-        <img src="images/img2.jpg" alt="imagen_etsiit" title="imagen_etsiit" width="960px" height="200px">
+        <div class = "sesion">
+            <a href="index.php?page=registro"><li id="boton_registro">¡REGISTRATE!</li></a>
+            <form class = "barra_sesion">
+                <input type = "text" id="texto" size ="13" placeholder="Usuario" required>
+                <input type="password" id="texto" size ="13" placeholder="Contraseña" required>
+                <input type="submit" id="submit" value="Acceder">
+            </form>
+        </div> <!-- end sesion -->
+        <img class="imagnePortada" src="images/img2.jpg" alt="imagen_etsiit" title="imagen_etsiit" width="960px" height="200px">
     </div>
 </header>
