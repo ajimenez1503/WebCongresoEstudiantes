@@ -17,6 +17,7 @@
             </div>
         <li><a href="./index.php?page=patrocinadores">Patrocinadores</a></li>
         <li ><a href="./index.php?page=contacto">Contacto</a></li>
+        <li ><a href="./index.php?page=participantes">Ver Participantes</a></li>
         </ul>
     </nav>
     <div id="slider">
