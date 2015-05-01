@@ -6,9 +6,9 @@
 
 <?php
 	include "php/includes/actividad_class.php";
-	include "includes/dbhandler.php";
+	include "php/includes/dbhandler.php";
 	$dbhandler = new db_handler("localhost","root","granada","congreso");
-	
+
 	if(isset($_GET['actividad']) && !empty($_GET['actividad'])){
 		$idactividad=$_GET['actividad'];
 		describir_activiad($idactividad,$dbhandler);

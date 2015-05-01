@@ -188,7 +188,8 @@ footer{
 	padding: 0px 20px 0px 20px;
 	background : #CDDBF0;
 	border-radius : 15px;
-	height : 280px;
+	padding-bottom:10px;
+	margin-botoom:10px;
 }
 
 .marcoImg{
