@@ -8,5 +8,7 @@
 
         </div>
     </div>
-    <img src="images/img2.jpg" alt="imagen_etsiit" title="imagen_etsiit" width="960px" height="200px">
+    <div>
+        <img src="images/img2.jpg" alt="imagen_etsiit" title="imagen_etsiit" width="960px" height="200px">
+    </div>
 </header>

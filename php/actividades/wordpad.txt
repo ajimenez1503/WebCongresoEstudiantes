@@ -1,7 +1,0 @@
-images/actividades/wordpad.jpg
-Taller: Introducción a Wordpad
-¿Quien dijo que Wordpad estaba obsoleto?, ¿Alguien cree que es una herramienta con poca utilidad?.
-
-En el taller de Wordpad comprenderas el mundo de esta maravillosa herramienta, en la que podrás escribir texto (y números!!) además, a diferencia de las ya antiguas máquinas de escribir, podrás borrar lo escrito (sin manchas!!)
-
-Para el taller se requiere un ordenador con Windows 95
