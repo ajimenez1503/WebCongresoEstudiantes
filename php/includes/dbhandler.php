@@ -7,10 +7,10 @@ class db_handler{
     private $dbname;
     private $connection;
 
-    public function __construct($servernameaux,$usernameaux,$password,$dbnameaux){
+    public function __construct($servernameaux,$usernameaux,$dbnameaux){
         $this->servername=$servernameaux;
         $this->username=$usernameaux;
-        $this->pass=$password;
+        $this->pass="";
         $this->dbname=$dbnameaux;
 
     }

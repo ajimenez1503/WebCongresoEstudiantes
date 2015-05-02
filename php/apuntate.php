@@ -28,7 +28,7 @@ function mostraractividades($dbhandler){
 }
 
 function mostrarcuotasyactividades(){
-	$dbhandler = new db_handler("localhost","root","granada","congreso");
+	$dbhandler = new db_handler("localhost","root","congreso");
 	$dbhandler->connect();
 	mostrarcuotas($dbhandler);
 	mostraractividades($dbhandler);
@@ -103,7 +103,7 @@ function addparticiapante_Actividad($dbhandler){
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	$dbhandler = new db_handler("localhost","root","granada","congreso");
+	$dbhandler = new db_handler("localhost","root","congreso");
 	$dbhandler->connect();
 
 	$sql="INSERT INTO Participante(nombre,nombreUsuario,apellido,tipo) VALUES ('$_REQUEST[nombre]','antonio','$_REQUEST[apellido]','$_REQUEST[tipo]')";

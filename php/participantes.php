@@ -2,7 +2,7 @@
 
 include "php/includes/dbhandler.php";
 function mostrarparticipantes(){
-    $dbhandler = new db_handler("localhost","root","granada","congreso");
+    $dbhandler = new db_handler("localhost","root","congreso");
     $dbhandler->connect();
     $table=$dbhandler->query("SELECT * FROM Participante");
     if ($table->num_rows > 0) {

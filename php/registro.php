@@ -22,7 +22,7 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         include "php/includes/dbhandler.php";
-        $dbhandler = new db_handler("localhost","root","granada","congreso");
+        $dbhandler = new db_handler("localhost","root","congreso");
         $dbhandler->connect();
         $sql="INSERT INTO Usuario(nombre,password, email, rol) VALUES ('$_REQUEST[nombre]','$_REQUEST[password]','$_REQUEST[email]','normal')";
         if ($dbhandler->query($sql) === TRUE) {
