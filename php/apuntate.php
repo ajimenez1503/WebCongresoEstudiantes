@@ -4,7 +4,7 @@
 Para apuntarse es necesario rellenar el formulario y enviar una transferencia la proximo numero de cuenta: 123456789.
 			</p>
 			 <p>
-El precio de cada actividad es de 2€. El precio de la inscripcion depende del rol:</p>
+El precio de la inscripcion depende del rol:</p>
 			<li ><p> 10€ para estudiante</p></li>
 			<li ><p> 15€ para profesor</p></li>
 			<li ><p> 20€ para invitado</p></li>
