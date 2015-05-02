@@ -1,44 +1,89 @@
 <!--Copyright ©. All rights reserved. Designed by Antonio Jimenez Martinez y Andres Ortiz Corrales -->
-<!DOCTYPE html>
-			<p>
-Para apuntarse es necesario rellenar el formulario y enviar una transferencia la proximo numero de cuenta: 123456789.
-			</p>
-			 <p>
-El precio de la inscripcion depende del rol:</p>
-			<li ><p> 10€ para estudiante</p></li>
-			<li ><p> 15€ para profesor</p></li>
-			<li ><p> 20€ para invitado</p></li>
+<?php
+include "php/includes/dbhandler.php";
+function mostrarcuotas($dbhandler){
+	$table=$dbhandler->query("SELECT * FROM Cuota");
+	if ($table->num_rows > 0) {
+		// output data of each row
+		echo "<label><h4>Ocupación</h4></label>";
+		echo "<select name=\"tipo\">";
+		while($row = $table->fetch_assoc()) {
+			echo "<option  id=\"". $row["tipo"]."\" value=\"". $row["tipo"]."\">". $row["tipo"]." por ". $row["importe"]." €</option>";
+		}
+		echo "</select>";
+	}
+}
 
-			<p>
+function mostraractividades($dbhandler){
+	$table=$dbhandler->query("SELECT * FROM Actividad");
+	if ($table->num_rows > 0) {
+		// output data of each row
+		echo "<br><br><h4>Actividades</h4>";
+		while($row = $table->fetch_assoc()) {
+			echo "<input  type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]. "\">   ". $row["nombre"]."<br>";
+		}
+		echo "</br>";
+
+	}
+}
+
+function mostrarcuotasyactividades(){
+	$dbhandler = new db_handler("localhost","root","granada","congreso");
+	$dbhandler->connect();
+	mostrarcuotas($dbhandler);
+	mostraractividades($dbhandler);
+	$dbhandler->close();
+}
+?>
+
+
+
+<p>
+Para apuntarse es necesario rellenar el formulario y enviar una transferencia la proximo numero de cuenta: 123456789.
+</p>
+ <p>
+El precio de la inscripcion depende del rol:</p>
+<li ><p> 10€ para estudiante</p></li>
+<li ><p> 15€ para profesor</p></li>
+<li ><p> 20€ para invitado</p></li>
+
+<p>
 Manda un mensaje a <a href="congreso@ugr.es">congreso@ugr.es </a> en caso de duda.
 </p>
+<div class ="contacta">
+<form method="post" action="index.php?page=apuntate" >
+	<h3>Datos participante :</h3>
+	<label>Nombre</label> <input name="nombre" type="text" placeholder="Introduce nombre."  required="true" autofocus><br>
+	<label>Apellidos</label> <input name="apellido" type="text" placeholder="Introduce apellidos."  required="true"><br>
+	<br>
+	<?php mostrarcuotasyactividades();?>
+	<button type="submit" name="submit">Enviar</button>
+</form>
+</div> <!-- end contacta -->
 
-			<form >
-				<fieldset>
-					<legend><h4>Datos:</h4></legend>
-					<label>Nombre</label> <input id="formNombre" type="text" size="30"><br>
-					<label>Apellidos</label> <input id="formApellidos" type="text" size="30"><br>
-					<label>Correo Electronico</label> <input id="formMail" type="text" size="30"><br>
-					<br>
-					<label><h4>Ocupación</h4></label>
-							<select name="rol">
-							<option  id="option1" value="estudiante">Estudiante</option>
-							<option id="option2" value="profesor">Profesor</option>
-							<option  id="option3" value="visitante">Visitante</option>
-							</select>
-				<br>
-				<br>
-				<h4>Actividades</h4>
-					<input id="checkbox1" type="checkbox" name="actividad" value="Campeonato de LoL">Campeonato de LoL<br>
-					<input id="checkbox2" type="checkbox" name="actividad" value="Picnic en sala de ordenadores">Picnic en sala de ordenadores<br>
-					<input id="checkbox3" type="checkbox" name="actividad" value="Campeonato futbolin">Campeonato futbolin<br>
-					<input id="checkbox4" type="checkbox" name="actividad" value="Partido de futbol">Partido de futbol<br>
-					<input id="checkbox5" type="checkbox" name="actividad" value="Taller: Introducción a WordPad">Taller: Introducción a WordPad<br>
-					<input id="checkbox6" type="checkbox" name="actividad" value="Viaje Sierra Nevada">Viaje Sierra Nevada<br>
-					<input id="checkbox7" type="checkbox" name="actividad" value="Visita Alhambra">Visita Alhambra<br>
-				</fieldset>
-			</form>
-			<button type="button" onClick="formSubmit()">Enviar</button>
-			<p class="totalDinero" id="dinero">
-			Total: 0€
-			</p>
+<p class="totalDinero" id="dinero">
+Total: 0€
+</p>
+
+
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+	echo "nombre ".$_REQUEST[nombre];
+	echo "apellido ".$_REQUEST[apellido];
+	echo "tipo ".$_REQUEST[tipo];
+
+	/*$conexion=mysql_connect("localhost","root","granada")
+	or die("Problemas en la conexion");
+
+	mysql_select_db("congreso",$conexion) or
+	die("Problemas en la seleccion de la base de datos");
+
+	mysql_query("INSERT INTO Usuario(nombre,password, email, rol) VALUES ". "('$_REQUEST[nombre]','$_REQUEST[password]','$_REQUEST[email]','normal')",$conexion) or die("Problemas en el insert".mysql_error());
+
+	mysql_close($conexion);
+	echo "<script> alert(\"Usuario dado de alta\");</script>";*/
+}
+
+?>
