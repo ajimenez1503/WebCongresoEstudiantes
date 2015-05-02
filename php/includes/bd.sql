@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 02-05-2015 a las 10:42:50
+-- Tiempo de generación: 02-05-2015 a las 19:01:02
 -- Versión del servidor: 5.5.43-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.9
 
@@ -86,9 +86,16 @@ CREATE TABLE IF NOT EXISTS `Participante` (
   `apellido` text NOT NULL,
   `tipo` varchar(512) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `tipo` (`tipo`),
+  KEY `tipo` (`tipo`),
   KEY `nombreUsuario` (`nombreUsuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+
+--
+-- Volcado de datos para la tabla `Participante`
+--
+
+INSERT INTO `Participante` (`id`, `nombre`, `nombreUsuario`, `apellido`, `tipo`) VALUES
+(1, 'antonio', 'antonio', 'jimenez', 'estudiante');
 
 -- --------------------------------------------------------
 
@@ -116,8 +123,8 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
   `email` text NOT NULL,
   `rol` text NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `nombre` (`nombre`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+  KEY `nombre` (`nombre`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Volcado de datos para la tabla `Usuario`
@@ -126,7 +133,8 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
 INSERT INTO `Usuario` (`id`, `nombre`, `password`, `email`, `rol`) VALUES
 (1, 'antonio', 'antonio', 'jm94antonio@correo.ugr.es', 'admin'),
 (2, 'andres', 'andres', 'andres@correo.es', 'admin'),
-(7, 'juan', 'juan', 'juan@corre.ugr.es', 'normal');
+(7, 'juan', 'juan', 'juan@corre.ugr.es', 'normal'),
+(9, 'pepe', 'pepe', 'pepe@correo.es', 'normal');
 
 --
 -- Restricciones para tablas volcadas
@@ -136,8 +144,8 @@ INSERT INTO `Usuario` (`id`, `nombre`, `password`, `email`, `rol`) VALUES
 -- Filtros para la tabla `Participante`
 --
 ALTER TABLE `Participante`
-  ADD CONSTRAINT `Participante_ibfk_2` FOREIGN KEY (`tipo`) REFERENCES `Cuota` (`tipo`),
-  ADD CONSTRAINT `Participante_ibfk_1` FOREIGN KEY (`nombreUsuario`) REFERENCES `Usuario` (`nombre`);
+  ADD CONSTRAINT `Participante_ibfk_1` FOREIGN KEY (`nombreUsuario`) REFERENCES `Usuario` (`nombre`),
+  ADD CONSTRAINT `Participante_ibfk_2` FOREIGN KEY (`tipo`) REFERENCES `Cuota` (`tipo`);
 
 --
 -- Filtros para la tabla `Participante_Actividades`

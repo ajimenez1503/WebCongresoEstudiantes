@@ -19,15 +19,15 @@ class db_handler{
         $acentos = $this->connection->query("SET NAMES 'utf8'");//para que funciones los acentos
         $this->check_connection();
     }
-    public function getConection(){
-        return $this->connection;
-    }
     public function close(){
         $this->connection->close();
     }
     public function query($sqlquery){
         $res=$this->connection->query($sqlquery);
         return $res;
+    }
+    public function error(){
+        return $this->connection->error;
     }
     private function check_connection(){
         if ($this->connection->connect_error) {

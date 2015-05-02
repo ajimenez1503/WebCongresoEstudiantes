@@ -68,22 +68,52 @@ Total: 0€
 
 <?php
 
+function addparticiapante_Actividad($dbhandler){
+	//calculamos la id del ultimo participante metido
+	$sql="SELECT MAX(id) as id FROM Participante";
+	$maxid=$dbhandler->query($sql);
+	if ($maxid->num_rows > 0) {
+		while($row = $maxid->fetch_assoc()) {
+			$maxid=$row["id"];
+			break;
+		}
+		//calculamos las id de las actividades pinchadas
+		$ql="SELECT id FROM Actividad";
+		$table=$dbhandler->query($ql);
+		if ($table->num_rows > 0) {
+			while($row = $table->fetch_assoc()) {
+				if(isset($_POST[$row["id"]])){
+					//insertamos el par de ides participante y actividad.
+					$idaux=$row["id"];
+					$sql="INSERT INTO Participante_Actividades(id_participante,id_actividad) VALUES ('$maxid','$idaux')";
+					if ($dbhandler->query($sql) == FALSE) {
+						echo "Error: ".$dbhandler->error();
+					}
+				}
+			}
+			echo "<script> alert(\"Participante dado de alta\");</script>";
+		}
+		else {
+			echo "Error: ".$dbhandler->error();
+		}
+	}
+	else {
+		echo "Error: ".$dbhandler->error();
+	}
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	$dbhandler = new db_handler("localhost","root","granada","congreso");
+	$dbhandler->connect();
 
-	echo "nombre ".$_REQUEST[nombre];
-	echo "apellido ".$_REQUEST[apellido];
-	echo "tipo ".$_REQUEST[tipo];
-
-	/*$conexion=mysql_connect("localhost","root","granada")
-	or die("Problemas en la conexion");
-
-	mysql_select_db("congreso",$conexion) or
-	die("Problemas en la seleccion de la base de datos");
-
-	mysql_query("INSERT INTO Usuario(nombre,password, email, rol) VALUES ". "('$_REQUEST[nombre]','$_REQUEST[password]','$_REQUEST[email]','normal')",$conexion) or die("Problemas en el insert".mysql_error());
-
-	mysql_close($conexion);
-	echo "<script> alert(\"Usuario dado de alta\");</script>";*/
+	$sql="INSERT INTO Participante(nombre,nombreUsuario,apellido,tipo) VALUES ('$_REQUEST[nombre]','antonio','$_REQUEST[apellido]','$_REQUEST[tipo]')";
+	if ($dbhandler->query($sql) === TRUE) {
+		addparticiapante_Actividad($dbhandler);
+	}
+	else {
+		echo "Error: ".$dbhandler->error();
+	}
+	$dbhandler->close();
 }
 
 ?>
