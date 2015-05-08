@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 02-05-2015 a las 19:01:02
+-- Tiempo de generación: 08-05-2015 a las 17:03:24
 -- Versión del servidor: 5.5.43-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.9
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `congreso`
+-- Base de datos: `congreso3`
 --
 
 -- --------------------------------------------------------
@@ -76,6 +76,19 @@ INSERT INTO `Cuota` (`id`, `tipo`, `importe`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `Cuotas_Actividades`
+--
+
+CREATE TABLE IF NOT EXISTS `Cuotas_Actividades` (
+  `id_cuota` int(10) unsigned NOT NULL DEFAULT '0',
+  `id_actividad` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id_cuota`,`id_actividad`),
+  KEY `id_actividad` (`id_actividad`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `Participante`
 --
 
@@ -88,14 +101,17 @@ CREATE TABLE IF NOT EXISTS `Participante` (
   PRIMARY KEY (`id`),
   KEY `tipo` (`tipo`),
   KEY `nombreUsuario` (`nombreUsuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Volcado de datos para la tabla `Participante`
 --
 
 INSERT INTO `Participante` (`id`, `nombre`, `nombreUsuario`, `apellido`, `tipo`) VALUES
-(1, 'antonio', 'antonio', 'jimenez', 'estudiante');
+(1, 'antonio', 'antonio', 'jimenez', 'estudiante'),
+(11, 'antonio', 'antonio', 'jimenez martinez', 'estudiante'),
+(12, 'aaa', 'antonio', 'jimenez', 'profesor'),
+(13, 'antonio', 'antonio', 'jimenez', 'estudiante');
 
 -- --------------------------------------------------------
 
@@ -111,14 +127,14 @@ CREATE TABLE IF NOT EXISTS `Participante_Actividades` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Estructura de tabla para la tabla `Cuotas_Actividades`
+-- Volcado de datos para la tabla `Participante_Actividades`
 --
-CREATE TABLE IF NOT EXISTS `Cuotas_Actividades` (
-  `id_cuota` int(10) unsigned NOT NULL DEFAULT '0',
-  `id_actividad` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id_cuota`,`id_actividad`),
-  KEY `id_actividad` (`id_actividad`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `Participante_Actividades` (`id_participante`, `id_actividad`) VALUES
+(11, 2),
+(12, 2),
+(11, 3),
+(11, 4);
 
 -- --------------------------------------------------------
 
@@ -134,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
   `rol` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `nombre` (`nombre`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Volcado de datos para la tabla `Usuario`
@@ -151,6 +167,13 @@ INSERT INTO `Usuario` (`id`, `nombre`, `password`, `email`, `rol`) VALUES
 --
 
 --
+-- Filtros para la tabla `Cuotas_Actividades`
+--
+ALTER TABLE `Cuotas_Actividades`
+  ADD CONSTRAINT `Cuotas_Actividades_ibfk_1` FOREIGN KEY (`id_cuota`) REFERENCES `Cuota` (`id`),
+  ADD CONSTRAINT `Cuotas_Actividades_ibfk_2` FOREIGN KEY (`id_actividad`) REFERENCES `Actividad` (`id`);
+
+--
 -- Filtros para la tabla `Participante`
 --
 ALTER TABLE `Participante`
@@ -162,13 +185,6 @@ ALTER TABLE `Participante`
 --
 ALTER TABLE `Participante_Actividades`
   ADD CONSTRAINT `Participante_Actividades_ibfk_1` FOREIGN KEY (`id_participante`) REFERENCES `Participante` (`id`),
-  ADD CONSTRAINT `Participante_Actividades_ibfk_2` FOREIGN KEY (`id_actividad`) REFERENCES `Actividad` (`id`);
-
---
--- Filtros para la tabla `Cuotas_Actividades`
---
-ALTER TABLE `Cuotas_Actividades`
-  ADD CONSTRAINT `Cuotas_Actividades_ibfk_1` FOREIGN KEY (`id_cuota`) REFERENCES `Cuota` (`id`),
   ADD CONSTRAINT `Participante_Actividades_ibfk_2` FOREIGN KEY (`id_actividad`) REFERENCES `Actividad` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
