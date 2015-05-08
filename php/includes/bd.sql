@@ -110,6 +110,16 @@ CREATE TABLE IF NOT EXISTS `Participante_Actividades` (
   KEY `id_actividad` (`id_actividad`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Estructura de tabla para la tabla `Cuotas_Actividades`
+--
+CREATE TABLE IF NOT EXISTS `Cuotas_Actividades` (
+  `id_cuota` int(10) unsigned NOT NULL DEFAULT '0',
+  `id_actividad` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id_cuota`,`id_actividad`),
+  KEY `id_actividad` (`id_actividad`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 -- --------------------------------------------------------
 
 --
@@ -152,6 +162,13 @@ ALTER TABLE `Participante`
 --
 ALTER TABLE `Participante_Actividades`
   ADD CONSTRAINT `Participante_Actividades_ibfk_1` FOREIGN KEY (`id_participante`) REFERENCES `Participante` (`id`),
+  ADD CONSTRAINT `Participante_Actividades_ibfk_2` FOREIGN KEY (`id_actividad`) REFERENCES `Actividad` (`id`);
+
+--
+-- Filtros para la tabla `Cuotas_Actividades`
+--
+ALTER TABLE `Cuotas_Actividades`
+  ADD CONSTRAINT `Cuotas_Actividades_ibfk_1` FOREIGN KEY (`id_cuota`) REFERENCES `Cuota` (`id`),
   ADD CONSTRAINT `Participante_Actividades_ibfk_2` FOREIGN KEY (`id_actividad`) REFERENCES `Actividad` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
