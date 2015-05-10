@@ -20,7 +20,7 @@ function mostraractividades($dbhandler){
 		// output data of each row
 		echo "<br><br><h4>Actividades</h4>";
 		while($row = $table->fetch_assoc()) {
-			echo "<input  type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]. "\">   ". $row["nombre"]."<br>";
+			echo "<input checked=\"checked\" type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]. "\">   ". $row["nombre"]."<br>";
 		}
 		echo "</br>";
 

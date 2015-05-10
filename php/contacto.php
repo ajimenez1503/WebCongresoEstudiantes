@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail->Port = 587;                                    // TCP port to connect to
     $mail->From = 'sibweb2014@gmail.com';
     $mail->FromName = 'Congreso';
-    $mail->addAddress('jm.94.antonio@gmail.com', 'Antonio');     // Add a recipient
+    $mail->addAddress('sibweb2014@gmail.com', 'Antonio');     // Add a recipient
     $mail->addAddress($email, $name);     // Add a recipient
     $mail->Subject = '[Mensaje de Web] Asunto';
     // use wordwrap() if lines are longer than 70 characters
