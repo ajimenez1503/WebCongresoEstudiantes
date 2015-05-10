@@ -94,3 +94,14 @@ function switch_section(n){
 	else
 		document.getElementById("subseccion"+n).style.display="block";
 }
+
+//mantine un checkbox siempre checked
+function alwayschecked(id){
+    document.getElementById(id).checked = true;
+}
+
+//devuelve que option se ha selecionado del select
+function returnCuota() {
+    var x = document.getElementById("tipo").selectedIndex;
+    console.log(x);
+}

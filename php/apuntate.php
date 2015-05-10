@@ -6,7 +6,7 @@ function mostrarcuotas($dbhandler){
 	if ($table->num_rows > 0) {
 		// output data of each row
 		echo "<label><h4>Ocupación</h4></label>";
-		echo "<select name=\"tipo\">";
+		echo "<select  onclick=\"returnCuota()\" name=\"tipo\" id=\"tipo\">";
 		while($row = $table->fetch_assoc()) {
 			echo "<option  id=\"". $row["tipo"]."\" value=\"". $row["tipo"]."\">". $row["tipo"]." por ". $row["importe"]." €</option>";
 		}
@@ -14,13 +14,21 @@ function mostrarcuotas($dbhandler){
 	}
 }
 
-function mostraractividades($dbhandler){
+
+
+function mostraractividades($dbhandler,$cuota){
 	$table=$dbhandler->query("SELECT * FROM Actividad");
 	if ($table->num_rows > 0) {
 		// output data of each row
-		echo "<br><br><h4>Actividades</h4>";
+		echo "<br><br><h4>Actividades ".$cuota."</h4>";
 		while($row = $table->fetch_assoc()) {
-			echo "<input checked=\"checked\" type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]. "\">   ". $row["nombre"]."<br>";
+			$sql="SELECT * FROM Cuotas_Actividades WHERE Cuotas_Actividades.id_Actividad =". $row["id"]." AND Cuotas_Actividades.id_cuota =".$cuota;
+			if($dbhandler->query($sql)->num_rows > 0){
+				echo "<input checked=\"checked\" type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]."\"  id=\"". $row["id"]."\" onclick=\"alwayschecked(". $row["id"].")\">   ". $row["nombre"]."<br>";
+			}
+			else{
+				echo "<input type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]."\">   ". $row["nombre"]."<br>";
+			}
 		}
 		echo "</br>";
 
@@ -31,25 +39,12 @@ function mostrarcuotasyactividades(){
 	$dbhandler = new db_handler("localhost","root","congreso");
 	$dbhandler->connect();
 	mostrarcuotas($dbhandler);
-	mostraractividades($dbhandler);
+	$idCuota=1;
+	mostraractividades($dbhandler,$idCuota);
 	$dbhandler->close();
 }
 ?>
 
-
-
-<p>
-Para apuntarse es necesario rellenar el formulario y enviar una transferencia la proximo numero de cuenta: 123456789.
-</p>
- <p>
-El precio de la inscripcion depende del rol:</p>
-<li ><p> 10€ para estudiante</p></li>
-<li ><p> 15€ para profesor</p></li>
-<li ><p> 20€ para invitado</p></li>
-
-<p>
-Manda un mensaje a <a href="congreso@ugr.es">congreso@ugr.es </a> en caso de duda.
-</p>
 <div class ="contacta">
 <form method="post" action="index.php?page=apuntate" >
 	<h3>Datos participante :</h3>
@@ -63,6 +58,15 @@ Manda un mensaje a <a href="congreso@ugr.es">congreso@ugr.es </a> en caso de dud
 
 <p class="totalDinero" id="dinero">
 Total: 0€
+</p>
+
+
+<p>
+Para apuntarse es necesario rellenar el formulario y enviar una transferencia al proximo numero de cuenta: 123456789.
+</p>
+
+<p>
+Manda un mensaje a <a href="congreso@ugr.es">congreso@ugr.es </a> en caso de duda.
 </p>
 
 
