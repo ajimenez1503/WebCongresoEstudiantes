@@ -54,13 +54,9 @@ function mostrarcuotasyactividades(){
 	<?php mostrarcuotasyactividades();?>
 	<button type="submit" name="submit">Enviar</button>
 </form>
+</br>
+<p id="dinero" class="totalDinero"></p>
 </div> <!-- end contacta -->
-
-<p class="totalDinero" id="dinero">
-Total: 0€
-</p>
-
-
 <p>
 Para apuntarse es necesario rellenar el formulario y enviar una transferencia al proximo numero de cuenta: 123456789.
 </p>
@@ -77,12 +73,11 @@ function addparticiapante_Actividad($dbhandler){
 	$sql="SELECT MAX(id) as id FROM Participante";
 	$maxid=$dbhandler->query($sql);
 	if ($maxid->num_rows > 0) {
-		while($row = $maxid->fetch_assoc()) {
-			$maxid=$row["id"];
-			break;
-		}
+		$row = $maxid->fetch_assoc();
+		$maxid=$row["id"];
 		//calculamos las id de las actividades pinchadas
-		$ql="SELECT id FROM Actividad";
+		$ql="SELECT id,precio FROM Actividad";
+		$coste=0;
 		$table=$dbhandler->query($ql);
 		if ($table->num_rows > 0) {
 			while($row = $table->fetch_assoc()) {
@@ -93,9 +88,13 @@ function addparticiapante_Actividad($dbhandler){
 					if ($dbhandler->query($sql) == FALSE) {
 						echo "Error: ".$dbhandler->error();
 					}
+					else{//incrementamos el coste de la actividad
+						$coste+=$row["precio"];
+					}
 				}
 			}
 			echo "<script> alert(\"Participante dado de alta\");</script>";
+			return $coste;
 		}
 		else {
 			echo "Error: ".$dbhandler->error();
@@ -106,17 +105,38 @@ function addparticiapante_Actividad($dbhandler){
 	}
 }
 
+
+function costePorElTipo($dbhandler,$tipo){
+	//calculamso el importe del coste
+	$ql="SELECT importe FROM Cuota WHERE tipo='".$tipo."'";
+	$table=$dbhandler->query($ql);
+	if ($table->num_rows > 0) {
+		$row = $table->fetch_assoc();
+		return $row["importe"];
+	}
+	else {
+		echo "Error: ".$dbhandler->error();
+	}
+}
+
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$dbhandler = new db_handler("localhost","root","congreso");
 	$dbhandler->connect();
 
 	$sql="INSERT INTO Participante(nombre,nombreUsuario,apellido,tipo) VALUES ('$_REQUEST[nombre]','antonio','$_REQUEST[apellido]','$_REQUEST[tipo]')";
 	if ($dbhandler->query($sql) === TRUE) {
-		addparticiapante_Actividad($dbhandler);
+		$dinero=0;
+		$dinero+=costePorElTipo($dbhandler,$_REQUEST[tipo]);
+		$dinero+=addparticiapante_Actividad($dbhandler);
+		echo "<script> document.getElementById(\"dinero\").innerHTML = \"Total: ".$dinero."€ \";</script>";
+		//echo "<p id=\"dinero\" class=\"totalDinero\">Total: ".$dinero."€ </p>";
 	}
 	else {
 		echo "Error: ".$dbhandler->error();
 	}
+
 	$dbhandler->close();
 }
 
