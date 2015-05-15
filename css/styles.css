@@ -261,7 +261,6 @@ footer{
 #boton_salir{
 	background-color: #0483a0;
 	color: white;
-	float: right;
 }
 
 
@@ -286,7 +285,7 @@ footer{
 }
 .sesion2{
 	position:absolute;
-	padding: 164px 0px 0px 865px;
+	padding: 156px 0px 0px 882px;
 }
 .sesion2 a{
 	float:right;

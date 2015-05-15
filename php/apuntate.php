@@ -39,6 +39,9 @@ function mostraractividades($dbhandler,$cuota){
 function mostrarcuotasyactividades(){
 	$dbhandler = new db_handler("localhost","root","congreso");
 	$dbhandler->connect();
+	if(isset($_SESSION['user']) && isset($_SESSION['rol']) ){
+			echo "user ".$_SESSION['user']." y rol: ".$_SESSION['rol'];
+	}
 	mostrarcuotas($dbhandler);
 	$idCuota=1;
 	mostraractividades($dbhandler,$idCuota);

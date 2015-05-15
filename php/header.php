@@ -23,10 +23,9 @@ echo "<header>";
            }
             else{
                 echo "<div class = \"sesion2\">";
-                    echo "<a href=\"index.php?salir\"><li id=\"boton_salir\" > SALIR </li></a>";
+                    echo "<a href=\"index.php?salir\"><li id=\"boton_salir\" >    SALIR    </li></a>";
                 echo "</div> <!-- end sesion2 -->";
             }
-        echo "</div> <!-- end sesion -->";
         echo "<img class=\"imagnePortada\" src=\"images/img2.jpg\" alt=\"imagen_etsiit\" title=\"imagen_etsiit\" width=\"960px\" height=\"200px\">";
     echo "</div>";
 echo "</header>";
@@ -38,21 +37,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$user=$_REQUEST['user'];
 			$pass=$_REQUEST['pass'];
 			$dbhandler = new db_handler("localhost","root","congreso");
-			$sql="select * from `Usuario` where	`nombre`='".$user."' and password='".$pass."'";
+			$sql="select rol from `Usuario` where	`nombre`='".$user."' and password='".$pass."'";
 			$dbhandler->connect();
 			$consulta=$dbhandler->query($sql);
             //si existe
 			if($consulta->num_rows > 0 )
 			{
-				//echo " <script> alert('Usuario logeado') </script> ";
+                //echo " <script> alert('Usuario logeado') </script> ";
                 /*
-              //$dir="location:".$_SERVER['REQUEST_URI'];    //direccion q hay que recargar
-              //echo $dir;
-              //header($dir);
-              otra solucion guardar en una cookie toda los parametros get
-              */
-				$_SESSION['user']=$user;
-				header("location:index.php");
+                //$dir="location:".$_SERVER['REQUEST_URI'];    //direccion q hay que recargar
+                //echo $dir;
+                //header($dir);
+                otra solucion guardar en una cookie toda los parametros get
+                */
+                $row = $consulta->fetch_assoc();
+                $_SESSION['user']=$user;
+                $_SESSION['rol']=$row["rol"];
+                header("location:index.php");
 			}
 			else{
 				echo " <script> alert('Usuario y contraseña incorrectos!') </script> ";

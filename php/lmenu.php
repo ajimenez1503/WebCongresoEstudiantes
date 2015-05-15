@@ -17,7 +17,13 @@
             </div>
         <li><a href="./index.php?page=patrocinadores">Patrocinadores</a></li>
         <li ><a href="./index.php?page=contacto">Contacto</a></li>
-        <li ><a href="./index.php?page=participantes">Ver Participantes</a></li>
+        <?php
+        if(isset($_SESSION['rol']) ){
+    			if($_SESSION['rol']=="admin"){
+                    echo "<li ><a href=\"./index.php?page=participantes\">Ver Participantes</a></li>";
+                }
+    	}
+        ?>
         </ul>
     </nav>
     <div id="slider">

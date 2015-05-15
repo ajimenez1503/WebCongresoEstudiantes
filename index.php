@@ -39,6 +39,10 @@ session_start();
 			<div class="mainContent" >
 				<!-- Incluir contenido necesario -->
 				<?php
+				//en el caso de que sea auntate y no nos hayamos logeados entramos en registrar
+				if($current_page=="apuntate" && !isset($_SESSION['user'])){
+					$current_page="registro";
+				}
 				require './php/'. $current_page . '.php';
 				?>
 			</div>
