@@ -9,6 +9,7 @@
 	<script type="text/javascript" src="./js/script.js"></script>
 
 	<?php
+	require "php/includes/dbhandler.php";
 
 	if(!isset($_GET['page']) || empty($_GET['page'])){
 		$current_page="home";

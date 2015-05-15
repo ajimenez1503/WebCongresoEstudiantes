@@ -1,6 +1,5 @@
 <?php
 
-include "php/includes/dbhandler.php";
 function mostrarParticipantes(){
     $dbhandler = new db_handler("localhost","root","congreso");
     $dbhandler->connect();

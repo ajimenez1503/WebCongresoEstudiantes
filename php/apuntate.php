@@ -1,12 +1,11 @@
 <!--Copyright ©. All rights reserved. Designed by Antonio Jimenez Martinez y Andres Ortiz Corrales -->
 <?php
-include "php/includes/dbhandler.php";
 function mostrarcuotas($dbhandler){
 	$table=$dbhandler->query("SELECT * FROM Cuota");
 	if ($table->num_rows > 0) {
 		// output data of each row
 		echo "<label><h4>Ocupación</h4></label>";
-		echo "<select  onclick=\"returnCuota()\" name=\"tipo\" id=\"tipo\">";
+		echo "<select  onclick=\"guardarCuota()\" name=\"tipo\" id=\"tipo\">";
 		while($row = $table->fetch_assoc()) {
 			echo "<option  id=\"". $row["tipo"]."\" value=\"". $row["tipo"]."\">". $row["tipo"]." por ". $row["importe"]." €</option>";
 		}
@@ -20,7 +19,8 @@ function mostraractividades($dbhandler,$cuota){
 	$table=$dbhandler->query("SELECT * FROM Actividad");
 	if ($table->num_rows > 0) {
 		// output data of each row
-		echo "<br><br><h4>Actividades ".$cuota."</h4>";
+		echo "<div id=\"mostrarActividades\">";
+		echo "<br><br><h4>Actividades</h4>";
 		while($row = $table->fetch_assoc()) {
 			$sql="SELECT * FROM Cuotas_Actividades WHERE Cuotas_Actividades.id_Actividad =". $row["id"]." AND Cuotas_Actividades.id_cuota =".$cuota;
 			if($dbhandler->query($sql)->num_rows > 0){
@@ -31,6 +31,7 @@ function mostraractividades($dbhandler,$cuota){
 			}
 		}
 		echo "</br>";
+		echo "</div>";//mostrarActividades
 
 	}
 }

@@ -105,3 +105,22 @@ function returnCuota() {
     var x = document.getElementById("tipo").selectedIndex;
     console.log(x);
 }
+
+
+//funcion que le pasamos una valoracion y un identificador de hotel
+//a partir de una llamada ajax, accede al servidor y almacena ese valor en la base de datos de forma dinamica.
+function guardarCuota() {
+    var idCuota=document.getElementById("tipo").selectedIndex;//couta selecionada
+    idCuota=idCuota+1;//ya que el index empieza en 0
+    console.log(idCuota);
+	var xmlhttp;
+	xmlhttp=new XMLHttpRequest();
+	xmlhttp.onreadystatechange=function(){
+			if (xmlhttp.readyState==4 && xmlhttp.status==200){
+                document.getElementById("mostrarActividades").innerHTML=xmlhttp.responseText;
+		}
+	}
+	xmlhttp.open("POST","php/includes/mostrarActividades.php",true);
+	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlhttp.send("idCuota="+idCuota);//enviamos la id de la cuota sleecioanda
+}
