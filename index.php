@@ -1,4 +1,8 @@
 <!--Copyright ©. All rights reserved. Designed by Antonio Jimenez Martinez y Andres Ortiz Corrales -->
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +13,8 @@
 	<script type="text/javascript" src="./js/script.js"></script>
 
 	<?php
-	session_start();
 	require "php/includes/dbhandler.php";
-	//error_reporting(E_ALL ^ E_DEPRECATED);//reportar los errores de phph
+	//si hemos pulsado sobre salir
 	if(isset($_GET['salir'])){
 		session_destroy();
 		header("location:index.php");

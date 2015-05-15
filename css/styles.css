@@ -284,6 +284,23 @@ footer{
 	border-radius: 10px;
 	padding: 12px 12px 12px 12px;
 }
+.sesion2{
+	position:absolute;
+	padding: 164px 0px 0px 865px;
+}
+.sesion2 a{
+	float:right;
+	margin-top: 12px;
+	margin-left:2px;
+
+}
+.sesion2 li{
+	display: inline;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 12px 12px 12px 12px;
+}
+
 
 .barra_sesion{
     padding: 8px;

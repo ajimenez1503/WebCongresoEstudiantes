@@ -9,19 +9,22 @@ echo "<header>";
         echo "</div>";
     echo "</div>";
     echo "<div>";
-        echo "<div class = \"sesion\">";
 
 
             if(!isset($_SESSION['user'])){
-                echo "<a href=\"index.php?page=registro\"><li id=\"boton_registro\">¡REGISTRATE!</li></a>";
-                echo "<form class = \"barra_sesion\" method=\"post\" action=\"index.php\">";
-                    echo "<input type =\"text\" id=\"texto\" name=\"user\" size =\"13\" placeholder=\"Usuario\" required>";
-                    echo "<input type=\"password\" id=\"texto\" name=\"pass\" size =\"13\" placeholder=\"Contraseña\" required>";
-                    echo "<input type=\"submit\" id=\"submit\" value=\"Acceder\">";
-                echo "</form>";
+                echo "<div class = \"sesion\">";
+                    echo "<a href=\"index.php?page=registro\"><li id=\"boton_registro\">¡REGISTRATE!</li></a>";
+                    echo "<form class = \"barra_sesion\" method=\"post\" action=\"index.php\">";
+                        echo "<input type =\"text\" id=\"texto\" name=\"user\" size =\"13\" placeholder=\"Usuario\" required>";
+                        echo "<input type=\"password\" id=\"texto\" name=\"pass\" size =\"13\" placeholder=\"Contraseña\" required>";
+                        echo "<input type=\"submit\" id=\"submit\" value=\"Acceder\">";
+                    echo "</form>";
+                echo "</div> <!-- end sesion -->";
            }
             else{
-                echo "<a href=\"index.php?salir\"><li id=\"boton_salir\" > SALIR </li></a>";
+                echo "<div class = \"sesion2\">";
+                    echo "<a href=\"index.php?salir\"><li id=\"boton_salir\" > SALIR </li></a>";
+                echo "</div> <!-- end sesion2 -->";
             }
         echo "</div> <!-- end sesion -->";
         echo "<img class=\"imagnePortada\" src=\"images/img2.jpg\" alt=\"imagen_etsiit\" title=\"imagen_etsiit\" width=\"960px\" height=\"200px\">";
@@ -42,6 +45,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			if($consulta->num_rows > 0 )
 			{
 				//echo " <script> alert('Usuario logeado') </script> ";
+                /*
+              //$dir="location:".$_SERVER['REQUEST_URI'];    //direccion q hay que recargar
+              //echo $dir;
+              //header($dir);
+              otra solucion guardar en una cookie toda los parametros get
+              */
 				$_SESSION['user']=$user;
 				header("location:index.php");
 			}
