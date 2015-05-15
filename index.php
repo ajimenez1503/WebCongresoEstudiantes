@@ -9,7 +9,13 @@
 	<script type="text/javascript" src="./js/script.js"></script>
 
 	<?php
+	session_start();
 	require "php/includes/dbhandler.php";
+	//error_reporting(E_ALL ^ E_DEPRECATED);//reportar los errores de phph
+	if(isset($_GET['salir'])){
+		session_destroy();
+		header("location:index.php");
+	}
 
 	if(!isset($_GET['page']) || empty($_GET['page'])){
 		$current_page="home";

@@ -258,6 +258,13 @@ footer{
 	color: white;
 }
 
+#boton_salir{
+	background-color: #0483a0;
+	color: white;
+	float: right;
+}
+
+
 .imagnePortada{
 	z-index: -1;
 }
