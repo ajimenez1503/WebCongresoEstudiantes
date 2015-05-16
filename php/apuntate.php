@@ -124,8 +124,7 @@ function costePorElTipo($dbhandler,$tipo){
 }
 
 
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST"  && isset($_REQUEST['nombre']) && isset($_REQUEST['apellido'])) {
 	$dbhandler = new db_handler("localhost","root","congreso");
 	$dbhandler->connect();
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 08-05-2015 a las 17:03:24
+-- Tiempo de generación: 16-05-2015 a las 12:44:03
 -- Versión del servidor: 5.5.43-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.9
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `congreso3`
+-- Base de datos: `congreso`
 --
 
 -- --------------------------------------------------------
@@ -86,6 +86,16 @@ CREATE TABLE IF NOT EXISTS `Cuotas_Actividades` (
   KEY `id_actividad` (`id_actividad`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `Cuotas_Actividades`
+--
+
+INSERT INTO `Cuotas_Actividades` (`id_cuota`, `id_actividad`) VALUES
+(1, 2),
+(2, 2),
+(2, 4),
+(3, 7);
+
 -- --------------------------------------------------------
 
 --
@@ -101,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `Participante` (
   PRIMARY KEY (`id`),
   KEY `tipo` (`tipo`),
   KEY `nombreUsuario` (`nombreUsuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
 
 --
 -- Volcado de datos para la tabla `Participante`
@@ -111,7 +121,17 @@ INSERT INTO `Participante` (`id`, `nombre`, `nombreUsuario`, `apellido`, `tipo`)
 (1, 'antonio', 'antonio', 'jimenez', 'estudiante'),
 (11, 'antonio', 'antonio', 'jimenez martinez', 'estudiante'),
 (12, 'aaa', 'antonio', 'jimenez', 'profesor'),
-(13, 'antonio', 'antonio', 'jimenez', 'estudiante');
+(13, 'antonio', 'antonio', 'jimenez', 'estudiante'),
+(16, 'sdfasf', 'antonio', 'sdfasdsa', 'inivitado'),
+(17, 'sdfasf', 'antonio', 'sdfasdsa', 'inivitado'),
+(18, 'sdfasf', 'antonio', 'sdfasdsa', 'inivitado'),
+(19, 'sdfasf', 'antonio', 'sdfasdsa', 'inivitado'),
+(20, 'sdfasf', 'antonio', 'sdfasdsa', 'inivitado'),
+(21, 'sdfasf', 'antonio', 'sdfasdsa', 'inivitado'),
+(22, 'asdfdsf', 'antonio', 'sdfsdfs', 'profesor'),
+(23, 'antonio', 'antonio', 'sdf', 'inivitado'),
+(24, 'juan', 'antonio', 'pepe', 'profesor'),
+(25, 'dsgsa', 'antonio', 'sdgas', 'inivitado');
 
 -- --------------------------------------------------------
 
@@ -133,8 +153,13 @@ CREATE TABLE IF NOT EXISTS `Participante_Actividades` (
 INSERT INTO `Participante_Actividades` (`id_participante`, `id_actividad`) VALUES
 (11, 2),
 (12, 2),
+(24, 2),
+(25, 2),
 (11, 3),
-(11, 4);
+(24, 3),
+(25, 3),
+(11, 4),
+(24, 4);
 
 -- --------------------------------------------------------
 
@@ -150,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
   `rol` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `nombre` (`nombre`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
 -- Volcado de datos para la tabla `Usuario`
@@ -160,7 +185,9 @@ INSERT INTO `Usuario` (`id`, `nombre`, `password`, `email`, `rol`) VALUES
 (1, 'antonio', 'antonio', 'jm94antonio@correo.ugr.es', 'admin'),
 (2, 'andres', 'andres', 'andres@correo.es', 'admin'),
 (7, 'juan', 'juan', 'juan@corre.ugr.es', 'normal'),
-(9, 'pepe', 'pepe', 'pepe@correo.es', 'normal');
+(9, 'pepe', 'pepe', 'pepe@correo.es', 'normal'),
+(10, 'a', 'a', 'a@correo.ugr.es', 'admin'),
+(12, 'b', 'b', 'sjadsaja@afa.es', 'normal');
 
 --
 -- Restricciones para tablas volcadas
