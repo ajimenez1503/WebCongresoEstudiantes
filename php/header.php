@@ -36,7 +36,7 @@ echo "</header>";
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_REQUEST['user']) && isset($_REQUEST['pass'])) {
 			$user=$_REQUEST['user'];
 			$pass=$_REQUEST['pass'];
-			$dbhandler = new db_handler("localhost","root","congreso");
+			$dbhandler = new db_handler("localhost","congreso");
 			$sql="select rol from `Usuario` where	`nombre`='".$user."' and password='".$pass."'";
 			$dbhandler->connect();
 			$consulta=$dbhandler->query($sql);

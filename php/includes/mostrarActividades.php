@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST["idCuota"])){
     require "dbhandler.php";
-    $dbhandler = new db_handler("localhost","root","congreso");
+    $dbhandler = new db_handler("localhost","congreso");
 	$dbhandler->connect();
     $cuota=$_POST["idCuota"];
     $table=$dbhandler->query("SELECT * FROM Actividad");

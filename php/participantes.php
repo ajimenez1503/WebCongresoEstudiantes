@@ -1,7 +1,7 @@
 <?php
 
 function mostrarParticipantes(){
-    $dbhandler = new db_handler("localhost","root","congreso");
+    $dbhandler = new db_handler("localhost","congreso");
     $dbhandler->connect();
     $table=$dbhandler->query("SELECT * FROM Participante");
     if ($table->num_rows > 0) {
@@ -16,7 +16,7 @@ function mostrarParticipantes(){
 }
 
 function mostrarDatosParticipante($id){
-    $dbhandler = new db_handler("localhost","root","congreso");
+    $dbhandler = new db_handler("localhost","congreso");
     $dbhandler->connect();
     //comprobamos datos del participantes
     $table=$dbhandler->query("SELECT * FROM Participante WHERE id=".$id);

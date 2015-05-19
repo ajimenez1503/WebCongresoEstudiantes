@@ -27,7 +27,7 @@
 <?php
 
     if ($_SERVER["REQUEST_METHOD"] == "POST"  && isset($_REQUEST['nombre']) && isset($_REQUEST['password']) && isset($_REQUEST['email'])) {
-        $dbhandler = new db_handler("localhost","root","congreso");
+        $dbhandler = new db_handler("localhost","congreso");
         $dbhandler->connect();
         $sql="INSERT INTO Usuario(nombre,password, email, rol) VALUES ('$_REQUEST[nombre]','$_REQUEST[password]','$_REQUEST[email]','normal')";
         if ($dbhandler->query($sql) === TRUE) {

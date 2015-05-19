@@ -6,7 +6,7 @@
 
 <?php
 	include "php/includes/actividad_class.php";
-	$dbhandler = new db_handler("localhost","root","congreso");
+	$dbhandler = new db_handler("localhost","congreso");
 
 	if(isset($_GET['actividad']) && !empty($_GET['actividad'])){
 		$idactividad=$_GET['actividad'];

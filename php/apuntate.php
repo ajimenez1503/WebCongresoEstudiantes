@@ -37,7 +37,7 @@ function mostraractividades($dbhandler,$cuota){
 }
 
 function mostrarcuotasyactividades(){
-	$dbhandler = new db_handler("localhost","root","congreso");
+	$dbhandler = new db_handler("localhost","congreso");
 	$dbhandler->connect();
 	if(isset($_SESSION['user']) && isset($_SESSION['rol']) ){
 			echo "user ".$_SESSION['user']." y rol: ".$_SESSION['rol'];
@@ -125,7 +125,7 @@ function costePorElTipo($dbhandler,$tipo){
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"  && isset($_REQUEST['nombre']) && isset($_REQUEST['apellido'])) {
-	$dbhandler = new db_handler("localhost","root","congreso");
+	$dbhandler = new db_handler("localhost","congreso");
 	$dbhandler->connect();
 
 	$sql="INSERT INTO Participante(nombre,nombreUsuario,apellido,tipo) VALUES ('$_REQUEST[nombre]','antonio','$_REQUEST[apellido]','$_REQUEST[tipo]')";
