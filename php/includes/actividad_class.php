@@ -26,6 +26,9 @@ class Actividad{
                 echo "<div class =\"marcoImg\">";
                     echo "<img src=\"".$this->foto."\"  alt=\"Imagen actividad\" width=\"200px\" height=\"200px\" >";
                     echo "<a href=\"./index.php?page=actividades\"><div class =\"boton_atras\">ATRAS </div></a>";
+
+                    echo "<a href=\"./index.php?page=actividades&actividad=".$this->id."&editar=true\"><div class =\"boton_atras\">EDITAR </div></a>";
+
                 echo "</div> <!-- end marcoImg -->";
                 echo "<div class =\"marcoText_Superior\">";
                     echo "<div class =\"marcoText\">";
