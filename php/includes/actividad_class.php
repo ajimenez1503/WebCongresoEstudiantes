@@ -30,6 +30,7 @@ class Actividad{
                     echo "<a href=\"./index.php?page=actividades&actividad=".$this->id."&editar=true\"><div class =\"boton_atras\">EDITAR </div></a>";
 
                 echo "</div> <!-- end marcoImg -->";
+
                 echo "<div class =\"marcoText_Superior\">";
                     echo "<div class =\"marcoText\">";
                         echo "<h4>". $this->nombre ."</h4>";
@@ -38,9 +39,45 @@ class Actividad{
                               echo "</p>";
                     echo "</div> <!-- end marcoText -->";
                 echo "</div> <!-- end marcoText_Superior -->";
+
+                if(isset($_GET['editar'])){
+                    echo "<div class =\"marcoFormulario\">";
+                        echo "<h4>Editar actividad</h4>";
+
+                        echo "<form method=\"post\" action=\"index.php?page=actividades&actividad=1&editar=true\" >";
+
+                        echo "<label> Descripcion actividad</label>";
+                        echo "<textarea  name=\"descripcion\"  row=\"100\" cols=\"45\"  >".$this->descripcion."</textarea>";
+                        echo "<br><br>";
+
+                        echo "<label> Precio:    </label>";
+                        echo "<input type=\"number\" name=\"precio\" value=\"".$this->precio."\" ></input>";
+                        echo "<br><br>";
+
+                        echo "<button type=\"submit\" name=\"submit\">Modificar</button>";
+                        echo "</form>";
+                    echo "</div> <!-- end marcoFormulario -->";
+
+
+                    if ($_SERVER["REQUEST_METHOD"] == "POST"  ) {
+
+                        $dbhandler = new db_handler("localhost","congreso");
+                        $dbhandler->connect();
+                        $sql="UPDATE Actividad SET descripcion='".$_REQUEST['descripcion']."', precio=".$_REQUEST['precio']." WHERE id=".$this->id;
+                        if ($dbhandler->query($sql) === TRUE) {
+                            echo "<script> alert(\"actividade modificada\");</script>";
+                        } else {
+                            echo "Error: ".$dbhandler->error();
+                        }
+                        $dbhandler->close();
+                        // echo "precio ".$_REQUEST['precio']."</br>";
+                        // echo "descrip ".$_REQUEST['descripcion']."</br>";
+                    }
+            }
             echo "</div> <!-- end marco -->";
         }
 
+        //mostrmaos un fila de la tabla
     public function mostrar_fila(){
     echo "<tr>";
             echo "<td>" . $this->fecha . "</td>";//echo date($fecha); otra opcion
@@ -96,6 +133,7 @@ function mostrar_tabla($actividades){
         echo "</div>";
 }
 
+//muestra la info especifica de una actividad
 function describir_activiad($idactividad,$dbhandler){
     $query="SELECT * FROM `Actividad` WHERE id=".$idactividad;
     $result=leer_actividades($query,$dbhandler);

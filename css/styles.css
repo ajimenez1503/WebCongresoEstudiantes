@@ -207,10 +207,24 @@ footer{
 .marcoText p{
 	padding: 0px 0px 0px 15px;
 }
+
 .marcoText_Superior{
 	width: 450px;
 	float: left;
 	padding: 0px 0px 150px 10px;
+}
+
+.marcoFormulario{
+	padding: 0px 0px 0px 15px;
+	width: 450px;
+	float: right;
+	background : #CDDBF0;
+	border-radius : 15px;
+	margin-bottom: 10px;
+}
+.marcoFormulario textarea{
+	width: 419px;
+	height: 118px;
 }
 .boton_atras{
 	border: 1px solid #00748f;
