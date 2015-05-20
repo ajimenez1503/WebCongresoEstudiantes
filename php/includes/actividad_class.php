@@ -46,7 +46,7 @@ class Actividad{
                     echo "<div class =\"marcoFormulario\">";
                         echo "<h4>Editar actividad</h4>";
 
-                        echo "<form method=\"post\" action=\"index.php?page=actividades&actividad=".$this->id."&editar=true\" >";
+                        echo "<form method=\"post\" action=\"index.php?page=actividades&actividad=".$this->iud."&editar=true\" >";
 
                         echo "<label> Descripcion actividad</label>";
                         echo "<textarea  name=\"descripcion\"  row=\"100\" cols=\"45\"  >".$this->descripcion."</textarea>";

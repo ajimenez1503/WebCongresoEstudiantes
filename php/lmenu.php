@@ -21,6 +21,7 @@
         if(isset($_SESSION['rol']) ){
     			if($_SESSION['rol']=="admin"){
                     echo "<li ><a href=\"./index.php?page=participantes\">Ver Participantes</a></li>";
+                    echo "<li ><a href=\"./index.php?page=cuotas\">Administrar Cuotas</a></li>";
                 }
     	}
         ?>
