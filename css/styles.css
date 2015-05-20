@@ -215,7 +215,7 @@ footer{
 }
 
 .marcoFormulario{
-	padding: 0px 0px 0px 15px;
+	padding: 5px 0px 20px 20px;
 	width: 450px;
 	float: right;
 	background : #CDDBF0;
@@ -231,17 +231,18 @@ footer{
 	height: 25px;
 	width: 133px;
 	margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 4px;
-  cursor: pointer;
-  font: 20px plane;
-  color: #fafafa;
-  background-color: #0483a0;
-  background-image: linear-gradient(top, #31b2c3, #0483a0);
-  border-radius: 3px;
+	margin-bottom: 10px;
+	margin-right: 4px;
+	cursor: pointer;
+	font: 20px plane;
+	color: #fafafa;
+	background-color: #0483a0;
+	background-image: linear-gradient(top, #31b2c3, #0483a0);
+	border-radius: 3px;
 	text-align: center;
 	padding: 10px;
 }
+
 
 
 .marco_ponencias{

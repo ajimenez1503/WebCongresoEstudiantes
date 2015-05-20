@@ -27,7 +27,9 @@ class Actividad{
                     echo "<img src=\"".$this->foto."\"  alt=\"Imagen actividad\" width=\"200px\" height=\"200px\" >";
                     echo "<a href=\"./index.php?page=actividades\"><div class =\"boton_atras\">ATRAS </div></a>";
 
-                    echo "<a href=\"./index.php?page=actividades&actividad=".$this->id."&editar=true\"><div class =\"boton_atras\">EDITAR </div></a>";
+                    if(isset($_SESSION['user']) && $_SESSION['rol']=="admin"){
+                            echo "<a href=\"./index.php?page=actividades&actividad=".$this->id."&editar=true\"><div class =\"boton_atras\">EDITAR </div></a>";
+                    }
 
                 echo "</div> <!-- end marcoImg -->";
 
@@ -40,11 +42,11 @@ class Actividad{
                     echo "</div> <!-- end marcoText -->";
                 echo "</div> <!-- end marcoText_Superior -->";
 
-                if(isset($_GET['editar'])){
+                if(isset($_SESSION['user']) && isset($_GET['editar'])&& $_SESSION['rol']=="admin"){
                     echo "<div class =\"marcoFormulario\">";
                         echo "<h4>Editar actividad</h4>";
 
-                        echo "<form method=\"post\" action=\"index.php?page=actividades&actividad=1&editar=true\" >";
+                        echo "<form method=\"post\" action=\"index.php?page=actividades&actividad=".$this->id."&editar=true\" >";
 
                         echo "<label> Descripcion actividad</label>";
                         echo "<textarea  name=\"descripcion\"  row=\"100\" cols=\"45\"  >".$this->descripcion."</textarea>";
@@ -112,10 +114,10 @@ function leer_actividades($query,$dbhandler){
 //muestra todas las actividades en una tabla con el array dado
 function mostrar_tabla($actividades){
     echo "<div class=\"tablaActividades\">";
-    echo "<h3>Actividades</h3>";
+    //echo "<h3>Actividades</h3>";
     echo "<table>";
     echo "<thead>";
-    		echo "<tr>";
+        	echo "<tr>";
     			echo "<th>Fecha</th>";
     			echo "<th>Hora Comienzo</th>";
     			echo "<th>Actividad</th>";

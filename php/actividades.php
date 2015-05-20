@@ -12,6 +12,9 @@
 		$idactividad=$_GET['actividad'];
 		describir_activiad($idactividad,$dbhandler);
 	}
+	else{//si no mostramos descripcion
+		echo "<h3>Actividades</h3>";
+	}
 
 	$actividades=leer_actividades("SELECT * FROM Actividad",$dbhandler);
 	mostrar_tabla($actividades);
