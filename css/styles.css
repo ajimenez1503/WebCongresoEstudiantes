@@ -399,3 +399,15 @@ input:focus::-webkit-input-placeholder{
 	margin-bottom: 245px;
 
 }
+
+/*mostrar formulario hote*/
+#deseoHotel{
+	display: none;
+}
+#boton_buscar{
+	border: 5px solid #0483a0;
+	height: 15px;
+	width: 15px;
+	background-color: #0483a0;
+	color: #fafafa;
+}

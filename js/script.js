@@ -112,7 +112,7 @@ function returnCuota() {
 function guardarCuota() {
     var idCuota=document.getElementById("tipo").selectedIndex;//couta selecionada
     idCuota=idCuota+1;//ya que el index empieza en 0
-    console.log(idCuota);
+    //console.log(idCuota);
 	var xmlhttp;
 	xmlhttp=new XMLHttpRequest();
 	xmlhttp.onreadystatechange=function(){
@@ -123,4 +123,40 @@ function guardarCuota() {
 	xmlhttp.open("POST","php/includes/mostrarActividades.php",true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlhttp.send("idCuota="+idCuota);//enviamos la id de la cuota sleecioanda
+}
+
+//mostrar formulario para buscar hotel
+function mostrar_formulario_hotel(tipo){
+    if(document.getElementById("deseoHotel").style.display=="block"){
+		document.getElementById("deseoHotel").style.display="none";
+        document.getElementById("mostrarHoteles").style.display="none";
+
+    }
+	else{
+		document.getElementById("deseoHotel").style.display="block";
+        document.getElementById("mostrarHoteles").style.display="block";
+    }
+
+}
+
+//fucnion ajax que muesta los hotes con las caracterisiticas del formulario
+function buscar_hotel(){
+    var tipohab = document.getElementById("tipohab_formulario").value;
+    //console.log(tipohab);
+    var fecha_entrada = document.getElementById("fecha_entrada_formulario").value;
+    //console.log(fecha_entrada);
+    var fecha_salida = document.getElementById("fecha_salida_formulario").value;
+    //console.log(fecha_salida);
+
+    var xmlhttp;
+	xmlhttp=new XMLHttpRequest();
+	xmlhttp.onreadystatechange=function(){
+		if (xmlhttp.readyState==4 && xmlhttp.status==200){
+            document.getElementById("mostrarHoteles").innerHTML=xmlhttp.responseText;
+		}
+	}
+	xmlhttp.open("POST","php/includes/mostrarHoteles.php",true);
+	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlhttp.send("tipohab="+tipohab+"&fecha_salida="+fecha_salida+"&fecha_entrada="+fecha_entrada);//enviamos la id de la cuota sleecioanda
+
 }
