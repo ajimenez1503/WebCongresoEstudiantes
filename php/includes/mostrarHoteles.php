@@ -25,10 +25,10 @@ class Hotel{
 
 
     public function mostrar(){
+        echo "<img id=\"foto_hotel\" src = \"http://127.0.0.1/heisenburg/".$this->imagen."\">";
+        echo "<div>";
         echo "<h2> HOTEL ".$this->nombre." </h2>";
         echo "<h4>Precio desde: ".$this->precio." € </h4>";
-        echo "<img src = \"http://127.0.0.1/heisenburg/".$this->imagen."\">";
-        echo "<div>";
         echo "<p>".$this->resumen."</p>";
         echo "</div>";
     }
@@ -50,11 +50,26 @@ if(isset($_POST["tipohab"]) && isset($_POST["fecha_entrada"]) && isset($_POST["f
     $decoded=json_decode($result,true);
     //echo "Header:" . $httpcode . "</br>";
     if($httpcode==200){
-
+        /*
         foreach ($decoded as  $valor) {
             $h = new Hotel;
             $h->read_hotel($valor);
             $h->mostrar();
+        }*/
+        $size=count($decoded);
+        for($i = 0; $i<$size; $i++) {
+            $h = new Hotel;
+            $h->read_hotel($decoded[$i]);
+            if($i%2==0){
+                echo "<div class = \"hotel_izquierda\">";
+                $h->mostrar();
+                echo "</div><!-- end hotel_izquierda -->";
+            }
+            else{
+                echo "<div class = \"hotel_derecha\">";
+                $h->mostrar();
+                echo "</div><!-- end hotel_derecha -->";
+            }
         }
     }
     else{
