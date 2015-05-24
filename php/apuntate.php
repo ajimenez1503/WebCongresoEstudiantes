@@ -181,14 +181,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"  && isset($_REQUEST['nombre']) && isset
 
 	$sql="INSERT INTO Participante(nombre,nombreUsuario,apellido,tipo) VALUES ('$_REQUEST[nombre]','antonio','$_REQUEST[apellido]','$_REQUEST[tipo]')";
 	if ($dbhandler->query($sql) === TRUE) {
-		$dinero=0;
-		$dinero+=costePorElTipo($dbhandler,$_REQUEST[tipo]);
-		$dinero+=addparticiapante_Actividad($dbhandler);
-		echo "<script> document.getElementById(\"dinero\").innerHTML = \"Total: ".$dinero."€ \";</script>";
-		//echo "<p id=\"dinero\" class=\"totalDinero\">Total: ".$dinero."€ </p>";realizar_reserva($_REQUEST["tipohab"],$_REQUEST["fecha_entrada"],$_REQUEST["fecha_salida"],$_REQUEST["hotel"],$_SESSION["user"]);
 
 		//realizamos reserva
 		realizar_reserva($_REQUEST["tipohab"],$_REQUEST["fecha_entrada"],$_REQUEST["fecha_salida"],$_REQUEST["hotel"],$_SESSION["user"]);
+
+		$dinero=0;
+		$dinero+=costePorElTipo($dbhandler,$_REQUEST[tipo]);
+		$dinero+=addparticiapante_Actividad($dbhandler);
+		$dinero+=$_REQUEST["precio_hotel"];
+		echo "<script> document.getElementById(\"dinero\").innerHTML = \"Total: ".$dinero."€ \";</script>";
+		//echo "<p id=\"dinero\" class=\"totalDinero\">Total: ".$dinero."€ </p>";realizar_reserva($_REQUEST["tipohab"],$_REQUEST["fecha_entrada"],$_REQUEST["fecha_salida"],$_REQUEST["hotel"],$_SESSION["user"]);
+
+
 	}
 	else {
 		echo "Error: ".$dbhandler->error();

@@ -63,9 +63,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_REQUEST["buscar"]=="true" && isset
     // echo "fecha_entrada".$_REQUEST["fecha_entrada"];
     // echo "fecha_salida".$_REQUEST["fecha_salida"];
     // echo "tipohab".$_REQUEST["tipohab"];
+    echo "preco".$_REQUEST["precio_hotel"];
 
-
-    realizar_reserva($_REQUEST["tipohab"],$_REQUEST["fecha_entrada"],$_REQUEST["fecha_salida"],$_REQUEST["hotel"],$_SESSION["user"]);
+    //realizar_reserva($_REQUEST["tipohab"],$_REQUEST["fecha_entrada"],$_REQUEST["fecha_salida"],$_REQUEST["hotel"],$_SESSION["user"]);
 
 }
 
