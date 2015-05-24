@@ -152,7 +152,6 @@ function realizar_reserva($tipohab,$fecha_entrada,$fecha_salida,$idHotel,$user){
 
     $service_url = "http://localhost/heisenburg/rest/reserva/".$tipohab."/".$fecha_entrada."/".$fecha_salida."/".$user."/".$idHotel;//funcion de reservar alojameinto
 
-
     $curl = curl_init($service_url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true); //to return the content
 
@@ -165,9 +164,13 @@ function realizar_reserva($tipohab,$fecha_entrada,$fecha_salida,$idHotel,$user){
         echo "reserva realizada correctamente</br>";
     }
     else{
+		$_REQUEST["precio_hotel"]=0;
         if($httpcode==204){
-            echo "no hay habitaciones disponibles</br>";
+            echo "no hay habitaciones disponibles o usuario no existe, debes darte de alta en la web de reservas</br>";
         }
+		/*elseif($httpcode==206){
+			echo "usuario no existe, debes darte de alta en la web de reservas</br>";
+		}*/
         else{
             echo "error Header:" . $httpcode . "</br>";
         }
@@ -182,13 +185,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"  && isset($_REQUEST['nombre']) && isset
 	$sql="INSERT INTO Participante(nombre,nombreUsuario,apellido,tipo) VALUES ('$_REQUEST[nombre]','antonio','$_REQUEST[apellido]','$_REQUEST[tipo]')";
 	if ($dbhandler->query($sql) === TRUE) {
 
-		//realizamos reserva
-		realizar_reserva($_REQUEST["tipohab"],$_REQUEST["fecha_entrada"],$_REQUEST["fecha_salida"],$_REQUEST["hotel"],$_SESSION["user"]);
-
 		$dinero=0;
+		if ($_REQUEST["buscar"]=="true" && isset($_REQUEST["hotel"]) ) {
+			//realizamos reserva
+			realizar_reserva($_REQUEST["tipohab"],$_REQUEST["fecha_entrada"],$_REQUEST["fecha_salida"],$_REQUEST["hotel"],$_SESSION["user"]);
+			$dinero+=$_REQUEST["precio_hotel"];
+		}
+
+
 		$dinero+=costePorElTipo($dbhandler,$_REQUEST[tipo]);
 		$dinero+=addparticiapante_Actividad($dbhandler);
-		$dinero+=$_REQUEST["precio_hotel"];
+
 		echo "<script> document.getElementById(\"dinero\").innerHTML = \"Total: ".$dinero."€ \";</script>";
 		//echo "<p id=\"dinero\" class=\"totalDinero\">Total: ".$dinero."€ </p>";realizar_reserva($_REQUEST["tipohab"],$_REQUEST["fecha_entrada"],$_REQUEST["fecha_salida"],$_REQUEST["hotel"],$_SESSION["user"]);
 
