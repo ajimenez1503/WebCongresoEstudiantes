@@ -412,23 +412,13 @@ input:focus::-webkit-input-placeholder{
 	color: #fafafa;
 }
 
-.hotel_derecha{
-	padding: 0 0 0 12px;
-	border: 1px solid black;
-	width: 340px;
-	float: right;
+.hotel{
+	width: 325px;
 	height: 320px;
 	background-color: #CDDBF0;
 }
 
-.hotel_izquierda{
-	border: 1px solid black;
-	padding: 0 0 0 12px;
-	float: left;
-	width: 340px;
-	height: 320px;
-	background-color: #CDDBF0;
-}
+
 
 #foto_hotel{
 	float: right;

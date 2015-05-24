@@ -129,12 +129,9 @@ function guardarCuota() {
 function mostrar_formulario_hotel(tipo){
     if(document.getElementById("deseoHotel").style.display=="block"){
 		document.getElementById("deseoHotel").style.display="none";
-        document.getElementById("mostrarHoteles").style.display="none";
-
     }
 	else{
 		document.getElementById("deseoHotel").style.display="block";
-        document.getElementById("mostrarHoteles").style.display="block";
     }
 
 }

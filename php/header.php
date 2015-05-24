@@ -51,8 +51,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_REQUEST['user']) && isset($_
                 otra solucion guardar en una cookie toda los parametros get
                 */
                 $row = $consulta->fetch_assoc();
-                $_SESSION['user']=$user;
-                $_SESSION['rol']=$row["rol"];
+                $_SESSION["user"]=$user;
+                $_SESSION["rol"]=$row["rol"];
                 header("location:index.php");
 			}
 			else{

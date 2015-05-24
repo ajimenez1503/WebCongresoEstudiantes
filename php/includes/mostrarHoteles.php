@@ -27,8 +27,10 @@ class Hotel{
     public function mostrar(){
         echo "<img id=\"foto_hotel\" src = \"http://127.0.0.1/heisenburg/".$this->imagen."\">";
         echo "<div>";
+        echo "<input type=\"checkbox\" name=\"hotel\" value=\"".$this->idAlojamiento."\" >";
         echo "<h2> HOTEL ".$this->nombre." </h2>";
-        echo "<h4>Precio desde: ".$this->precio." € </h4>";
+        echo "</input>";
+        echo "<h5>Precio: ".$this->precio."€</h5>";
         echo "<p>".$this->resumen."</p>";
         echo "</div>";
     }
@@ -58,16 +60,20 @@ if(isset($_POST["tipohab"]) && isset($_POST["fecha_entrada"]) && isset($_POST["f
             if($i%2==0){
                 echo "<tr>";
                 echo "<td>";
-                echo "<div class = \"hotel_izquierda\">";
-                $h->mostrar();
-                echo "</div><!-- end hotel_izquierda -->";
+                    echo "<div class =\"hotel\">";
+                        //echo "<input type=\"checkbox\" name=\"hotel\" value=\"".$h->idAlojamiento."\" >";
+                        $h->mostrar();
+                        //echo "</input>";
+                    echo "</div><!-- end hotel -->";
                 echo "</td>";
             }
             else{
                 echo "<td>";
-                echo "<div class = \"hotel_derecha\">";
-                $h->mostrar();
-                echo "</div><!-- end hotel_derecha -->";
+                    echo "<div class =\"hotel\">";
+                        //echo "<input type=\"checkbox\" name=\"hotel\" value=\"".$h->idAlojamiento."\" >";
+                        $h->mostrar();
+                        //echo "</input>";
+                    echo "</div><!-- end hotel -->";
                 echo "</td>";
                 echo "</tr>";
             }
