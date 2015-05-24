@@ -30,14 +30,11 @@
 
 
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST" && $_REQUEST["buscar"]=="true" && isset($_REQUEST["hotel"]) ) {
-    echo "hotel".$_REQUEST["hotel"];
-    echo "fecha_entrada".$_REQUEST["fecha_entrada"];
-    echo "fecha_salida".$_REQUEST["fecha_salida"];
-    echo "tipohab".$_REQUEST["tipohab"];
 
+//funcinon que realiza un reserva a partir de la api rest
+function realizar_reserva($tipohab,$fecha_entrada,$fecha_salida,$idHotel,$user){
 
-    $service_url = "http://localhost/heisenburg/rest/reserva/".$_REQUEST["tipohab"]."/".$_REQUEST["fecha_entrada"]."/".$_REQUEST["fecha_salida"]."/".$_SESSION["user"]."/".$_REQUEST["hotel"];//funcion de reservar alojameinto
+    $service_url = "http://localhost/heisenburg/rest/reserva/".$tipohab."/".$fecha_entrada."/".$fecha_salida."/".$user."/".$idHotel;//funcion de reservar alojameinto
 
 
     $curl = curl_init($service_url);
@@ -59,6 +56,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_REQUEST["buscar"]=="true" && isset
             echo "error Header:" . $httpcode . "</br>";
         }
     }
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && $_REQUEST["buscar"]=="true" && isset($_REQUEST["hotel"]) ) {
+    // echo "hotel".$_REQUEST["hotel"];
+    // echo "fecha_entrada".$_REQUEST["fecha_entrada"];
+    // echo "fecha_salida".$_REQUEST["fecha_salida"];
+    // echo "tipohab".$_REQUEST["tipohab"];
+
+
+    realizar_reserva($_REQUEST["tipohab"],$_REQUEST["fecha_entrada"],$_REQUEST["fecha_salida"],$_REQUEST["hotel"],$_SESSION["user"]);
+
 }
 
 ?>
