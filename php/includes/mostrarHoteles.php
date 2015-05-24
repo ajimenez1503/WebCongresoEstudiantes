@@ -49,28 +49,31 @@ if(isset($_POST["tipohab"]) && isset($_POST["fecha_entrada"]) && isset($_POST["f
     curl_close($curl);
     $decoded=json_decode($result,true);
     //echo "Header:" . $httpcode . "</br>";
-    if($httpcode==200){
-        /*
-        foreach ($decoded as  $valor) {
-            $h = new Hotel;
-            $h->read_hotel($valor);
-            $h->mostrar();
-        }*/
-        $size=count($decoded);
+    $size=count($decoded);
+    if($httpcode==200 && $size>0){//mostramos los hotels en forma de tabla
+        echo "<table>";
         for($i = 0; $i<$size; $i++) {
             $h = new Hotel;
             $h->read_hotel($decoded[$i]);
             if($i%2==0){
+                echo "<tr>";
+                echo "<td>";
                 echo "<div class = \"hotel_izquierda\">";
                 $h->mostrar();
                 echo "</div><!-- end hotel_izquierda -->";
+                echo "</td>";
             }
             else{
+                echo "<td>";
                 echo "<div class = \"hotel_derecha\">";
                 $h->mostrar();
                 echo "</div><!-- end hotel_derecha -->";
+                echo "</td>";
+                echo "</tr>";
             }
         }
+        echo "</table>";
+
     }
     else{
         echo "error Header:" . $httpcode . "</br>";
