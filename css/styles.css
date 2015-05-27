@@ -412,6 +412,15 @@ input:focus::-webkit-input-placeholder{
 	color: #fafafa;
 }
 
+#boton_apuntarse{
+	border: 5px solid #0483a0;
+	height: 35px;
+	width: 70px;
+	background-color: #0483a0;
+	color: #fafafa;
+	font-size:21px;
+}
+
 #mostrarHoteles{
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -433,4 +442,15 @@ input:focus::-webkit-input-placeholder{
 	padding-top: 5px;
 	padding-right: 3px;
 	padding-left: 3px;
+}
+
+#precio_dinamico{
+	margin-top: 10px;
+	border: 5px solid #0483a0;
+	height: 32px;
+	width: 70px;
+	background-color: #0483a0;
+	color: #fafafa;
+	font-size:21px;
+	float:right;
 }

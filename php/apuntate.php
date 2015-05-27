@@ -47,6 +47,7 @@ function mostrarcuotasyactividades(){
 ?>
 
 <div class ="contacta">
+	<label id="precio_dinamico" >Precio</label>
 <form method="post" action="index.php?page=apuntate" >
 	<h3>Datos participante :</h3>
 	<label>Nombre</label> <input name="nombre" type="text" placeholder="Introduce nombre."  required="true" autofocus><br>
@@ -76,11 +77,7 @@ function mostrarcuotasyactividades(){
 		</div>
 	</div> <!-- end deseohotel -->
 
-
-
-
-
-	<button type="submit" name="submit">Enviar</button>
+	<button id="boton_apuntarse" type="submit" name="submit">Enviar</button>
 </form>
 </br>
 <p id="dinero" class="totalDinero"></p>
