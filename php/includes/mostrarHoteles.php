@@ -27,13 +27,13 @@ class Hotel{
     public function mostrar(){
         echo "<img id=\"foto_hotel\" src = \"http://127.0.0.1/heisenburg/".$this->imagen."\">";
         echo "<div>";
-        //ponemos un formulario oculto para el precio
-        echo "<input id=\"precio_hotel\" type=\"hidden\" name=\"precio_hotel\" value=\"".$this->precio."\"></input>";
-        echo "<input type=\"radio\" name=\"hotel\" value=\"".$this->idAlojamiento."\" >";
-        echo "<h2> HOTEL ".$this->nombre." </h2>";
-        echo "</input>";
-        echo "<h5>Precio: ".$this->precio."€</h5>";
-        echo "<p>".$this->resumen."</p>";
+            //ponemos un formulario oculto para el precio
+            echo "<input id=\"precio_hotel\" type=\"hidden\" name=\"precio_hotel\" value=\"".$this->precio."\"></input>";
+            echo "<input type=\"radio\" name=\"hotel\" value=\"".$this->idAlojamiento."\" >";
+            echo "<h2> HOTEL ".$this->nombre." </h2>";
+            echo "</input>";
+            echo "<h5>Precio: ".$this->precio."€</h5>";
+            echo "<p>".$this->resumen."</p>";
         echo "</div>";
     }
 }
@@ -81,7 +81,6 @@ if(isset($_POST["tipohab"]) && isset($_POST["fecha_entrada"]) && isset($_POST["f
             }
         }
         echo "</table>";
-
     }
     else{
         echo "error Header:" . $httpcode . "</br>";

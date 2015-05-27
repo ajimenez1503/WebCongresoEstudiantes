@@ -412,6 +412,11 @@ input:focus::-webkit-input-placeholder{
 	color: #fafafa;
 }
 
+#mostrarHoteles{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
 .hotel{
 	width: 325px;
 	height: 320px;
