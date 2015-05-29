@@ -34,9 +34,15 @@ class db_handler{
             die("Connection failed: " . $this->connection->connect_error);
         }
     }
-    /*public function count ($table){
-        return $this->connection->query("select count(*) from table ".$table);
-    }*/
+    public function count ($table){
+        $table=$this->connection->query("select count(*) from ".$table);
+        if ($table->num_rows > 0) {
+            $row = $table->fetch_assoc();
+            return $row["count(*)"];
+        }else{
+            return 0;
+        }
+    }
 
 }
 ?>
