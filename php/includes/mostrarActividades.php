@@ -15,7 +15,7 @@ if(isset($_POST["idCuota"])){
                 echo "<input checked=\"checked\" type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]."\"  id=\"". $row["id"]."\" onclick=\"alwayschecked(". $row["id"].")\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
 			}
 			else{
-				echo "<input type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]."\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
+				echo "<input id=\"". $row["id"]."\" type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]."\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
 			}
     	}
     	echo "</br>";

@@ -21,7 +21,8 @@ function costePorActividad($dbhandler){
 		$table=$dbhandler->query($ql);
 		if ($table->num_rows > 0) {
 			while($row = $table->fetch_assoc()) {
-				if(isset($_POST[$row["id"]])){//si esta selecionada la activida
+				$aux="act".$row["id"];
+				if(isset($_POST["$aux"])){//si esta selecionada la activida
 						$coste+=$row["precio"];//añadimoscoste
 				}
 			}
@@ -32,23 +33,22 @@ function costePorActividad($dbhandler){
 
 //funcion que calcula el preioc total de la incripcion
 //function calcularprecio(){
-if(isset($_POST["buscar_precio"])){
-	/*require "dbhandler.php";
+if(isset($_POST["buscar_precio"]) && isset($_POST["tipoCuota"])){
+	require "dbhandler.php";
 	$dbhandler = new db_handler("localhost","congreso");
 	$dbhandler->connect();
 	$dinero=0;
-	if ($_REQUEST["buscar"]=="true" && isset($_REQUEST["hotel"]) ) {
+
+	/*if ($_REQUEST["buscar"]=="true" && isset($_REQUEST["hotel"]) ) {
 		$dinero+=$_REQUEST["precio_hotel"];
-	}
-	$dinero+=costePorElTipo($dbhandler,$_REQUEST["tipo"]);
+	}*/
+
+	$dinero+=costePorElTipo($dbhandler,$_POST["tipoCuota"]);
 	$dinero+=costePorActividad($dbhandler);
 
-
+	//echo $_POST["tipoCuota"];
 	$dbhandler->close();
-	//return $dinero;
-	//echo $dinero."€";
-	echo $dbhandler->count(Actividad);
-	$dbhandler->close();*/
+	echo $dinero."€";
 }
 
 ?>
