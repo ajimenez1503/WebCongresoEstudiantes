@@ -12,11 +12,11 @@ if(isset($_POST["idCuota"])){
     	while($row = $table->fetch_assoc()) {
     		$sql="SELECT * FROM Cuotas_Actividades WHERE Cuotas_Actividades.id_Actividad =". $row["id"]." AND Cuotas_Actividades.id_cuota =".$cuota;
     		if($dbhandler->query($sql)->num_rows > 0){
-    			echo "<input checked=\"checked\" type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]."\"  id=\"". $row["id"]."\" onclick=\"alwayschecked(". $row["id"].")\">   ". $row["nombre"]."<br>";
-    		}
-    		else{
-    			echo "<input type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]."\">   ". $row["nombre"]."<br>";
-    		}
+                echo "<input checked=\"checked\" type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]."\"  id=\"". $row["id"]."\" onclick=\"alwayschecked(". $row["id"].")\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
+			}
+			else{
+				echo "<input type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]."\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
+			}
     	}
     	echo "</br>";
     	echo "</div>";//mostrarActividades

@@ -5,7 +5,7 @@ function mostrarcuotas($dbhandler){
 	if ($table->num_rows > 0) {
 		// output data of each row
 		echo "<label><h4>Ocupación</h4></label>";
-		echo "<select  onclick=\"guardarCuota()\" name=\"tipo\" id=\"tipo\">";
+		echo "<select onclick=\"precio_inscriptcion();guardarCuota()\" name=\"tipo\" id=\"tipo\">";
 		while($row = $table->fetch_assoc()) {
 			echo "<option  id=\"". $row["tipo"]."\" value=\"". $row["tipo"]."\">". $row["tipo"]." por ". $row["importe"]." €</option>";
 		}
@@ -24,6 +24,7 @@ function mostraractividades($dbhandler,$cuota){
 		while($row = $table->fetch_assoc()) {
 			$sql="SELECT * FROM Cuotas_Actividades WHERE Cuotas_Actividades.id_Actividad =". $row["id"]." AND Cuotas_Actividades.id_cuota =".$cuota;
 			if($dbhandler->query($sql)->num_rows > 0){
+
 				echo "<input checked=\"checked\" type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]."\"  id=\"". $row["id"]."\" onclick=\"alwayschecked(". $row["id"].")\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
 			}
 			else{
@@ -82,9 +83,6 @@ function mostrarcuotasyactividades(){
 </br>
 <p id="dinero" class="totalDinero"></p>
 </div> <!-- end contacta -->
-<p>
-Para apuntarse es necesario rellenar el formulario y enviar una transferencia al proximo numero de cuenta: 123456789.
-</p>
 
 <p>
 Manda un mensaje a <a href="congreso@ugr.es">congreso@ugr.es </a> en caso de duda.

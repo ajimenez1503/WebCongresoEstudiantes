@@ -157,3 +157,20 @@ function buscar_hotel(){
 	xmlhttp.send("tipohab="+tipohab+"&fecha_salida="+fecha_salida+"&fecha_entrada="+fecha_entrada);//enviamos la id de la cuota sleecioanda
 
 }
+
+
+//fucnion ajax muestre el preio total de incripcion
+function precio_inscriptcion(){
+    console.log("hola");
+    var xmlhttp;
+	xmlhttp=new XMLHttpRequest();
+	xmlhttp.onreadystatechange=function(){
+		if (xmlhttp.readyState==4 && xmlhttp.status==200){
+            document.getElementById("precio_dinamico").innerHTML=xmlhttp.responseText;
+		}
+	}
+	xmlhttp.open("POST","php/includes/precio.php",true);
+	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlhttp.send("buscar_precio=true");//enviamos la id de la cuota sleecioanda
+
+}
