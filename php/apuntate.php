@@ -1,7 +1,7 @@
 <!--Copyright ©. All rights reserved. Designed by Antonio Jimenez Martinez y Andres Ortiz Corrales -->
 <?php
 function mostrarcuotas($dbhandler){
-	$n_actividades=$dbhandler->count("Actividad");
+	$n_actividades=$dbhandler->count("Actividad");//calculamos el numero de actividades para pasarlo a la funcion javaScript
 	$table=$dbhandler->query("SELECT * FROM Cuota");
 	if ($table->num_rows > 0) {
 		// output data of each row
@@ -18,6 +18,7 @@ function mostrarcuotas($dbhandler){
 
 
 function mostraractividades($dbhandler,$cuota){
+	$n_actividades=$dbhandler->count("Actividad");//calculamos el numero de actividades para pasarlo a la funcion javaScript
 	$table=$dbhandler->query("SELECT * FROM Actividad");
 	if ($table->num_rows > 0) {
 		// output data of each row
@@ -27,10 +28,10 @@ function mostraractividades($dbhandler,$cuota){
 			$sql="SELECT * FROM Cuotas_Actividades WHERE Cuotas_Actividades.id_Actividad =". $row["id"]." AND Cuotas_Actividades.id_cuota =".$cuota;
 			if($dbhandler->query($sql)->num_rows > 0){
 
-				echo "<input checked=\"checked\" type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]."\"  id=\"". $row["id"]."\" onclick=\"alwayschecked(". $row["id"].")\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
+				echo "<input checked=\"checked\" type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]."\"  id=\"". $row["id"]."\" onclick=\"alwayschecked(". $row["id"].");precio_inscriptcion(".$n_actividades.")\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
 			}
 			else{
-				echo "<input id=\"". $row["id"]."\" type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]."\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
+				echo "<input id=\"". $row["id"]."\" type=\"checkbox\" name=\"". $row["id"]."\"   onclick=\"precio_inscriptcion(".$n_actividades.")\"  value=\"". $row["nombre"]."\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
 			}
 		}
 		echo "</br>";
