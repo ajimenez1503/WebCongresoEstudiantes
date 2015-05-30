@@ -454,3 +454,13 @@ input:focus::-webkit-input-placeholder{
 	font-size:21px;
 	float:right;
 }
+
+/*pagina de participantes*/
+.lista_particiapantes{
+	list-style-type:circle;
+	padding-left: 45px;
+}
+
+.lista_particiapantes li:hover {
+    background-color: rgb(249, 160, 0);
+}

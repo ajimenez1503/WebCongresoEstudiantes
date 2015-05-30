@@ -4,17 +4,23 @@ function mostrarParticipantes(){
     $dbhandler = new db_handler("localhost","congreso");
     $dbhandler->connect();
     $table=$dbhandler->query("SELECT * FROM Participante");
+    echo "<div class=\"lista_particiapantes\">";
     if ($table->num_rows > 0) {
-        // output data of each row
+
+        echo "<ul>";
         while($row = $table->fetch_assoc()) {
-            echo "<a href=\"./index.php?page=participantes&id=".$row["id"]."\"><p>nombre: " . $row["nombre"]. " - Apellido: " . $row["apellido"]. "</p></a>";
+            echo "<li><a href=\"./index.php?page=participantes&id=".$row["id"]."\"> <p>Participante: ". $row["nombre"]." ". $row["apellido"]."</p></a></li>";
         }
+        echo "</ul>";
+
     } else {
         echo "no existen participantes";
     }
+    echo "</div>";//lista participantes
     $dbhandler->close();
 }
 
+//mostramos lo datos especificos del participante, como su grupo de actividades.
 function mostrarDatosParticipante($id){
     $dbhandler = new db_handler("localhost","congreso");
     $dbhandler->connect();
@@ -22,8 +28,7 @@ function mostrarDatosParticipante($id){
     $table=$dbhandler->query("SELECT * FROM Participante WHERE id=".$id);
     if ($table->num_rows > 0) {
         echo "<div class =\"contacta\">";
-        // output data of each row
-        $row = $table->fetch_assoc();
+        $row = $table->fetch_assoc();// output data of each row
 
         echo "<p>nombre: " . $row["nombre"]. " - Apellido: " . $row["apellido"]. "</p>";
         echo "<p>Tipo de participante: " . $row["tipo"]. "</p>";
@@ -47,6 +52,7 @@ function mostrarDatosParticipante($id){
         echo "no existen el participante";
     }
 
+    //volver a la lista de participantes
     echo "<div class=\"menu_ponencias\">";
         echo "<ul>";
             echo "<li ><a href=\"./index.php?page=participantes\">Vovler a lista participantes</a></li>";
@@ -58,15 +64,17 @@ function mostrarDatosParticipante($id){
 
 
 echo "<div>";
-echo "<h2> Participantes del concurso</h4>";
-echo "<p>";
+    echo "Buscar participante <input type=\"text\" id=\"buscador\" name=\"buscador\" onkeyup=\"buscar_participante_ajax()\" required />";
 
-if(!isset($_GET['id']) || empty($_GET['id'])){
-    mostrarParticipantes();
-}
-else{
-    mostrarDatosParticipante($_GET['id']);
-}
-echo "</p>";
+    echo "<h2> Participantes del concurso</h4>";
+
+    echo "<div id=\"buscador_participantes\">";
+        if(!isset($_GET['id']) || empty($_GET['id'])){
+            mostrarParticipantes();
+        }
+        else{
+            mostrarDatosParticipante($_GET['id']);
+        }
+    echo "</div>";//buscador_participantes
 echo "</div>";
 ?>

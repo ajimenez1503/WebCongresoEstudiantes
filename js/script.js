@@ -197,7 +197,23 @@ function precio_inscriptcion(n_actividades,n_hoteles){
 	}
 	xmlhttp.open("POST","php/includes/precio.php",true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    console.log("buscar_precio=true&tipoCuota="+tipoCuota+actividades_elegidas+hotel_elegido);
+//    console.log("buscar_precio=true&tipoCuota="+tipoCuota+actividades_elegidas+hotel_elegido);
 	xmlhttp.send("buscar_precio=true&tipoCuota="+tipoCuota+actividades_elegidas+hotel_elegido);//enviamos la id de la cuota sleecioanda
 
+}
+
+
+function buscar_participante_ajax(){
+
+    var n=document.getElementById("buscador").value;
+        var xmlhttp;
+        xmlhttp=new XMLHttpRequest();
+        xmlhttp.onreadystatechange=function(){
+            if (xmlhttp.readyState==4 && xmlhttp.status==200){
+                    document.getElementById("buscador_participantes").innerHTML=xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("POST","php/includes/buscar_participante.php",true);
+        xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xmlhttp.send("nombre="+n);
 }
