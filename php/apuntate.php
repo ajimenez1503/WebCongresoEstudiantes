@@ -11,7 +11,6 @@ function mostrarcuotas($dbhandler){
 			echo "<option  id=\"". $row["tipo"]."\" value=\"". $row["tipo"]."\">". $row["tipo"]." por ". $row["importe"]." €</option>";
 		}
 		echo "</select>";
-		$n_actividades=$dbhandler->count("Actividad");
 	}
 }
 
