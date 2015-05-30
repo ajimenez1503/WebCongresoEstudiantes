@@ -46,6 +46,10 @@ function mostrarcuotasyactividades(){
 	mostrarcuotas($dbhandler);
 	$idCuota=1;
 	mostraractividades($dbhandler,$idCuota);
+
+	//para poner el precio inicialemtne
+	$n_actividades=$dbhandler->count("Actividad");//calculamos el numero de actividades para pasarlo a la funcion javaScript
+	echo "<script>precio_inscriptcion(".$n_actividades.")</script>";
 	$dbhandler->close();
 }
 ?>
