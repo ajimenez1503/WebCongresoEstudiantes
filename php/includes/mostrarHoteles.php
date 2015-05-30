@@ -24,12 +24,12 @@ class Hotel{
     }
 
 
-    public function mostrar(){
+    public function mostrar($i,$n_actividades,$n_hoteles){
         echo "<img id=\"foto_hotel\" src = \"http://127.0.0.1/heisenburg/".$this->imagen."\">";
         echo "<div>";
             //ponemos un formulario oculto para el precio
-            echo "<input id=\"precio_hotel\" type=\"hidden\" name=\"precio_hotel\" value=\"".$this->precio."\"></input>";
-            echo "<input type=\"radio\" name=\"hotel\" value=\"".$this->idAlojamiento."\" >";
+            echo "<input id=\"precio_hotel".$i."\" type=\"hidden\" name=\"precio_hotel\" value=\"".$this->precio."\"></input>";
+            echo "<input  onclick=\"precio_inscriptcion(".$n_actividades.",".$n_hoteles.")\"  id=\"hotel".$i."\" type=\"radio\" name=\"hotel\" value=\"".$this->idAlojamiento."\" >";
             echo "<h2> HOTEL ".$this->nombre." </h2>";
             echo "</input>";
             echo "<h5>Precio: ".$this->precio."€</h5>";
@@ -41,6 +41,16 @@ class Hotel{
 
 if(isset($_POST["tipohab"]) && isset($_POST["fecha_entrada"]) && isset($_POST["fecha_entrada"])){
 
+    //calculamos el numoer de actividades
+    require "dbhandler.php";
+    $dbhandler = new db_handler("localhost","congreso");
+	$dbhandler->connect();
+	//para poner el precio inicialemtne
+	$n_actividades=$dbhandler->count("Actividad");//calculamos el numero de actividades para pasarlo a la funcion javaScript
+
+	$dbhandler->close();
+
+    /////////////
 
     $service_url = "http://localhost/heisenburg/rest/hotel/".$_POST["tipohab"]."/".$_POST["fecha_entrada"]."/".$_POST["fecha_salida"];//funcion de buscar alojameintos
 
@@ -64,7 +74,7 @@ if(isset($_POST["tipohab"]) && isset($_POST["fecha_entrada"]) && isset($_POST["f
                 echo "<td>";
                     echo "<div class =\"hotel\">";
                         //echo "<input type=\"checkbox\" name=\"hotel\" value=\"".$h->idAlojamiento."\" >";
-                        $h->mostrar();
+                        $h->mostrar($i,$n_actividades,$size);
                         //echo "</input>";
                     echo "</div><!-- end hotel -->";
                 echo "</td>";
@@ -73,7 +83,7 @@ if(isset($_POST["tipohab"]) && isset($_POST["fecha_entrada"]) && isset($_POST["f
                 echo "<td>";
                     echo "<div class =\"hotel\">";
                         //echo "<input type=\"checkbox\" name=\"hotel\" value=\"".$h->idAlojamiento."\" >";
-                        $h->mostrar();
+                        $h->mostrar($i,$n_actividades,$size);
                         //echo "</input>";
                     echo "</div><!-- end hotel -->";
                 echo "</td>";

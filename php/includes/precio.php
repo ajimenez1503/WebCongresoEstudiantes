@@ -39,9 +39,9 @@ if(isset($_POST["buscar_precio"]) && isset($_POST["tipoCuota"])){
 	$dbhandler->connect();
 	$dinero=0;
 
-	/*if ($_REQUEST["buscar"]=="true" && isset($_REQUEST["hotel"]) ) {
-		$dinero+=$_REQUEST["precio_hotel"];
-	}*/
+	if (isset($_POST["precio_hotel"]) ) {
+		$dinero+=$_POST["precio_hotel"];
+	}
 
 	$dinero+=costePorElTipo($dbhandler,$_POST["tipoCuota"]);
 	$dinero+=costePorActividad($dbhandler);

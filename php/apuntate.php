@@ -6,7 +6,7 @@ function mostrarcuotas($dbhandler){
 	if ($table->num_rows > 0) {
 		// output data of each row
 		echo "<label><h4>Cuota</h4></label>";
-		echo "<select onclick=\"guardarCuota();precio_inscriptcion(".$n_actividades.")\" name=\"tipo\" id=\"tipo\">";
+		echo "<select onclick=\"guardarCuota();precio_inscriptcion(".$n_actividades.",0)\" name=\"tipo\" id=\"tipo\">";
 		while($row = $table->fetch_assoc()) {
 			echo "<option  id=\"". $row["tipo"]."\" value=\"". $row["tipo"]."\">". $row["tipo"]." por ". $row["importe"]." €</option>";
 		}
@@ -27,10 +27,10 @@ function mostraractividades($dbhandler,$cuota){
 			$sql="SELECT * FROM Cuotas_Actividades WHERE Cuotas_Actividades.id_Actividad =". $row["id"]." AND Cuotas_Actividades.id_cuota =".$cuota;
 			if($dbhandler->query($sql)->num_rows > 0){
 
-				echo "<input checked=\"checked\" type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]."\"  id=\"". $row["id"]."\" onclick=\"alwayschecked(". $row["id"].");precio_inscriptcion(".$n_actividades.")\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
+				echo "<input checked=\"checked\" type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]."\"  id=\"". $row["id"]."\" onclick=\"alwayschecked(". $row["id"].");precio_inscriptcion(".$n_actividades.",0)\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
 			}
 			else{
-				echo "<input id=\"". $row["id"]."\" type=\"checkbox\" name=\"". $row["id"]."\"   onclick=\"precio_inscriptcion(".$n_actividades.")\"  value=\"". $row["nombre"]."\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
+				echo "<input id=\"". $row["id"]."\" type=\"checkbox\" name=\"". $row["id"]."\"   onclick=\"precio_inscriptcion(".$n_actividades.",0)\"  value=\"". $row["nombre"]."\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
 			}
 		}
 		echo "</br>";
@@ -45,10 +45,15 @@ function mostrarcuotasyactividades(){
 	mostrarcuotas($dbhandler);
 	$idCuota=1;
 	mostraractividades($dbhandler,$idCuota);
+	$dbhandler->close();
+}
 
+function calcular_precio_inicialmente(){
+	$dbhandler = new db_handler("localhost","congreso");
+	$dbhandler->connect();
 	//para poner el precio inicialemtne
 	$n_actividades=$dbhandler->count("Actividad");//calculamos el numero de actividades para pasarlo a la funcion javaScript
-	echo "<script>precio_inscriptcion(".$n_actividades.")</script>";
+	echo "<script>precio_inscriptcion(".$n_actividades.",0)</script>";
 	$dbhandler->close();
 }
 ?>
@@ -65,8 +70,8 @@ function mostrarcuotasyactividades(){
 
 
 	<label> Buscar hotel:</label>
-	<input onclick="mostrar_formulario_hotel()" type="radio" name="buscar" value="true" >Si</input>
-	<input onclick="mostrar_formulario_hotel()" type="radio" name="buscar" value="false" checked>No</input>
+	<input onclick="mostrar_formulario_hotel()" id="buscar_hotel_true" type="radio" name="buscar" value="true" >Si</input>
+	<input onclick="mostrar_formulario_hotel()" id="buscar_hotel_false" type="radio" name="buscar" value="false" checked>No</input>
 	<br><br>
 	<div id="deseoHotel">
 		<input id="fecha_entrada_formulario" type="date" name="fecha_entrada" min="2015-01-01" max="2016-01-01" value="<?php echo date("Y-m-d");?>"></input>
@@ -86,6 +91,7 @@ function mostrarcuotasyactividades(){
 
 	<button id="boton_apuntarse" type="submit" name="submit">Enviar</button>
 </form>
+<?php calcular_precio_inicialmente();?>
 </br>
 <p id="dinero" class="totalDinero"></p>
 </div> <!-- end contacta -->
@@ -93,7 +99,6 @@ function mostrarcuotasyactividades(){
 <p>
 Manda un mensaje a <a href="congreso@ugr.es">congreso@ugr.es </a> en caso de duda.
 </p>
-
 
 <?php
 
@@ -198,14 +203,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"  && isset($_REQUEST['nombre']) && isset
 		$dinero+=addparticiapante_Actividad($dbhandler);
 
 		echo "<script> document.getElementById(\"dinero\").innerHTML = \"Total: ".$dinero."€ \";</script>";
-		//echo "<p id=\"dinero\" class=\"totalDinero\">Total: ".$dinero."€ </p>";realizar_reserva($_REQUEST["tipohab"],$_REQUEST["fecha_entrada"],$_REQUEST["fecha_salida"],$_REQUEST["hotel"],$_SESSION["user"]);
-
-
 	}
 	else {
 		echo "Error: ".$dbhandler->error();
 	}
-
 	$dbhandler->close();
 }
 

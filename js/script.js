@@ -160,14 +160,33 @@ function buscar_hotel(){
 
 
 //fucnion ajax muestre el preio total de incripcion
-function precio_inscriptcion(n_actividades){
+function precio_inscriptcion(n_actividades,n_hoteles){
+    //comprobamos la cuota elegida
     var tipoCuota=document.getElementById("tipo").value ;//couta selecionada
+    //comprobamos las actividades elegidas
     var actividades_elegidas="";
     for (i =1;i<=n_actividades; i++) {
         if(document.getElementById(i).checked==true){
             actividades_elegidas=actividades_elegidas.concat("&act"+i+"=checked");
         }
     }
+
+    //comprobamos hotel
+    var hotel_elegido="";
+    var aux="";
+    if(document.getElementById("buscar_hotel_true").checked==true){
+        for (i =0;i<n_hoteles; i++) {
+            aux="hotel".concat(i);
+            if(document.getElementById(aux).checked==true){
+                //precio
+                aux="precio_hotel".concat(i);
+                aux=document.getElementById(aux).value;//tomamos el precio
+                hotel_elegido="&precio_hotel="+aux;
+                break;
+            }
+        }
+    }
+
 
     var xmlhttp;
 	xmlhttp=new XMLHttpRequest();
@@ -178,7 +197,7 @@ function precio_inscriptcion(n_actividades){
 	}
 	xmlhttp.open("POST","php/includes/precio.php",true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    console.log("buscar_precio=true&tipoCuota="+tipoCuota+actividades_elegidas);
-	xmlhttp.send("buscar_precio=true&tipoCuota="+tipoCuota+actividades_elegidas);//enviamos la id de la cuota sleecioanda
+    console.log("buscar_precio=true&tipoCuota="+tipoCuota+actividades_elegidas+hotel_elegido);
+	xmlhttp.send("buscar_precio=true&tipoCuota="+tipoCuota+actividades_elegidas+hotel_elegido);//enviamos la id de la cuota sleecioanda
 
 }
