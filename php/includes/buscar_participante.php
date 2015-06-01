@@ -2,7 +2,6 @@
 
 if(isset($_POST["nombre"])){
     $q=$_POST["nombre"];
-    echo $q;
     require "dbhandler.php";
     $dbhandler = new db_handler("localhost","congreso");
     $dbhandler->connect();
