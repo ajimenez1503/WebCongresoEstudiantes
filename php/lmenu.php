@@ -33,6 +33,7 @@
             <div class="slide"><a href="http://www.ugr.es/"><img src="images/patrocinador/ugr.png" alt="ugr" title="ugr" width="230px"height="150"></a></div>
             <div class="slide"><a href="http://biotic.ugr.es/"><img src="images/patrocinador/ceibiotic.png" title="ceibiotic" alt="ceibiotic" width="230px" height="150"></a></div>
             <div class="slide"><a href="http://osl.ugr.es/"><img src="images/patrocinador/osl.png" alt="osl" title="osl" width="230px" height="150"></a></div>
+            <div class="slide"><a href="http://cevug.ugr.es/"><img src="images/patrocinador/cevug.png" alt="cebug" title="cebug" width="230px"height="150"></a></div>
 
         </div> <!-- /slidesContainer-->
     </div> <!-- /slider -->

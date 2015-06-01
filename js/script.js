@@ -6,27 +6,22 @@ function pausecomp(millis){
 
 }
 function rotar(){
-	var timer = setInterval(sliderScroll, 10);
-	//230px ancho ventana
-	//Desplaza el contenedor derecha
+    //230px ancho ventana
+    //Desplaza el contenedor derecha
     var slider =document.getElementById("slider");
 	    // crea el temporizador
 	var timer = setInterval(sliderScroll, 10);
 	//Asigna el ancho total de los slides al contenedor
 	//La anchura total se obtiene multiplicando la medida de un slide por el nÃºmero de slides)
-	document.getElementById("slidesContainer").style.width="920px";//230*4=920
+	document.getElementById("slidesContainer").style.width="1150px";//230*5=1150px
 	var incremento=0;
-	var totalWidth =690;//4*230-230=690//Calcula la anchura total menos el ultimo slide.
+	var totalWidth =920;//5*230-230=920//Calcula la anchura total menos el ultimo slide.
 	var position=0;
 	function sliderScroll(){
+        incremento=position+1;
 	    position =document.getElementById("slider").scrollLeft; //Calcula la posicion actual del contenedor
-		//si estamos al inicio de una imagne que se pare durante 1seg
-		if(position%230==0){
-			pausecomp(1000);
-		}
-		//movemos scroll
-		incremento=position+1;
-		if(incremento>totalWidth){//si es el final del scroll -> volvmeos a empezar
+
+		if(incremento>=totalWidth){//si es el final del scroll -> volvmeos a empezar
 			slider.scrollLeft=0;
 		}
 		else{
