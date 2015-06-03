@@ -170,15 +170,17 @@ function precio_inscriptcion(n_actividades){
     var tipoCuota=document.getElementById("tipo").value ;//couta selecionada
     //comprobamos las actividades elegidas
     var actividades_elegidas="";
+    var aux="";
     for (i =1;i<=n_actividades; i++) {
-        if(document.getElementById(i).checked==true){
+        aux="actividad".concat(i);
+        if(document.getElementById(aux).checked==true){
             actividades_elegidas=actividades_elegidas.concat("&act"+i+"=checked");
         }
     }
 
     //comprobamos hotel
     var hotel_elegido="";
-    var aux="";
+    aux="";
     if(document.getElementById("buscar_hotel_true").checked==true){
         n_hoteles=calcular_numero_hoteles();
         for (i =0;i<n_hoteles; i++) {
