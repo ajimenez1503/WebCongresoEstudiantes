@@ -29,7 +29,7 @@ class Hotel{
         echo "<div>";
             //ponemos un formulario oculto para el precio
             echo "<input id=\"precio_hotel".$i."\" type=\"hidden\" name=\"precio_hotel\" value=\"".$this->precio."\"></input>";
-            echo "<input  onclick=\"precio_inscriptcion(".$n_actividades.",".$n_hoteles.")\"  id=\"hotel".$i."\" type=\"radio\" name=\"hotel\" value=\"".$this->idAlojamiento."\" >";
+            echo "<input  onclick=\"precio_inscriptcion(".$n_actividades.")\"  id=\"hotel".$i."\" type=\"radio\" name=\"hotel\" value=\"".$this->idAlojamiento."\" >";
             echo "<h2> HOTEL ".$this->nombre." </h2>";
             echo "</input>";
             echo "<h5>Precio: ".$this->precio."€</h5>";
@@ -65,7 +65,7 @@ if(isset($_POST["tipohab"]) && isset($_POST["fecha_entrada"]) && isset($_POST["f
     //echo "Header:" . $httpcode . "</br>";
     $size=count($decoded);
     if($httpcode==200 && $size>0){//mostramos los hotels en forma de tabla
-        echo "<table>";
+        echo "<table id=\"tabla_hoteles\" >";
         for($i = 0; $i<$size; $i++) {
             $h = new Hotel;
             $h->read_hotel($decoded[$i]);

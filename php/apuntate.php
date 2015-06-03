@@ -6,7 +6,7 @@ function mostrarcuotas($dbhandler){
 	if ($table->num_rows > 0) {
 		// output data of each row
 		echo "<label><h4>Cuota</h4></label>";
-		echo "<select onclick=\"guardarCuota();precio_inscriptcion(".$n_actividades.",0)\" name=\"tipo\" id=\"tipo\">";
+		echo "<select onclick=\"guardarCuota();precio_inscriptcion(".$n_actividades.")\" name=\"tipo\" id=\"tipo\">";
 		while($row = $table->fetch_assoc()) {
 			echo "<option  id=\"". $row["tipo"]."\" value=\"". $row["tipo"]."\">". $row["tipo"]." por ". $row["importe"]." €</option>";
 		}
@@ -27,10 +27,10 @@ function mostraractividades($dbhandler,$cuota){
 			$sql="SELECT * FROM Cuotas_Actividades WHERE Cuotas_Actividades.id_Actividad =". $row["id"]." AND Cuotas_Actividades.id_cuota =".$cuota;
 			if($dbhandler->query($sql)->num_rows > 0){
 
-				echo "<input checked=\"checked\" type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]."\"  id=\"". $row["id"]."\" onclick=\"alwayschecked(". $row["id"].");precio_inscriptcion(".$n_actividades.",0)\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
+				echo "<input checked=\"checked\" type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]."\"  id=\"". $row["id"]."\" onclick=\"alwayschecked(". $row["id"].");precio_inscriptcion(".$n_actividades.")\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
 			}
 			else{
-				echo "<input id=\"". $row["id"]."\" type=\"checkbox\" name=\"". $row["id"]."\"   onclick=\"precio_inscriptcion(".$n_actividades.",0)\"  value=\"". $row["nombre"]."\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
+				echo "<input id=\"". $row["id"]."\" type=\"checkbox\" name=\"". $row["id"]."\"   onclick=\"precio_inscriptcion(".$n_actividades.")\"  value=\"". $row["nombre"]."\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
 			}
 		}
 		echo "</br>";
@@ -53,7 +53,7 @@ function calcular_precio_inicialmente(){
 	$dbhandler->connect();
 	//para poner el precio inicialemtne
 	$n_actividades=$dbhandler->count("Actividad");//calculamos el numero de actividades para pasarlo a la funcion javaScript
-	echo "<script>precio_inscriptcion(".$n_actividades.",0)</script>";
+	echo "<script>precio_inscriptcion(".$n_actividades.")</script>";
 	$dbhandler->close();
 }
 ?>

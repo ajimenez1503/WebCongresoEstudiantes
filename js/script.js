@@ -153,9 +153,19 @@ function buscar_hotel(){
 
 }
 
+function calcular_numero_hoteles(){
+    var n_hoteles=0;
+    var filas = document.getElementById("tabla_hoteles").rows.length;//calculmaos el numero de filas
+    var i;
+    for(i=0;i<filas;i++){
+        n_hoteles+=document.getElementById("tabla_hoteles").rows[i].cells.length;//calculamos el numero de columnas por fila
+    }
+    return n_hoteles;
+}
+
 
 //fucnion ajax muestre el preio total de incripcion
-function precio_inscriptcion(n_actividades,n_hoteles){
+function precio_inscriptcion(n_actividades){
     //comprobamos la cuota elegida
     var tipoCuota=document.getElementById("tipo").value ;//couta selecionada
     //comprobamos las actividades elegidas
@@ -170,6 +180,7 @@ function precio_inscriptcion(n_actividades,n_hoteles){
     var hotel_elegido="";
     var aux="";
     if(document.getElementById("buscar_hotel_true").checked==true){
+        n_hoteles=calcular_numero_hoteles();
         for (i =0;i<n_hoteles; i++) {
             aux="hotel".concat(i);
             if(document.getElementById(aux).checked==true){
