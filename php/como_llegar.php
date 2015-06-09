@@ -21,4 +21,4 @@
 
 		<h3> Ubicación Congreso</h3>
 		<p>C/Periodista Daniel Saucedo Aranda, s/n · E-18071 GRANADA (Spain)</p>
-		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3178.1353705207152!2d-3.6242509999999992!3d37.19701399999999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd71fc55025f928b%3A0x4dbbca09efdcad08!2sE.T.S.+de+Ingenier%C3%ADas+Inform%C3%A1tica+y+de+Telecomunicaci%C3%B3n!5e0!3m2!1ses!2s!4v1425655810579" width="400" height="300" frameborder="0" style="border:0"></iframe>
+		<iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3178.1353705207152!2d-3.6242509999999992!3d37.19701399999999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd71fc55025f928b%3A0x4dbbca09efdcad08!2sE.T.S.+de+Ingenier%C3%ADas+Inform%C3%A1tica+y+de+Telecomunicaci%C3%B3n!5e0!3m2!1ses!2s!4v1425655810579"  frameborder="0" style="border:0"></iframe>

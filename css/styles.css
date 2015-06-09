@@ -204,6 +204,13 @@ footer{
 	cols:40;
 }
 
+#mapa{
+	margin-top: 5%;
+	margin-left: 10%;
+	width:500px;
+	height:300px;
+}
+
 .marcoImg{
 	padding: 0px 0px 10px 10px;
 	width: 215px;
