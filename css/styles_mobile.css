@@ -190,7 +190,7 @@ footer{
 }
 
 .imagenesPatrocinadores{
-	margin: 50px 0px 0px 90px;
+	margin: 10% 0px 0px 10%;
 }
 
 .contacta{
@@ -200,6 +200,9 @@ footer{
 	border-radius : 15px;
 	padding-bottom:10px;
 	margin-botoom:10px;
+}
+#comentario_contacto{
+	width: 84%;
 }
 
 .marcoImg{
@@ -262,10 +265,9 @@ footer{
 
 }
 .menu_ponencias{
-	width: 710px;
-	height: 100px;
 	text-align: center;
-	margin-top:22px;
+	margin-top: 10%;
+	margin-bottom: 10%;
 }
 
 .menu_ponencias li{

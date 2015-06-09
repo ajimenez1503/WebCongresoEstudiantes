@@ -20,7 +20,7 @@
    <br><br>
    E-mail: <input type="text" name="email" value="<?php echo $email;?>"required>
    <br><br>
-   <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
+   <textarea name="comment" id="comentario_contacto" rows="5" cols="40"><?php echo $comment;?></textarea>
    <br><br>
    <input type="submit" name="submit" value="Enviar">
 </form>
