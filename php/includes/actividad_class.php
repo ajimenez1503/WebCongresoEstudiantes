@@ -46,14 +46,14 @@ class Actividad{
                     echo "<div class =\"marcoFormulario\">";
                         echo "<h4>Editar actividad</h4>";
 
-                        echo "<form method=\"post\" action=\"index.php?page=actividades&actividad=".$this->iud."&editar=true\" >";
+                        echo "<form method=\"post\" action=\"index.php?page=actividades&actividad=".$this->id."&editar=true\" >";
 
                         echo "<label> Descripcion actividad</label>";
                         echo "<textarea  name=\"descripcion\"  row=\"100\" cols=\"45\"  >".$this->descripcion."</textarea>";
                         echo "<br><br>";
 
                         echo "<label> Precio:    </label>";
-                        echo "<input type=\"number\" name=\"precio\" value=\"".$this->precio."\" ></input>";
+                        echo "<input type=\"number\" step=\"any\" name=\"precio\" value=\"".$this->precio."\" ></input>";
                         echo "<br><br>";
 
                         echo "<button type=\"submit\" name=\"submit\">Modificar</button>";

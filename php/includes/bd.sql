@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-05-2015 a las 12:44:03
+-- Tiempo de generación: 09-06-2015 a las 11:51:44
 -- Versión del servidor: 5.5.43-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.9
 
@@ -42,11 +42,11 @@ CREATE TABLE IF NOT EXISTS `Actividad` (
 --
 
 INSERT INTO `Actividad` (`id`, `nombre`, `fecha`, `hora`, `foto`, `precio`, `descripcion`) VALUES
-(1, 'Campeonato de LOL', '2015-06-05', '9:00', 'images/actividades/lol.png', 5, 'Se realizará un campeonato del popular juego LOL (League of Lettuces), El premio estará dotado en una subscripción por un año a la revista "Lactuca sativa"'),
+(1, 'Campeonato de LOL', '2015-06-05', '9:00', 'images/actividades/lol.png', 1, '¿Quien dijo que Wordpad estaba obsoleto?, ¿Alguien cree que es una herramienta con poca utilidad?.\r\n\r\nEn el taller de Wordpad comprenderas el mundo de esta maravillosa herramienta, en la que podrás escribir texto (y números!!) además, a diferencia de las ya antiguas máquinas de escribir, podrás borrar lo escrito (sin manchas!!)\r\n\r\nPara el taller se requiere un ordenador con Windows 95\r\n'),
 (2, 'Picnic en sala de ordenadores', '2015-06-05', '14:00', 'images/actividades/picnic.png', 2, 'Un bonito picnic en la sala de ordenadores (no hemos encontrado otro sitio)'),
 (3, 'Campeonato futbolin', '2015-06-05', '16:00', 'images/actividades/futbolin.jpg', 5, 'La pareja ganadora conseguira gratis un ticket por un cafe en la cafetería (a compartir entre los dos)'),
 (4, 'Partido de futbol', '2015-06-05', '18:00', 'images/actividades/futbol.jpg', 2, 'Tendrá lugar un encuentro entre el Galactic Empire F.C. y Los Rebeldes de Endor, el ganador recibirá una galaxia muy,muy lejana.\r\n'),
-(5, 'Taller: Introduccion a WordPad', '2015-06-05', '18:00', 'images/actividades/wordpad.jpg', 1, '¿Quien dijo que Wordpad estaba obsoleto?, ¿Alguien cree que es una herramienta con poca utilidad?.\r\n\r\nEn el taller de Wordpad comprenderas el mundo de esta maravillosa herramienta, en la que podrás escribir texto (y números!!) además, a diferencia de las ya antiguas máquinas de escribir, podrás borrar lo escrito (sin manchas!!)\r\n\r\nPara el taller se requiere un ordenador con Windows 95\r\n'),
+(5, 'Taller: Introduccion a WordPad', '2015-06-05', '18:00', 'images/actividades/wordpad.jpg', 1, '\r\n\r\nEn el taller de Wordpad comprenderas el mundo de esta maravillosa herramienta, en la que podrás escribir texto (y números!!) además, a diferencia de las ya antiguas máquinas de escribir, podrás borrar lo escrito (sin manchas!!)\r\n\r\nPara el taller se requiere un ordenador con Windows 95\r\n'),
 (6, 'Viaje a Sierra Nevada', '2015-06-06', '09:00', 'images/actividades/sierra.jpg', 20, 'Rodeada de parajes de excepción, Sierra Nevada es la joya nevada del Sur de España. Altas montañas, reservas y parques naturales, picos impresionantes... Su paisaje dibuja una inigualable belleza, donde la naturaleza ofrece bosques, lagunas y una gran riqueza en flora y fauna. Unas características que la han llevado a ser declarada Reserva de la Biosfera y Parque Nacional.'),
 (7, 'Visita Alhambra', '2015-06-06', '16:00', 'images/actividades/alhambra.jpg', 15, 'Castillo y fortaleza, palacio real y ciudad, jardines y retiro de verano, la Alhambra es todo eso y mucho más.\r\nen Granada.');
 
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `Participante` (
   PRIMARY KEY (`id`),
   KEY `tipo` (`tipo`),
   KEY `nombreUsuario` (`nombreUsuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
 
 --
 -- Volcado de datos para la tabla `Participante`
@@ -131,7 +131,22 @@ INSERT INTO `Participante` (`id`, `nombre`, `nombreUsuario`, `apellido`, `tipo`)
 (22, 'asdfdsf', 'antonio', 'sdfsdfs', 'profesor'),
 (23, 'antonio', 'antonio', 'sdf', 'inivitado'),
 (24, 'juan', 'antonio', 'pepe', 'profesor'),
-(25, 'dsgsa', 'antonio', 'sdgas', 'inivitado');
+(25, 'dsgsa', 'antonio', 'sdgas', 'inivitado'),
+(26, 'antonio', 'antonio', 'jimenez', 'profesor'),
+(27, 'antonio3', 'antonio', 'jimenez', 'profesor'),
+(28, 'antonio3', 'antonio', 'jimenez', 'profesor'),
+(29, 'antonio', 'antonio', 'sdf', 'estudiante'),
+(30, 'antonio', 'antonio', 'jimenez', 'estudiante'),
+(31, 'antonio', 'antonio', 'jimenez', 'profesor'),
+(32, 'b', 'antonio', 'jimenez', 'estudiante'),
+(33, 'b', 'antonio', 'jimenez', 'estudiante'),
+(34, 'b', 'antonio', 'jimenez', 'estudiante'),
+(35, 'antonio', 'antonio', 'jimenez', 'profesor'),
+(36, 'a', 'antonio', 'a', 'estudiante'),
+(37, 'antonio', 'antonio', 'jimenez', 'estudiante'),
+(38, 'antonio', 'antonio', 'a', 'estudiante'),
+(39, 'juan', 'antonio', 'fsdfsa', 'inivitado'),
+(40, 'antonio', 'antonio', 'jimenez', 'inivitado');
 
 -- --------------------------------------------------------
 
@@ -155,11 +170,31 @@ INSERT INTO `Participante_Actividades` (`id_participante`, `id_actividad`) VALUE
 (12, 2),
 (24, 2),
 (25, 2),
+(26, 2),
+(27, 2),
+(28, 2),
+(29, 2),
+(30, 2),
+(31, 2),
+(32, 2),
+(33, 2),
+(34, 2),
+(35, 2),
+(36, 2),
+(37, 2),
+(38, 2),
 (11, 3),
 (24, 3),
 (25, 3),
 (11, 4),
-(24, 4);
+(24, 4),
+(26, 4),
+(27, 4),
+(28, 4),
+(31, 4),
+(35, 4),
+(39, 7),
+(40, 7);
 
 -- --------------------------------------------------------
 
@@ -175,7 +210,7 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
   `rol` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `nombre` (`nombre`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Volcado de datos para la tabla `Usuario`

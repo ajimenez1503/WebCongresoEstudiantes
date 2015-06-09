@@ -16,8 +16,8 @@ if(isset($_SESSION['user']) && $_SESSION['rol']=="admin"){
             if ($table->num_rows > 0) {
                 // output data of each row
                 while($row = $table->fetch_assoc()) {
-                    echo "<label> ".$row["tipo"]."    </label>";
-                    echo "<input type=\"number\" name=\"".$row["tipo"]."\" value=\"".$row["importe"]."\" ></input>";
+                    echo "<label> ".$row["tipo"]."</label>";
+                    echo "<input type=\"number\"  step=\"any\" name=\"".$row["tipo"]."\" value=\"".$row["importe"]."\" ></input>";
                     echo "<br><br>";
                     $tipos[]=$row["tipo"];
                 }
@@ -34,6 +34,7 @@ if(isset($_SESSION['user']) && $_SESSION['rol']=="admin"){
     if ($_SERVER["REQUEST_METHOD"] == "POST"  ) {
 
         foreach ($tipos as $tipo){
+            echo $tipo." impote".$_REQUEST[$tipo]."</br>";
             $sql="UPDATE Cuota SET importe='".$_REQUEST[$tipo]."' WHERE tipo='".$tipo."'";
             if ($dbhandler->query($sql) === FALSE) {
                 echo "Error: ".$dbhandler->error();

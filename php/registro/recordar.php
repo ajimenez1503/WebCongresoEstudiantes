@@ -22,7 +22,7 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"  && isset($_REQUEST['nombre']) && isset($_REQUEST['email'])) {
-        $dbhandler = new db_handler("localhost","root","congreso");
+        $dbhandler = new db_handler("localhost","congreso");
         $dbhandler->connect();
         $sql="SELECT password FROM Usuario where nombre='".$_REQUEST[nombre]."' AND email='".$_REQUEST[email]."'";
         $table=$dbhandler->query($sql);
