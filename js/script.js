@@ -205,7 +205,7 @@ function precio_inscriptcion(n_actividades){
 	}
 	xmlhttp.open("POST","php/includes/precio.php",true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-//    console.log("buscar_precio=true&tipoCuota="+tipoCuota+actividades_elegidas+hotel_elegido);
+    console.log("buscar_precio=true&tipoCuota="+tipoCuota+actividades_elegidas+hotel_elegido);
 	xmlhttp.send("buscar_precio=true&tipoCuota="+tipoCuota+actividades_elegidas+hotel_elegido);//enviamos la id de la cuota sleecioanda
 
 }

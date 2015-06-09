@@ -11,19 +11,18 @@ if(isset($_POST["idCuota"])){
     	// output data of each row
     	echo "<div id=\"mostrarActividades\">";
     	echo "<br><br><h4>Actividades </h4>";
-    	while($row = $table->fetch_assoc()) {
-    		$sql="SELECT * FROM Cuotas_Actividades WHERE Cuotas_Actividades.id_Actividad =". $row["id"]." AND Cuotas_Actividades.id_cuota =".$cuota;
-    		if($dbhandler->query($sql)->num_rows > 0){
-                echo "<input checked=\"checked\" type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]."\"  id=\"". $row["id"]."\" onclick=\"alwayschecked(". $row["id"].");precio_inscriptcion(".$n_actividades.")\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
+        $contador=1;
+		while($row = $table->fetch_assoc()) {
+			$sql="SELECT * FROM Cuotas_Actividades WHERE Cuotas_Actividades.id_Actividad =". $row["id"]." AND Cuotas_Actividades.id_cuota =".$cuota;
+			if($dbhandler->query($sql)->num_rows > 0){
+
+				echo "<input checked=\"checked\" type=\"checkbox\" name=\"". $row["id"]."\" value=\"". $row["nombre"]."\"  id=\"actividad".$contador."\" onclick=\"alwayschecked(". $row["id"].");precio_inscriptcion(".$n_actividades.")\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
 			}
 			else{
-				echo "<input id=\"". $row["id"]."\" type=\"checkbox\" name=\"". $row["id"]."\"  onclick=\"precio_inscriptcion(".$n_actividades.")\"  value=\"". $row["nombre"]."\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
+				echo "<input id=\"actividad".$contador."\" type=\"checkbox\" name=\"". $row["id"]."\"   onclick=\"precio_inscriptcion(".$n_actividades.")\"  value=\"". $row["nombre"]."\">   ". $row["nombre"]." <i>  por ". $row["precio"]." €</i><br>";
 			}
-    	}
-    	echo "</br>";
-    	echo "</div>";//mostrarActividades
-
-    }
+			$contador++;
+		}
     $dbhandler->close();
 }
 ?>
