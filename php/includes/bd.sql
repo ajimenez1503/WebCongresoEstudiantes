@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 09-06-2015 a las 11:51:44
+-- Tiempo de generación: 09-06-2015 a las 17:18:55
 -- Versión del servidor: 5.5.43-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.9
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `Actividad` (
   `fecha` date DEFAULT NULL,
   `hora` text COLLATE utf8_spanish_ci,
   `foto` text COLLATE utf8_spanish_ci NOT NULL,
-  `precio` int(11) NOT NULL,
+  `precio` decimal(11,2) NOT NULL,
   `descripcion` text COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=8 ;
@@ -42,13 +42,13 @@ CREATE TABLE IF NOT EXISTS `Actividad` (
 --
 
 INSERT INTO `Actividad` (`id`, `nombre`, `fecha`, `hora`, `foto`, `precio`, `descripcion`) VALUES
-(1, 'Campeonato de LOL', '2015-06-05', '9:00', 'images/actividades/lol.png', 1, '¿Quien dijo que Wordpad estaba obsoleto?, ¿Alguien cree que es una herramienta con poca utilidad?.\r\n\r\nEn el taller de Wordpad comprenderas el mundo de esta maravillosa herramienta, en la que podrás escribir texto (y números!!) además, a diferencia de las ya antiguas máquinas de escribir, podrás borrar lo escrito (sin manchas!!)\r\n\r\nPara el taller se requiere un ordenador con Windows 95\r\n'),
-(2, 'Picnic en sala de ordenadores', '2015-06-05', '14:00', 'images/actividades/picnic.png', 2, 'Un bonito picnic en la sala de ordenadores (no hemos encontrado otro sitio)'),
-(3, 'Campeonato futbolin', '2015-06-05', '16:00', 'images/actividades/futbolin.jpg', 5, 'La pareja ganadora conseguira gratis un ticket por un cafe en la cafetería (a compartir entre los dos)'),
-(4, 'Partido de futbol', '2015-06-05', '18:00', 'images/actividades/futbol.jpg', 2, 'Tendrá lugar un encuentro entre el Galactic Empire F.C. y Los Rebeldes de Endor, el ganador recibirá una galaxia muy,muy lejana.\r\n'),
-(5, 'Taller: Introduccion a WordPad', '2015-06-05', '18:00', 'images/actividades/wordpad.jpg', 1, '\r\n\r\nEn el taller de Wordpad comprenderas el mundo de esta maravillosa herramienta, en la que podrás escribir texto (y números!!) además, a diferencia de las ya antiguas máquinas de escribir, podrás borrar lo escrito (sin manchas!!)\r\n\r\nPara el taller se requiere un ordenador con Windows 95\r\n'),
-(6, 'Viaje a Sierra Nevada', '2015-06-06', '09:00', 'images/actividades/sierra.jpg', 20, 'Rodeada de parajes de excepción, Sierra Nevada es la joya nevada del Sur de España. Altas montañas, reservas y parques naturales, picos impresionantes... Su paisaje dibuja una inigualable belleza, donde la naturaleza ofrece bosques, lagunas y una gran riqueza en flora y fauna. Unas características que la han llevado a ser declarada Reserva de la Biosfera y Parque Nacional.'),
-(7, 'Visita Alhambra', '2015-06-06', '16:00', 'images/actividades/alhambra.jpg', 15, 'Castillo y fortaleza, palacio real y ciudad, jardines y retiro de verano, la Alhambra es todo eso y mucho más.\r\nen Granada.');
+(1, 'Campeonato de LOL', '2015-06-05', '9:00', 'images/actividades/lol.png', 1000.00, '¿Quien dijo que Wordpad estaba obsoleto?, ¿Alguien cree que es una herramienta con poca utilidad?.\r\n\r\nEn el taller de Wordpad comprenderas el mundo de esta maravillosa herramienta, en la que podrás escribir texto (y números!!) además, a diferencia de las ya antiguas máquinas de escribir, podrás borrar lo escrito (sin manchas!!)\r\n\r\n'),
+(2, 'Picnic en sala de ordenadores', '2015-06-05', '14:00', 'images/actividades/picnic.png', 2.00, 'Un bonito picnic en la sala de ordenadores (no hemos encontrado otro sitio)'),
+(3, 'Campeonato futbolin', '2015-06-05', '16:00', 'images/actividades/futbolin.jpg', 5.00, 'La pareja ganadora conseguira gratis un ticket por un cafe en la cafetería (a compartir entre los dos)'),
+(4, 'Partido de futbol', '2015-06-05', '18:00', 'images/actividades/futbol.jpg', 2.00, 'Tendrá lugar un encuentro entre el Galactic Empire F.C. y Los Rebeldes de Endor, el ganador recibirá una galaxia muy,muy lejana.\r\n'),
+(5, 'Taller: Introduccion a WordPad', '2015-06-05', '18:00', 'images/actividades/wordpad.jpg', 1.00, '\r\n\r\nEn el taller de Wordpad comprenderas el mundo de esta maravillosa herramienta, en la que podrás escribir texto (y números!!) además, a diferencia de las ya antiguas máquinas de escribir, podrás borrar lo escrito (sin manchas!!)\r\n\r\nPara el taller se requiere un ordenador con Windows 95\r\n'),
+(6, 'Viaje a Sierra Nevada', '2015-06-06', '09:00', 'images/actividades/sierra.jpg', 20.00, 'Rodeada de parajes de excepción, Sierra Nevada es la joya nevada del Sur de España. Altas montañas, reservas y parques naturales, picos impresionantes... Su paisaje dibuja una inigualable belleza, donde la naturaleza ofrece bosques, lagunas y una gran riqueza en flora y fauna. Unas características que la han llevado a ser declarada Reserva de la Biosfera y Parque Nacional.'),
+(7, 'Visita Alhambra', '2015-06-06', '16:00', 'images/actividades/alhambra.jpg', 15.00, 'Castillo y fortaleza, palacio real y ciudad, jardines y retiro de verano, la Alhambra es todo eso y mucho más.\r\nen Granada.');
 
 -- --------------------------------------------------------
 
@@ -59,19 +59,20 @@ INSERT INTO `Actividad` (`id`, `nombre`, `fecha`, `hora`, `foto`, `precio`, `des
 CREATE TABLE IF NOT EXISTS `Cuota` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `tipo` varchar(512) NOT NULL,
-  `importe` int(11) NOT NULL,
+  `importe` decimal(11,2) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `tipo` (`tipo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `Cuota`
 --
 
 INSERT INTO `Cuota` (`id`, `tipo`, `importe`) VALUES
-(1, 'estudiante', 10),
-(2, 'profesor', 15),
-(3, 'inivitado', 20);
+(1, 'estudiante', 11.00),
+(2, 'profesor', 15.00),
+(3, 'inivitado', 1.00),
+(4, 'specialone', 10.12);
 
 -- --------------------------------------------------------
 
@@ -111,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `Participante` (
   PRIMARY KEY (`id`),
   KEY `tipo` (`tipo`),
   KEY `nombreUsuario` (`nombreUsuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=45 ;
 
 --
 -- Volcado de datos para la tabla `Participante`
@@ -146,7 +147,10 @@ INSERT INTO `Participante` (`id`, `nombre`, `nombreUsuario`, `apellido`, `tipo`)
 (37, 'antonio', 'antonio', 'jimenez', 'estudiante'),
 (38, 'antonio', 'antonio', 'a', 'estudiante'),
 (39, 'juan', 'antonio', 'fsdfsa', 'inivitado'),
-(40, 'antonio', 'antonio', 'jimenez', 'inivitado');
+(40, 'antonio', 'antonio', 'jimenez', 'inivitado'),
+(41, 'juan', 'antonio', 'juan', 'inivitado'),
+(42, 'antonio', 'antonio', 'jimenez', 'profesor'),
+(43, 'antonio', 'antonio', 'jimenez', 'profesor');
 
 -- --------------------------------------------------------
 
@@ -166,6 +170,7 @@ CREATE TABLE IF NOT EXISTS `Participante_Actividades` (
 --
 
 INSERT INTO `Participante_Actividades` (`id_participante`, `id_actividad`) VALUES
+(43, 1),
 (11, 2),
 (12, 2),
 (24, 2),
@@ -183,6 +188,8 @@ INSERT INTO `Participante_Actividades` (`id_participante`, `id_actividad`) VALUE
 (36, 2),
 (37, 2),
 (38, 2),
+(42, 2),
+(43, 2),
 (11, 3),
 (24, 3),
 (25, 3),
@@ -193,8 +200,13 @@ INSERT INTO `Participante_Actividades` (`id_participante`, `id_actividad`) VALUE
 (28, 4),
 (31, 4),
 (35, 4),
+(42, 4),
+(42, 6),
 (39, 7),
-(40, 7);
+(40, 7),
+(41, 7),
+(42, 7),
+(43, 7);
 
 -- --------------------------------------------------------
 
@@ -209,8 +221,9 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
   `email` text NOT NULL,
   `rol` text NOT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `nombre_2` (`nombre`),
   KEY `nombre` (`nombre`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --
 -- Volcado de datos para la tabla `Usuario`
@@ -222,7 +235,8 @@ INSERT INTO `Usuario` (`id`, `nombre`, `password`, `email`, `rol`) VALUES
 (7, 'juan', 'juan', 'juan@corre.ugr.es', 'normal'),
 (9, 'pepe', 'pepe', 'pepe@correo.es', 'normal'),
 (10, 'a', 'a', 'a@correo.ugr.es', 'admin'),
-(12, 'b', 'b', 'sjadsaja@afa.es', 'normal');
+(12, 'b', 'b', 'sjadsaja@afa.es', 'normal'),
+(13, 'fjmelero', 'fjmelero', 'fjmelero@ugr.es', 'normal');
 
 --
 -- Restricciones para tablas volcadas
