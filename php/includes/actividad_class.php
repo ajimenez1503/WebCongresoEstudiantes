@@ -113,23 +113,21 @@ function leer_actividades($query,$dbhandler){
 
 //muestra todas las actividades en una tabla con el array dado
 function mostrar_tabla($actividades){
-    echo "<div class=\"tablaActividades\">";
-    //echo "<h3>Actividades</h3>";
-    echo "<table>";
-    echo "<thead>";
-        	echo "<tr>";
-    			echo "<th>Fecha</th>";
-    			echo "<th>Hora Comienzo</th>";
-    			echo "<th>Actividad</th>";
-    			echo "<th>Importe</th>";
-    		echo "</tr>";
-    	echo "</thead>";
-    	echo "<tbody>";
+    echo "<div>";
+        echo "<table>";
+        echo "<thead>";
+            	echo "<tr>";
+        			echo "<th>Fecha</th>";
+        			echo "<th>Hora Comienzo</th>";
+        			echo "<th>Actividad</th>";
+        			echo "<th>Importe</th>";
+        		echo "</tr>";
+        	echo "</thead>";
+        	echo "<tbody>";
 
-        foreach ($actividades as $act) {
-            $act->mostrar_fila();
-        }
-
+            foreach ($actividades as $act) {
+                $act->mostrar_fila();
+            }
         echo "</tbody>";
         echo "</table>";
         echo "</div>";

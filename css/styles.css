@@ -396,8 +396,6 @@ input:focus::-webkit-input-placeholder{
 	width: 450px;
 	background : #CDDBF0;
 	border-radius : 15px;
-	margin-bottom: 245px;
-
 }
 
 /*mostrar formulario hote*/
@@ -463,4 +461,28 @@ input:focus::-webkit-input-placeholder{
 
 .lista_particiapantes li:hover {
     background-color: rgb(249, 160, 0);
+}
+
+/*tablaCuotas*/
+.tablaCuotas{
+	margin-bottom: 25px;
+	width: 185px;
+	padding: 5px 0px 20px 20px;
+}
+.boton_cuotas{
+	float:right;
+	border: 1px solid #00748f;
+	height: 25px;
+	width: 133px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 285px;
+	cursor: pointer;
+	font: 20px plane;
+	color: #fafafa;
+	background-color: #CDDBF0;;
+	background-image: linear-gradient(top, #31b2c3, #0483a0);
+	border-radius: 3px;
+	text-align: center;
+	padding: 10px;
 }
