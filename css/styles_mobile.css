@@ -5,9 +5,27 @@ Copyright ©. All rights reserved. Designed by Antonio Jimenez Martienz y Andres
 	margin:0;
 	padding:0;
 }
+/*las imagnes se reducca de forma automatica*/
+img{
+	max-width: 100%;
+}
+/*imagnees*/
+#logo_web{
+	width:100px;
+	height:100px;
+	display:none;
+}
+.imagnePortada{
+	z-index: -1;
+	max-width:100%;
+	/*display:none;*/
+}
+#logo_menu{
+	max-width:100%;
+}
 body  {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 17px;
+	font-size: 16px;
 	background: url(../images/backgroundbrown.jpg);
   	background-size: 100% 100%;
 	color: #44391C;
@@ -45,28 +63,26 @@ h3,h4{
 
 /* Formato cabecera*/
 .headizq{
-	width: 100px;
-	float: left;
+	width: 100%;
 }
 
 .headder{
-	margin: 30px 0 0 0;
-	float: right;
+	width: 100%;
 }
 .headderizq{
-	height: 90px;
+	height: 100%;;
 }
 /* Formato cabecera*/
 /* Formato container */
 .containerSuperior {
 	margin: 0 auto;
-	width: 1020px;
+	width: 100%;
 	background: url(../images/contentBackground.jpg) repeat;
 }
 
 .container {
 	padding: 5px;
-	width: 960px;
+	width: 95%;
 	margin: 0 auto;
 
 }
@@ -77,12 +93,11 @@ section{
 }
 /* Formato menu */
 .MenuIzquierda{
-	width: 230px;
-	float: left;
-	position: relative;
+	width: 100%
 }
 .LMenu {
-	font-size: 22px;
+	/*width:100px;*/
+	font-size: 25px;
 	/*fonde degradado*/
 	background: -webkit-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); /* For Safari 5.1 to 6.0 */
   	background: -o-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); /* For Opera 11.1 to 12.0 */
@@ -279,17 +294,15 @@ footer{
 }
 
 
-.imagnePortada{
-	z-index: -1;
-}
 .sesion{
-	position:absolute;
-	padding: 155px 0px 0px 479px;
+	/*position:absolute;*/
+	margin: 8px 45px 15px 0px;
+	width: 100%;
 }
 .sesion a{
 	float:right;
 	margin-top: 12px;
-	margin-left:2px;
+	margin-left:13px;
 
 }
 .sesion li{
@@ -300,7 +313,7 @@ footer{
 }
 .sesion2{
 	position:absolute;
-	padding: 156px 0px 0px 882px;
+
 }
 .sesion2 a{
 	float:right;

@@ -5,7 +5,7 @@ echo "<header>";
             echo "<h1>I Congreso de Estudiantes de Ingeniería Informática</h1>";
         echo "</div>";
         echo "<div class=\"headleft\">";
-            echo "<a href=\"./index.php?page=home\"><img src=\"images/logo/logo_web.png\"  alt=\"logo_web\" title=\"logo_web\" width=\"100px\" height=\"100px\"></a>";
+            echo "<a href=\"./index.php?page=home\"><img src=\"images/logo/logo_web.png\" id=\"logo_web\" alt=\"logo_web\" title=\"logo_web\"></a>";
         echo "</div>";
     echo "</div>";
     echo "<div>";
@@ -26,7 +26,7 @@ echo "<header>";
                     echo "<a href=\"index.php?salir\"><li id=\"boton_salir\" >    SALIR    </li></a>";
                 echo "</div> <!-- end sesion2 -->";
             }
-        echo "<img class=\"imagnePortada\" src=\"images/img2.jpg\" alt=\"imagen_etsiit\" title=\"imagen_etsiit\" width=\"960px\" height=\"200px\">";
+        echo "<img class=\"imagnePortada\" src=\"images/img2.jpg\" alt=\"imagen_etsiit\" title=\"imagen_etsiit\">";
     echo "</div>";
 echo "</header>";
 

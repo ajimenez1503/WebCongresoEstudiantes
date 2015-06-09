@@ -2,7 +2,7 @@
 <div class="MenuIzquierda" >
     <!--<div class="LMenu" > -->
     <nav class="LMenu">
-    <a href="./index.php?page=home"><img src="images/logo/etsiit_logo.png" title="icono" alt="icono" width="230"></a>
+    <a href="./index.php?page=home"><img src="images/logo/etsiit_logo.png" title="icono" alt="icono" id="logo_menu"></a>
         <ul class="MenuLateral" >
         <li onClick="switch_section(1)" ><a href="#">+Info</a></li>
             <div id="subseccion1">

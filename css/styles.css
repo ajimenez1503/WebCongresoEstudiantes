@@ -41,12 +41,20 @@ h1,h2{
 h3,h4{
 	padding: 10px 0px 10px 20px;
 }
-
+/*imagenes*/
+#logo_web{
+	width:100px;
+	 height:100px;
+}
 
 /* Formato cabecera*/
 .headizq{
 	width: 100px;
 	float: left;
+}
+
+#logo_menu{
+	width:230px;
 }
 
 .headder{
@@ -281,6 +289,8 @@ footer{
 
 .imagnePortada{
 	z-index: -1;
+	width:960px;
+	height:200px;
 }
 .sesion{
 	position:absolute;

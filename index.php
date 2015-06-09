@@ -16,6 +16,7 @@ session_start();
 	if (preg_match("/mobile/i", $useragent) || preg_match("/tablet/i", $useragent)){
 		echo "<link href=\"css/styles_mobile.css\" rel=\"stylesheet\" type=\"text/css\"/>";
 		echo "<script>console.log(\"estamos en mobile\")</script>";
+		echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">";
 	}
 	else{
 		echo "<link href=\"css/styles.css\" rel=\"stylesheet\" type=\"text/css\"/>";
