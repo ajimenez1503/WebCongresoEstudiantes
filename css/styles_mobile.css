@@ -22,6 +22,7 @@ img{
 }
 #logo_menu{
 	max-width:100%;
+	padding: 2% 0% 2% 12%;
 }
 body  {
 	font-family: Arial, Helvetica, sans-serif;
@@ -96,8 +97,9 @@ section{
 	width: 100%
 }
 .LMenu {
-	/*width:100px;*/
-	font-size: 25px;
+
+	width:100%;
+	font-size: 35px;
 	/*fonde degradado*/
 	background: -webkit-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); /* For Safari 5.1 to 6.0 */
   	background: -o-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); /* For Opera 11.1 to 12.0 */
@@ -105,11 +107,12 @@ section{
   	background: linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12));/* Standard syntax */
 }
 .MenuLateral{
+	padding: 0px 0px 0px 25px;
 	list-style-type: none;
 	text-indent: 6px;
 }
 #subseccion1, #subseccion2{
-	font-size: 18px;
+	font-size: 25px;
 	padding: 5px 0px 10px 25px;
 	display: none;
 }
@@ -123,7 +126,7 @@ section{
 	height: 150px;
 	overflow: hidden;
 	position: relative;
-	margin: 10px 0 0 0;
+	margin: 10px 0px 10px 30px;
 	border: 2px solid rgb(216, 112, 11);
 
 }
@@ -170,24 +173,6 @@ footer{
 }
 /* Formato pie de pagina */
 
-
-/*procedente antiguo menu superior
-.MenuSuperior{
-	float: right;
-	width: 300px;
-	//fonde degradado
-	background: -webkit-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); // For Safari 5.1 to 6.0
-  	background: -o-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); / For Opera 11.1 to 12.0
- 	 background: -moz-linear-gradient(rgb(249, 160, 0),rgb(152, 97, 12)); // For Firefox 3.6 to 15
-  	background: linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12));// Standard syntax
-	border: 2px solid #BA7708;
-	font-size: 26px;
-}
-.EtiquetaSuperior{
-	display: inline;
-	padding: 0px 20px 0px 20px;
-}
-*/
 
 .totalDinero{
 	color:red;
