@@ -9,7 +9,22 @@ session_start();
 	<meta charset="utf-8">
 	<title>I Congreso de Estudiantes de Ingeniería Informática</title>
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
-	<link href="css/styles.css" rel="stylesheet" type="text/css"/>
+
+	<?php
+	//comprobamos la navegacion que estamos usando
+	$useragent = $_SERVER['HTTP_USER_AGENT'];
+	if (preg_match("/mobile/i", $useragent) || preg_match("/tablet/i", $useragent)){
+		echo "<link href=\"css/styles_mobile.css\" rel=\"stylesheet\" type=\"text/css\"/>";
+		echo "<script>console.log(\"estamos en mobile\")</script>";
+	}
+	else{
+		echo "<link href=\"css/styles.css\" rel=\"stylesheet\" type=\"text/css\"/>";
+		echo "<script>console.log(\"no estamos en mobile\")</script>";
+	}
+	?>
+
+
+	<!--<link href="css/styles.css" rel="stylesheet" type="text/css"/> -->
 	<script type="text/javascript" src="./js/script.js"></script>
 
 	<?php
@@ -35,7 +50,10 @@ session_start();
 	<?php include './php/header.php'; ?>
 	<section>
 		<div>
-			<?php include './php/lmenu.php'; ?>
+			<?php include './php/lmenu.php';
+
+
+			?>
 			<div class="mainContent" >
 				<!-- Incluir contenido necesario -->
 				<?php

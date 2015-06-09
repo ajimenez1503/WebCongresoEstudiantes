@@ -1,0 +1,488 @@
+/*
+Copyright ©. All rights reserved. Designed by Antonio Jimenez Martienz y Andres Ortiz Corrales
+*/
+* {
+	margin:0;
+	padding:0;
+}
+body  {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	background: url(../images/backgroundbrown.jpg);
+  	background-size: 100% 100%;
+	color: #44391C;
+}
+p {
+	line-height:170%;
+}
+a {
+	color:#ECE6AE;
+	text-decoration:none;
+}
+table,th, td {
+	text-align: center;
+   	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 5px;
+}
+th {
+	background-color: rgb(216, 112, 11);
+}
+td {
+	background-color:rgb(165, 202, 201);
+}
+
+fieldset{
+	padding: 3px 0px 9px 10px
+}
+h1,h2{
+	padding: 10px 0px 10px 0px;
+}
+h3,h4{
+	padding: 10px 0px 10px 20px;
+}
+
+
+/* Formato cabecera*/
+.headizq{
+	width: 100px;
+	float: left;
+}
+
+.headder{
+	margin: 30px 0 0 0;
+	float: right;
+}
+.headderizq{
+	height: 90px;
+}
+/* Formato cabecera*/
+/* Formato container */
+.containerSuperior {
+	margin: 0 auto;
+	width: 1020px;
+	background: url(../images/contentBackground.jpg) repeat;
+}
+
+.container {
+	padding: 5px;
+	width: 960px;
+	margin: 0 auto;
+
+}
+/* Formato container */
+
+section{
+	margin: 15px 0 0 0;
+}
+/* Formato menu */
+.MenuIzquierda{
+	width: 230px;
+	float: left;
+	position: relative;
+}
+.LMenu {
+	font-size: 22px;
+	/*fonde degradado*/
+	background: -webkit-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); /* For Opera 11.1 to 12.0 */
+ 	background: -moz-linear-gradient(rgb(249, 160, 0),rgb(152, 97, 12)); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12));/* Standard syntax */
+}
+.MenuLateral{
+	list-style-type: none;
+	text-indent: 6px;
+}
+#subseccion1, #subseccion2{
+	font-size: 18px;
+	padding: 5px 0px 10px 25px;
+	display: none;
+}
+.slide{
+	width: 230px;
+	height: 150px;
+	float: left;
+}
+#slider{
+	width: 230px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+	margin: 10px 0 0 0;
+	border: 2px solid rgb(216, 112, 11);
+
+}
+/* Formato menu */
+/* Formato central */
+.mainContent {
+	width: 710px;
+	margin-left: 250px;
+	color: #020202;
+}
+.mainContentizq{
+	width: 435px;
+	float: left;
+	text-align : justify;
+}
+.mainContentder{
+	margin-left: 458px;
+}
+.mainContent a{
+	color: #0F3A98;
+
+}
+/* Formato central */
+/* Formato pie de pagina */
+footer{
+	border-top: 4px solid #E5E5E5;
+	width: 960px;
+	margin: 150px 0px 0px 0px;
+	color: #be6100;
+}
+.footerContainerInterior{
+	height: 105px
+}
+.footerContainerizq{
+	width: 350px;
+	float: left;
+}
+.footerContainerder{
+	width: 600px;
+	margin-left: 350px;
+}
+.footerContainerder a{
+	color: #0F3A98;
+}
+/* Formato pie de pagina */
+
+
+/*procedente antiguo menu superior
+.MenuSuperior{
+	float: right;
+	width: 300px;
+	//fonde degradado
+	background: -webkit-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); // For Safari 5.1 to 6.0
+  	background: -o-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); / For Opera 11.1 to 12.0
+ 	 background: -moz-linear-gradient(rgb(249, 160, 0),rgb(152, 97, 12)); // For Firefox 3.6 to 15
+  	background: linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12));// Standard syntax
+	border: 2px solid #BA7708;
+	font-size: 26px;
+}
+.EtiquetaSuperior{
+	display: inline;
+	padding: 0px 20px 0px 20px;
+}
+*/
+
+.totalDinero{
+	color:red;
+	font-size: 16px;
+}
+
+.imagenesPatrocinadores{
+	margin: 50px 0px 0px 90px;
+}
+
+.contacta{
+	margin-top:10px;
+	padding: 0px 20px 0px 20px;
+	background : #CDDBF0;
+	border-radius : 15px;
+	padding-bottom:10px;
+	margin-botoom:10px;
+}
+
+.marcoImg{
+	padding: 0px 0px 10px 10px;
+	width: 215px;
+	height: 350px;
+	float: left;
+}
+.marcoText{
+	width: 450px;
+	float: left;
+	background : #CDDBF0;
+	border-radius : 15px;
+}
+.marcoText p{
+	padding: 0px 0px 0px 15px;
+}
+
+.marcoText_Superior{
+	width: 450px;
+	float: left;
+	padding: 0px 0px 150px 10px;
+}
+
+.marcoFormulario{
+	padding: 5px 0px 20px 20px;
+	width: 450px;
+	float: right;
+	background : #CDDBF0;
+	border-radius : 15px;
+	margin-bottom: 10px;
+}
+.marcoFormulario textarea{
+	width: 419px;
+	height: 118px;
+}
+.boton_atras{
+	border: 1px solid #00748f;
+	height: 25px;
+	width: 133px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 4px;
+	cursor: pointer;
+	font: 20px plane;
+	color: #fafafa;
+	background-color: #0483a0;
+	background-image: linear-gradient(top, #31b2c3, #0483a0);
+	border-radius: 3px;
+	text-align: center;
+	padding: 10px;
+}
+
+
+
+.marco_ponencias{
+	padding: 5px 20px 30px 20px;
+	background : #CDDBF0;
+	border-radius : 10px;
+
+}
+.menu_ponencias{
+	width: 710px;
+	height: 100px;
+	text-align: center;
+	margin-top:22px;
+}
+
+.menu_ponencias li{
+	display: inline;
+	background: -webkit-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); /* For Opera 11.1 to 12.0 */
+ 	background: -moz-linear-gradient(rgb(249, 160, 0),rgb(152, 97, 12)); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12));/* Standard syntax */
+	padding: 9px;
+
+}
+/*---------------barra sesion------------*/
+#boton_registro{
+	background-color: #0483a0;
+	color: white;
+}
+
+#boton_salir{
+	background-color: #0483a0;
+	color: white;
+}
+
+
+.imagnePortada{
+	z-index: -1;
+}
+.sesion{
+	position:absolute;
+	padding: 155px 0px 0px 479px;
+}
+.sesion a{
+	float:right;
+	margin-top: 12px;
+	margin-left:2px;
+
+}
+.sesion li{
+	display: inline;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 12px 12px 12px 12px;
+}
+.sesion2{
+	position:absolute;
+	padding: 156px 0px 0px 882px;
+}
+.sesion2 a{
+	float:right;
+	margin-top: 12px;
+	margin-left:2px;
+
+}
+.sesion2 li{
+	display: inline;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 12px 12px 12px 12px;
+}
+
+
+.barra_sesion{
+    padding: 8px;
+    overflow: hidden;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #dedede #bababa #aaa #bababa;
+    box-shadow: 0 1px 1px rgba(255,255,255,.1), 0 1px 0 #bbb, 0 1px 0 #aaa, 0 1px 1px #444;
+	border-radius: 10px;
+    background-color: #f6f6f6;
+}
+
+.barra_sesion #texto {
+    height: 20px;
+	text-align:center;
+    float: left;
+    font: 16px plane;
+
+    box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #fff;
+    border-radius: 3px;
+}
+
+.barra_sesion #texto:focus {
+	/* Para cuando se mete el cursor->gradiente */
+    outline: 0;
+    border-color: #aaa;
+    box-shadow: 0 1px 1px #bbb inset;
+}
+
+input:focus::-webkit-input-placeholder{
+	/* Esto borra los placeholders cuando se clika dentro */
+	color: transparent;
+}
+
+.barra_sesion #desplegable{
+	/* Menu desplegable*/
+	height: 24px;
+	font: 16px plane;
+	text-align:center;
+	border: 1px solid #ccc;
+    box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #fff;
+    border-radius: 3px;
+}
+
+.barra_sesion #desplegable:hover, .barra_sesion #desplegable:focus{
+	/* Cliky desplegable*/
+	outline: 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+}
+.barra_sesion #submit {
+	/* Boton */
+    float: right;
+    border: 1px solid #00748f;
+	height: 26px;
+	margin-left: 1px;
+    cursor: pointer;
+    font: 15px plane;
+    color: #fafafa;
+    background-color: #0483a0;
+    background-image: linear-gradient(top, #31b2c3, #0483a0);
+    border-radius: 3px;
+}
+
+.barra_sesion #submit:hover, .barra_sesion #submit:focus {
+	/* Click */
+    background-color: #31b2c3;
+    background-image: linear-gradient(top, #0483a0, #31b2c3);
+}
+
+.barra_sesion #submit:active {
+	/* Gradiente cuando click */
+    outline: 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+}
+
+/*administrar cuota*/
+.marcoCuotas{
+	padding: 5px 0px 20px 20px;
+	width: 450px;
+	background : #CDDBF0;
+	border-radius : 15px;
+}
+
+/*mostrar formulario hote*/
+#deseoHotel{
+	display: none;
+}
+#boton_buscar{
+	border: 5px solid #0483a0;
+	height: 15px;
+	width: 15px;
+	background-color: #0483a0;
+	color: #fafafa;
+}
+
+#boton_apuntarse{
+	border: 5px solid #0483a0;
+	height: 35px;
+	width: 70px;
+	background-color: #0483a0;
+	color: #fafafa;
+	font-size:21px;
+}
+
+#mostrarHoteles{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.hotel{
+	width: 325px;
+	height: 320px;
+	background-color: #CDDBF0;
+}
+
+
+
+#foto_hotel{
+	float: right;
+	width: 150px;
+	height: 150px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	padding-right: 3px;
+	padding-left: 3px;
+}
+
+#precio_dinamico{
+	margin-top: 10px;
+	border: 5px solid #0483a0;
+	height: 32px;
+	width: 70px;
+	background-color: #0483a0;
+	color: #fafafa;
+	font-size:21px;
+	float:right;
+}
+
+/*pagina de participantes*/
+.lista_particiapantes{
+	list-style-type:circle;
+	padding-left: 45px;
+}
+
+.lista_particiapantes li:hover {
+    background-color: rgb(249, 160, 0);
+}
+
+/*tablaCuotas*/
+.tablaCuotas{
+	margin-bottom: 25px;
+	width: 185px;
+	padding: 5px 0px 20px 20px;
+}
+.boton_cuotas{
+	float:right;
+	border: 1px solid #00748f;
+	height: 25px;
+	width: 133px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 285px;
+	cursor: pointer;
+	font: 20px plane;
+	color: #fafafa;
+	background-color: #CDDBF0;;
+	background-image: linear-gradient(top, #31b2c3, #0483a0);
+	border-radius: 3px;
+	text-align: center;
+	padding: 10px;
+}

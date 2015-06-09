@@ -226,7 +226,7 @@ function buscar_participante_ajax(){
         xmlhttp.send("nombre="+n);
 }
 
-//comprobamos si el nombre de usuario ya existe o es valido
+//comprobamos si el nombre de usuario ya existe o es valido a partir de AJAX
 function comprobar_nombre_usuario(){
 
     var n=document.getElementById("registro_nombre").value;
