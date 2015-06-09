@@ -210,7 +210,7 @@ function precio_inscriptcion(n_actividades){
 
 }
 
-
+//a partir de ajax buscarmos participante
 function buscar_participante_ajax(){
 
     var n=document.getElementById("buscador").value;
@@ -222,6 +222,29 @@ function buscar_participante_ajax(){
             }
         }
         xmlhttp.open("POST","php/includes/buscar_participante.php",true);
+        xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xmlhttp.send("nombre="+n);
+}
+
+//comprobamos si el nombre de usuario ya existe o es valido
+function comprobar_nombre_usuario(){
+
+    var n=document.getElementById("registro_nombre").value;
+        var xmlhttp;
+        xmlhttp=new XMLHttpRequest();
+        xmlhttp.onreadystatechange=function(){
+            if (xmlhttp.readyState==4 && xmlhttp.status==200){
+                    document.getElementById("etiqueta_usuario").innerHTML=xmlhttp.responseText;
+                    if(xmlhttp.responseText=="nombre usuario valido"){
+                        document.getElementById("etiqueta_usuario").style.color = "green";
+                    }
+                    else{//xmlhttp.responseText="nombre usuario invalido"
+                    document.getElementById("etiqueta_usuario").style.color = "red";
+                    }
+
+            }
+        }
+        xmlhttp.open("POST","php/includes/comprobar_nombre_usuario.php",true);
         xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
         xmlhttp.send("nombre="+n);
 }

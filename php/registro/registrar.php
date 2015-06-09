@@ -2,7 +2,8 @@
     <h1> Registro Usuario</h1>
     <form method="post" action="index.php?page=registro" >
        <label> Nombre usuario:</label>
-       <input type="text" name="nombre"  placeholder="Introduce nombre Usuario."  required="true" autofocus></input>
+       <input type="text" name="nombre"  placeholder="Introduce nombre Usuario."  id="registro_nombre" onkeyup="comprobar_nombre_usuario()" required="true" autofocus></input>
+       <label id="etiqueta_usuario"></label>
        <br><br>
 
       <label> Contraseña:    </label>
