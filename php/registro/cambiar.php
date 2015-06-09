@@ -29,7 +29,7 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"  && isset($_REQUEST['nombre']) && isset($_REQUEST['password1']) && isset($_REQUEST['password2'])){
-        $dbhandler = new db_handler("localhost","root","congreso");
+        $dbhandler = new db_handler("localhost","congreso");
         $dbhandler->connect();
 
         $sql="UPDATE Usuario SET password = '".$_REQUEST['password2']."' WHERE  nombre='".$_REQUEST['nombre']."' AND password='".$_REQUEST['password1']."'";

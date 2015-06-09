@@ -44,10 +44,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"  && isset($_REQUEST['nombre']) && isset
             $mail->From = 'sibweb2014@gmail.com';
             $mail->FromName = 'Congreso';
             $mail->addAddress($_REQUEST['email'], $_REQUEST['nombre']);     // Add a recipient
-            $mail->Subject = '[Mensaje de Web] Recordar contraseña';
+            $mail->Subject = '[Mensaje de Web] Recordar password';
             // use wordwrap() if lines are longer than 70 characters
             //$comment = wordwrap($comment,70)
-            $mail->Body    = "Contraseña: ".$contraseña;
+            $mail->Body    = "Password: ".$contraseña;
 
 
             if(!$mail->send()) {
