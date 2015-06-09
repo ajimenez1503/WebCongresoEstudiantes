@@ -1,5 +1,6 @@
 <h3>Ponencias</h3>
-<table>
+<div class="tabla_ponencias">
+<table >
     <thead>
         <tr>
             <th>Hora</th>
@@ -97,3 +98,4 @@
     </tr>
     <!--</tbody> -->
 </table>
+</div>

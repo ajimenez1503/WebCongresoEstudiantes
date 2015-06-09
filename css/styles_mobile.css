@@ -219,7 +219,8 @@ footer{
 	float: left;
 }
 .marcoText{
-	width: 450px;
+	width: 90%;
+	padding: 1% 4% 7% 2%;
 	float: left;
 	background : #CDDBF0;
 	border-radius : 15px;
@@ -229,14 +230,13 @@ footer{
 }
 
 .marcoText_Superior{
-	width: 450px;
-	float: left;
-	padding: 0px 0px 150px 10px;
+	width: 100%;
+	margin: 0% 0% 5% 3%;
 }
 
 .marcoFormulario{
 	padding: 5px 0px 20px 20px;
-	width: 450px;
+	width: 90%;
 	float: right;
 	background : #CDDBF0;
 	border-radius : 15px;
@@ -246,6 +246,10 @@ footer{
 	width: 419px;
 	height: 118px;
 }
+#descripcion_actividad{
+	width: 90%;
+}
+
 .boton_atras{
 	border: 1px solid #00748f;
 	height: 25px;
@@ -275,10 +279,11 @@ footer{
 	text-align: center;
 	margin-top: 10%;
 	margin-bottom: 10%;
+
 }
 
 .menu_ponencias li{
-	display: inline;
+	list-style-type: none;
 	background: -webkit-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); /* For Safari 5.1 to 6.0 */
   	background: -o-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); /* For Opera 11.1 to 12.0 */
  	background: -moz-linear-gradient(rgb(249, 160, 0),rgb(152, 97, 12)); /* For Firefox 3.6 to 15 */
@@ -410,9 +415,13 @@ input:focus::-webkit-input-placeholder{
 /*administrar cuota*/
 .marcoCuotas{
 	padding: 5px 0px 20px 20px;
-	width: 450px;
+	width: 90%;
 	background : #CDDBF0;
 	border-radius : 15px;
+}
+
+.tabla_ponencias{
+	font-size: 14px;
 }
 
 /*mostrar formulario hote*/
@@ -442,8 +451,8 @@ input:focus::-webkit-input-placeholder{
 }
 
 .hotel{
-	width: 325px;
-	height: 320px;
+	width: 100%;
+	height: 100%;
 	background-color: #CDDBF0;
 }
 
@@ -457,17 +466,21 @@ input:focus::-webkit-input-placeholder{
 	padding-top: 5px;
 	padding-right: 3px;
 	padding-left: 3px;
+	display: none;
 }
 
 #precio_dinamico{
-	margin-top: 10px;
+	margin-top: 6px;
 	border: 5px solid #0483a0;
-	height: 32px;
-	width: 70px;
+	height: 19px;
+	width: 59px;
 	background-color: #0483a0;
 	color: #fafafa;
-	font-size:21px;
+	font-size:19px;
 	float:right;
+}
+#mostrarActividades{
+	font-size:15px;
 }
 
 /*pagina de participantes*/
@@ -487,13 +500,10 @@ input:focus::-webkit-input-placeholder{
 	padding: 5px 0px 20px 20px;
 }
 .boton_cuotas{
-	float:right;
 	border: 1px solid #00748f;
 	height: 25px;
 	width: 133px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	margin-right: 285px;
+	margin: 5% 5% 5% 5%;
 	cursor: pointer;
 	font: 20px plane;
 	color: #fafafa;

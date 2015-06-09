@@ -49,7 +49,7 @@ class Actividad{
                         echo "<form method=\"post\" action=\"index.php?page=actividades&actividad=".$this->id."&editar=true\" >";
 
                         echo "<label> Descripcion actividad</label>";
-                        echo "<textarea  name=\"descripcion\"  row=\"100\" cols=\"45\"  >".$this->descripcion."</textarea>";
+                        echo "<textarea  id=\"descripcion_actividad\" name=\"descripcion\"  row=\"100\" cols=\"45\"  >".$this->descripcion."</textarea>";
                         echo "<br><br>";
 
                         echo "<label> Precio:    </label>";
