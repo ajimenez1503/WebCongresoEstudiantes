@@ -8,6 +8,7 @@
             <div id="subseccion1">
                 <li><a href="./index.php?page=actividades"> Actividades</a></li>
                 <li><a href="./index.php?page=ponencias"> Ponencias</a></li>
+                <li><a href="./index.php?page=cuotas">Cuotas</a></li>
             </div>
         <li><a href="./index.php?page=apuntate">Apúntate</a></li>
         <li onClick="switch_section(2)"><a href="#">Granada</a></li>
@@ -21,7 +22,6 @@
         if(isset($_SESSION['rol']) ){
     			if($_SESSION['rol']=="admin"){
                     echo "<li ><a href=\"./index.php?page=participantes\">Ver Participantes</a></li>";
-                    echo "<li ><a href=\"./index.php?page=cuotas\">Administrar Cuotas</a></li>";
                 }
     	}
         ?>
