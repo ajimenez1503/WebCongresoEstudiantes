@@ -22,7 +22,7 @@ img{
 }
 #logo_menu{
 	max-width:100%;
-	padding: 2% 0% 2% 12%;
+	padding: 2% 0% 1% 8%;
 }
 body  {
 	font-family: Arial, Helvetica, sans-serif;
@@ -69,6 +69,7 @@ h3,h4{
 
 .headder{
 	width: 100%;
+	text-align: center;
 }
 .headderizq{
 	height: 100%;;
@@ -94,7 +95,8 @@ section{
 }
 /* Formato menu */
 .MenuIzquierda{
-	width: 100%
+	width: 90%;
+  padding: 0% 0% 0% 5%;
 }
 .LMenu {
 
@@ -126,28 +128,29 @@ section{
 	height: 150px;
 	overflow: hidden;
 	position: relative;
-	margin: 10px 0px 10px 30px;
+	margin: 0 auto;
+	margin-top: 5%;
 	border: 2px solid rgb(216, 112, 11);
 
 }
 /* Formato menu */
 /* Formato central */
 .mainContent {
-	width: 710px;
-	margin-left: 250px;
+	width: 90%;
 	color: #020202;
+	text-align : justify;
+	padding: 5% 0% 0% 4%;
 }
 .mainContentizq{
-	width: 435px;
-	float: left;
+	width: 100%;
 	text-align : justify;
 }
-.mainContentder{
-	margin-left: 458px;
-}
+
 .mainContent a{
 	color: #0F3A98;
-
+}
+.mainContentder{
+	margin-top: 5%;
 }
 /* Formato central */
 /* Formato pie de pagina */
