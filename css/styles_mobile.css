@@ -19,10 +19,12 @@ img{
 	z-index: -1;
 	max-width:100%;
 	/*display:none;*/
+
 }
 #logo_menu{
 	max-width:100%;
 	padding: 2% 0% 1% 8%;
+	display:none;
 }
 #logo_footer{
 	max-width:100%;
@@ -102,21 +104,64 @@ section{
 	width: 90%;
   padding: 0% 0% 0% 5%;
 }
-.LMenu {
+/* definimos el cuadrado con las lineas */
+.iconoMenuDesplegable {
+	position: relative;
+	height: 40px;
+	width: 40px;
+}
+.iconoMenuDesplegable>span, .iconoMenuDesplegable>span::after {
+	position: absolute;
+	border: 6px solid black; /* border color */
+	border-width: 6px 0;
+	-moz-transition: all 0.3s ease-in;
+	-webkit-transition: all 0.3s ease-in;
+	transition: all 0.3s ease-in;
+	/*fonde degradado*/
+	background: rgb(249, 160, 0);
+}
+.iconoMenuDesplegable>span {
+	cursor: pointer;
+	width: 40px;
+	height: 27px;
 
+}
+.iconoMenuDesplegable>span::after {
+	content: "";
+	width: 100%;
+	height: 19%;
+	top: 19%;
+}
+
+
+.LMenu {
 	width:100%;
 	font-size: 35px;
-	/*fonde degradado*/
-	background: -webkit-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); /* For Safari 5.1 to 6.0 */
-  	background: -o-linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12)); /* For Opera 11.1 to 12.0 */
- 	background: -moz-linear-gradient(rgb(249, 160, 0),rgb(152, 97, 12)); /* For Firefox 3.6 to 15 */
-  	background: linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12));/* Standard syntax */
+	background: rgba(249, 160, 0, 0.6);
 }
+
+/* definimos el menu */
 .MenuLateral{
-	padding: 0px 0px 0px 25px;
-	list-style-type: none;
-	text-indent: 6px;
+	display:none;
+	list-style: none;
+	padding:0px;
+	margin:0px;
 }
+.MenuLateral a:link, a:visited, a:hover {
+	color:#FFFFFF;
+	text-decoration:none;
+}
+.MenuLateral li {
+	background: rgba(249, 160, 0, 0.6);
+	padding:5px 10px;
+	border-bottom:1px solid #fff;
+}
+.MenuLateral li:hover {
+	background-color:#808080;
+	padding:5px 10px;
+	border-bottom:1px solid #fff;
+}
+
 #subseccion1, #subseccion2{
 	font-size: 25px;
 	padding: 5px 0px 10px 25px;

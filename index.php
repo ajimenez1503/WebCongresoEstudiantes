@@ -11,12 +11,18 @@ session_start();
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
 	<?php
-	//comprobamos la navegacion que estamos usando
+	//comprobamos la navegacion que estamos
+
+
+
+
 	$useragent = $_SERVER['HTTP_USER_AGENT'];
 	if (preg_match("/mobile/i", $useragent) || preg_match("/tablet/i", $useragent)){
 		echo "<link href=\"css/styles_mobile.css\" rel=\"stylesheet\" type=\"text/css\"/>";
 		echo "<script>console.log(\"estamos en mobile\")</script>";
-		echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">";
+		echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1  \">";
+		echo "<script src=\"http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js\" type=\"text/javascript\"></script>";
+		echo "<script type=\"text/javascript\" src=\"./js/mobile.js\"></script>";
 	}
 	else{
 		echo "<link href=\"css/styles.css\" rel=\"stylesheet\" type=\"text/css\"/>";
