@@ -3,9 +3,19 @@
 
 class Cuota{
     private $id;
-    private $tipo;
+    public $tipo;
     private $importe;
 
+    //tipo
+    public function get_tipo(){
+        return $this->tipo;
+    }
+
+
+    //importe
+    public function get_importe(){
+        return $this->importe;
+    }
 
     //se le pasa una "row" del query
     public function read_cuota($row){
@@ -22,6 +32,7 @@ class Cuota{
             echo "<td>" . $this->importe . "</td>";
     echo "</tr>";
     }
+
 
 }
 
@@ -74,42 +85,48 @@ function boton_editar_cuota(){
         echo "</div>";// boton_cuotas\">";
     }
 }
-
-function editar_cuotas($dbhandler){
+//formulario para editar cuotas
+function editar_cuotas($cuotas){
     if(isset($_SESSION['user']) && $_SESSION['rol']=="admin" && isset($_GET['editar'])){
+
+
         echo "<div class =\"marcoCuotas\">";
             echo "<h4>Editar importe de las cuotas</h4>";
             echo "<form method=\"post\" action=\"index.php?page=cuotas&editar=true\" >";
-                $sql="SELECT * FROM Cuota";
-                $table=$dbhandler->query($sql);
-                $tipos=array();
-                if ($table->num_rows > 0) {
-                    // output data of each row
-                    while($row = $table->fetch_assoc()) {
-                        echo "<label> ".$row["tipo"]."</label>";
-                        echo "<input type=\"number\"  step=\"any\" name=\"".$row["tipo"]."\" value=\"".$row["importe"]."\" ></input>";
-                        echo "<br><br>";
-                        $tipos[]=$row["tipo"];
-                    }
-                } else {
-                    echo "no results";
-                }
+            foreach ($cuotas as $cuota){
+                echo "<label> ".$cuota->get_tipo()."</label>";
+                echo "<input type=\"number\"  step=\"any\" name=\"".$cuota->get_tipo()."\" value=\"".$cuota->get_importe()."\" ></input>";
+                echo "<br><br>";
+            }
             echo "<button type=\"submit\"name=\"submit\">Modificar</button>";
             echo "</form>";
         echo "</div> <!-- end marcoCuotas -->";
+    }
+}
 
+function mostrar_editar_tabla_cuotas($dbhandler){
 
-        if ($_SERVER["REQUEST_METHOD"] == "POST"  ) {
-            //recorremos todos los tipos
-            foreach ($tipos as $tipo){
-                //echo $tipo." impote".$_REQUEST[$tipo]."</br>";
-                $sql="UPDATE Cuota SET importe='".$_REQUEST[$tipo]."' WHERE tipo='".$tipo."'";
-                if ($dbhandler->query($sql) === FALSE) {
-                    echo "Error: ".$dbhandler->error();
-                }
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['user']) && $_SESSION['rol']=="admin" && isset($_GET['editar']) ) {
+        //tomamos las cuotas
+        $cuotas=leer_cuotas($dbhandler);
+        //recorremos todos los tipos
+        foreach ($cuotas as $cuota){
+            //echo $tipo." impote".$_REQUEST[$tipo]."</br>";
+            $sql="UPDATE Cuota SET importe='".$_REQUEST[$cuota->get_tipo()]."' WHERE tipo='".$cuota->get_tipo()."'";
+            if ($dbhandler->query($sql) === FALSE) {
+                echo "Error: ".$dbhandler->error();
             }
+
         }
     }
+    $cuotas=leer_cuotas($dbhandler);
+    //mostramos tablas
+    mostrar_tabla($cuotas);
+
+    //formulario para editar cuotas
+    editar_cuotas($cuotas,$dbhandler);
+
+
 }
 
 ?>
