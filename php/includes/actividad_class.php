@@ -98,9 +98,61 @@ function mostrar_tabla($actividades){
         echo "</div>";
 }
 
+function modificar_actividad($dbhandler,$result){
 
-funci
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['user']) && isset($_GET['editar'])&& $_SESSION['rol']=="admin" ) {
+        //actualizmos actividad
+        $sql="UPDATE Actividad SET descripcion='".$_REQUEST['descripcion']."', precio=".$_REQUEST['precio']." WHERE id=".$result[0]->get_id();
+        if ($dbhandler->query($sql) === TRUE) {
+            echo "<script> alert(\"actividade modificada\");</script>";
+            //actualizmos actividad
+            $query="SELECT * FROM `Actividad` WHERE id=".$result[0]->get_id();
+            $result=leer_actividades($query,$dbhandler);
+        } else {
+            echo "Error: ".$dbhandler->error();
+        }
+    }
+    return $result;
+}
 
+function mostrar_boton_editar_atras($actividad){
+    echo "<a href=\"./index.php?page=actividades\"><div class =\"boton_atras\">ATRAS </div></a>";
+    if(isset($_SESSION['user']) && $_SESSION['rol']=="admin"){
+            echo "<a href=\"./index.php?page=actividades&actividad=".$actividad->get_id()."&editar=true\"><div class =\"boton_atras\">EDITAR </div></a>";
+    }
+}
+
+function mostrar_descripcion($actividad){
+    echo "<div class =\"marcoText_Superior\">";
+        echo "<div class =\"marcoText\">";
+            echo "<h4>". $actividad->get_nombre() ."</h4>";
+                  echo "<p>";
+                  echo $actividad->get_descripcion();
+                  echo "</p>";
+        echo "</div> <!-- end marcoText -->";
+    echo "</div> <!-- end marcoText_Superior -->";
+}
+
+function mostrar_formulario($actividad){
+    if(isset($_SESSION['user']) && isset($_GET['editar'])&& $_SESSION['rol']=="admin"){
+        echo "<div class =\"marcoFormulario\">";
+            echo "<h4>Editar actividad</h4>";
+
+            echo "<form method=\"post\" action=\"index.php?page=actividades&actividad=".$actividad->get_id()."&editar=true\" >";
+
+            echo "<label> Descripcion actividad</label>";
+            echo "<textarea  id=\"descripcion_actividad\" name=\"descripcion\"  row=\"100\" cols=\"45\"  >".$actividad->get_descripcion()."</textarea>";
+            echo "<br><br>";
+
+            echo "<label> Precio:    </label>";
+            echo "<input type=\"number\" step=\"any\" name=\"precio\" value=\"".$actividad->get_precio()."\" ></input>";
+            echo "<br><br>";
+
+            echo "<button type=\"submit\" name=\"submit\">Modificar</button>";
+            echo "</form>";
+        echo "</div> <!-- end marcoFormulario -->";
+    }
+}
 
 
 //muestra la info especifica de una actividad
@@ -109,55 +161,16 @@ function describir_activiad($idactividad,$dbhandler){
     $query="SELECT * FROM `Actividad` WHERE id=".$idactividad;
     $result=leer_actividades($query,$dbhandler);
     if (count($result)>0) {
-        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['user']) && isset($_GET['editar'])&& $_SESSION['rol']=="admin" ) {
-            //actualizmos actividad
-            $sql="UPDATE Actividad SET descripcion='".$_REQUEST['descripcion']."', precio=".$_REQUEST['precio']." WHERE id=".$result[0]->get_id();
-            if ($dbhandler->query($sql) === TRUE) {
-                echo "<script> alert(\"actividade modificada\");</script>";
-                //actualizmos actividad
-                $result=leer_actividades($query,$dbhandler);
-            } else {
-                echo "Error: ".$dbhandler->error();
-            }
-        }
+        $result=modificar_actividad($dbhandler,$result);
         echo "<div class =\"marco\">";
             echo "<div class =\"marcoImg\">";
                 echo "<img src=\"".$result[0]->get_foto()."\"  alt=\"Imagen actividad\" width=\"200px\" height=\"200px\" >";
-                echo "<a href=\"./index.php?page=actividades\"><div class =\"boton_atras\">ATRAS </div></a>";
 
-                if(isset($_SESSION['user']) && $_SESSION['rol']=="admin"){
-                        echo "<a href=\"./index.php?page=actividades&actividad=".$result[0]->get_id()."&editar=true\"><div class =\"boton_atras\">EDITAR </div></a>";
-                }
+                mostrar_boton_editar_atras($result[0]);
 
             echo "</div> <!-- end marcoImg -->";
-
-            echo "<div class =\"marcoText_Superior\">";
-                echo "<div class =\"marcoText\">";
-                    echo "<h4>". $result[0]->get_nombre() ."</h4>";
-                          echo "<p>";
-                          echo $result[0]->get_descripcion();
-                          echo "</p>";
-                echo "</div> <!-- end marcoText -->";
-            echo "</div> <!-- end marcoText_Superior -->";
-
-            if(isset($_SESSION['user']) && isset($_GET['editar'])&& $_SESSION['rol']=="admin"){
-                echo "<div class =\"marcoFormulario\">";
-                    echo "<h4>Editar actividad</h4>";
-
-                    echo "<form method=\"post\" action=\"index.php?page=actividades&actividad=".$result[0]->get_id()."&editar=true\" >";
-
-                    echo "<label> Descripcion actividad</label>";
-                    echo "<textarea  id=\"descripcion_actividad\" name=\"descripcion\"  row=\"100\" cols=\"45\"  >".$result[0]->get_descripcion()."</textarea>";
-                    echo "<br><br>";
-
-                    echo "<label> Precio:    </label>";
-                    echo "<input type=\"number\" step=\"any\" name=\"precio\" value=\"".$result[0]->get_precio()."\" ></input>";
-                    echo "<br><br>";
-
-                    echo "<button type=\"submit\" name=\"submit\">Modificar</button>";
-                    echo "</form>";
-                echo "</div> <!-- end marcoFormulario -->";
-        }
+            mostrar_descripcion($result[0]);
+            mostrar_formulario($result[0]);
         echo "</div> <!-- end marco -->";
     }
 }
