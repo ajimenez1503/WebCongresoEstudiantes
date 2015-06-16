@@ -7,7 +7,8 @@
 <?php
 	include "php/includes/actividad_class.php";
 	$dbhandler = new db_handler("localhost","congreso");
-
+	$dbhandler->connect();
+	//si seleccionamos una actividd
 	if(isset($_GET['actividad']) && !empty($_GET['actividad'])){
 		$idactividad=$_GET['actividad'];
 		describir_activiad($idactividad,$dbhandler);
@@ -18,6 +19,6 @@
 
 	$actividades=leer_actividades("SELECT * FROM Actividad",$dbhandler);
 	mostrar_tabla($actividades);
-
+	$dbhandler->close();
 
 ?>
