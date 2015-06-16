@@ -136,7 +136,7 @@ section{
 
 .LMenu {
 	width:100%;
-	font-size: 35px;
+	font-size: 25px;
 	background: rgba(249, 160, 0, 0.6);
 }
 
@@ -163,7 +163,7 @@ section{
 }
 
 #subseccion1, #subseccion2{
-	font-size: 25px;
+	font-size: 18px;
 	padding: 5px 0px 10px 25px;
 	display: none;
 }
